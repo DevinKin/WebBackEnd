@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>案例2-表单校验</title>
+        <script>
+            function checkForm() {
+                var username = document.getElementById("uname").value;
+                var pwd = document.getElementById("pwd").value;
+                if (username == null || username == "") {
+                    alert("用户名不能为空");
+                    return false;
+                } 
+                if (pwd == null || pwd == "") {
+                    alert("密码不能为空");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <form action="#" method="get" onsubmit="return checkForm()">
+            姓名:<input type="text" name="username" id="uname"><br>
+            密码:<input type="password" name="password" id="pwd"><br>
+            <input type="submit" value="保存"> 
+            <input type="reset">
+        </form>
+    </body>
+</html>

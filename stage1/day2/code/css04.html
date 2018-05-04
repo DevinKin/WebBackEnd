@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>css样式的优先级</title>
+        <link rel="stylesheet" href="css/1.css">
+        <style>
+            #divid2 {
+                background-color: #0f0;
+                width: 50%;
+            }
+            .divcls1 {
+                background-color: red;
+            }
+            span {
+                background-color: burlywood;
+            }
+            span[att="val"] {
+                background-color: chartreuse;
+            }
+            #spanid1 {
+                background-color: palevioletred;
+            }
+        </style>
+    </head>
+    <body>
+        <div>天佑中华</div>
+        <div style="background-color: red;">天佑中华-内联</div>
+        <div class="divcls1">天佑中华-属性选择器</div>
+        <div id="divid2">天佑中华-内部样式表</div>
+        <div id="divid3">天佑中华-外部样式表文件</div>
+        <span>天佑中华</span> 
+        <span att="val" id="spanid1">天佑中华</span> 
+        <span class="divcls1">天佑中华</span> 
+    </body>
+</html>
