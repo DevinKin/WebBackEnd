@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>表单校验plus</title>
+        <style>
+            span {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="#" method="get">
+            <table width="60%" height="60%" align="center">
+                <tr>
+                    <td colspan="3">会员注册USER REGIST</td>
+                </tr>
+                <tr>
+                    <td width="20%">用户名:</td>
+                    <td width="40%"><input type="text" name="username" id="uid" onblur="checkUsername(this)"></td>
+                    <td width="40%"><span id="uspan"><font></font></span></td>
+                </tr>
+                <tr>
+                    <td width="20%">密码:</td>
+                    <td width="40%"><input type="password" name="password" id="pid" onblur="checkPassword()"></td>
+                    <td width="40%"><span id="pspan"></span></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input type="submit" value="提交" onsubmit="return checkForm()">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+    <script>
+        function checkForm() {
+            var userObj = document.getElementById("uid");
+            var username = userObj.value;
+
+            var passObj = document.getElementById("pid");
+            var password = passObj.value;
+
+            if (username == null || username == "") {
+                alert("用户名不能为空");
+                return false;
+            }
+
+            if (password == null || password == "") {
+                alert("用户名不能为空");
+                return false;
+            }
+            return true;
+        }
+
+        function checkUsername(userObj) {
+            // var username = document.getElementById("uid").value;
+            var username = userObj.value;
+            var uspanObj = document.getElementById("uspan");
+
+            if (username == null || username == "")
+                uspanObj.innerHTML = "用户名不能为空";
+            else
+                uspanObj.innerHTML = "";
+            
+        }
+        function checkPassword() {
+            var password = document.getElementById("pid").value;
+            var pspanObj = document.getElementById("pspan");
+
+            if (password == null || password == "")
+                pspanObj.innerHTML = "密码不能为空";
+            else
+                pspanObj.innerHTML = "";
+        }
+    </script>
+</html>

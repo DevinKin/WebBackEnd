@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>焦点事件</title>
+        <script>
+            //得到焦点
+            function getFocus() {
+                //获取元素
+                var userObj = document.getElementById("u1");
+
+                //给span添加内容
+                var spObj = document.getElementById("spanid");
+                spObj.innerHTML = userObj.value;
+            }
+
+            function lostFocus() {
+                var userObj = document.getElementById("u1");
+                alert(userObj.value);
+            }
+        </script>
+    </head>
+    <body>
+        用户名:<input name="username" value="tom" onfocus="getFocus()" id="u1" onblur="lostFocus()"><br/>
+        <span id="spanid"></span>
+        
+    </body>
+</html>

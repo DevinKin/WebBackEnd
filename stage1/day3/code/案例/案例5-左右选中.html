@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>左右选中</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <select id="left" multiple="true" style="width: 100px;" size="10">
+                    <option value="">测</option>
+                    <option value="">试</option>
+                    <option value="">一</option>
+                    <option value="">下</option>
+                    <option value="">下</option>
+                    <option value="">左</option>
+                    <option value="">右</option>
+                    <option value="">选</option>
+                    <option value="">中</option>
+                </select>
+            </td>
+            <td>
+                <input type="button" onclick="toRight1()" value=">">
+                <br>
+                <input type="button" onclick="toRight2()" value=">>">
+                <br>
+                <input type="button" onclick="toRight3()" value=">>>">
+                <br>
+                <input type="button" onclick="toLeft1()" value="<">
+                <br>
+                <input type="button" onclick="toLeft2()" value="<<">
+                <br>
+                <input type="button" onclick="toLeft3()" value="<<<">
+                <br>
+            </td>
+            <td>
+                <select id="right" multiple="true" style="width: 100px;" size="10"></select>
+            </td>
+        </tr>
+    </table>
+</body>
+<script>
+    function toRight1() {
+        var leftOptList = document.getElementById("left").options;
+        var rightSelect = document.getElementById("right");
+        for (var i = 0; i < leftOptList.length; i++) {
+            if (leftOptList[i].selected) {
+                rightSelect.appendChild(leftOptList[i]);
+                break;
+            }
+        }
+    }
+    function toLeft1() {
+        var rightOptList = document.getElementById("right").options;
+        var leftSelect = document.getElementById("left");
+        for (var i = 0; i < rightOptList.length; i++) {
+            if (rightOptList[i].selected) {
+                leftSelect.appendChild(rightOptList[i]);
+                break;
+            }
+        }
+    }
+    function toRight2() {
+        var leftOptList = document.getElementById("left").options;
+        var rightSelect = document.getElementById("right");
+        for (var i = 0; i < leftOptList.length; i++) {
+            if (leftOptList[i].selected) {
+                rightSelect.appendChild(leftOptList[i]);
+                i--;
+            }
+        }
+    }
+    function toLeft2() {
+        var rightOptList = document.getElementById("right").options;
+        var leftSelect = document.getElementById("left");
+        for (var i = 0; i < rightOptList.length; i++) {
+            if (rightOptList[i].selected) {
+                leftSelect.appendChild(rightOptList[i]);
+                i--;
+            }
+        }
+    }
+    function toRight3() {
+        var leftOptList = document.getElementById("left").options;
+        var rightSelect = document.getElementById("right");
+        while(leftOptList.length > 0) {
+            rightSelect.appendChild(leftOptList[0]);
+        }
+    }
+    function toLeft3() {
+        var rightOptList = document.getElementById("right").options;
+        var leftSelect = document.getElementById("left");
+        while(rightOptList.length > 0) {
+            leftSelect.appendChild(rightOptList[0]);
+        }
+    }
+
+</script>
+
+</html>
