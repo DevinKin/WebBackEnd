@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>内部插入节点</title>
+        <script src="../js/jquery-1.11.0.min.js"></script>
+        <script>
+            $(function () {
+               //1.在city的后面内部追加反恐
+               var $fk=$("#fk");
+               $("#city").append($fk);
+               //2.在city的前面内部插入反恐 
+               $("#city").prepend($fk);
+            });
+        </script>
+    </head>
+    <body>
+        <ul id="city">
+            <li id="bj" name="beijing">北京</li>
+            <li id="tj" name="tianjin">天津</li>
+            <li id="cq" name="chongqing">重庆</li>
+        </ul>
+
+        <ul id="love">
+            <li id="fk" name="fankong">反恐</li>
+            <li id="xj" name="xingji">星际</li>
+        </ul>
+        <div id="foo1">Hello1</div>
+    </body>
+</html>

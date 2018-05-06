@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>jquery效果</title>
+        <style type="text/css">
+            div {
+                width: 100px;
+                height: 100px;
+                border: 1px solid #000;
+            }
+        </style>
+        <script src="../resource/js类库/jquery-1.11.0.min.js"></script>
+        <script>
+            $(function () {
+                // 隐藏b1div
+                $("#b1").click(function () {
+                    $("#b1Div").hide(1000);
+                    
+                    // 切换
+                    $("#b1Div").toggle(1000);
+                });
+
+                $("#b2").click(function() {
+                    $("#b2Div").slideUp(1000);
+                    $("#b2Div").slideDown(1000);
+                })
+
+                $("#b3").click(function () {
+                    $("#b3Div").fadeOut(2000);
+                    // $("#b3Div").fadeToggle(1000);
+                    $("#b3Div").fadeIn(2000);
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <input type="button" id="b1" value="显示/隐藏b1Div">
+        <div id="b1Div"></div><br>
+        <input type="button" id="b2" value="滑出/滑入b2Div">
+        <div id="b2Div"></div><br>
+        <input type="button" id="b3" value="淡入/淡出b3Div">
+        <div id="b3Div"></div><br>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>获取jquery对象</title>
+        <script src="../resource/js类库/jquery-1.11.0.min.js"></script>
+    </head>
+    <body>
+        <input type="text" id="username" value="jack">
+        
+    </body>
+    <script>
+        //通过原生的js获取
+        alert(document.getElementById("username").value);
+
+        //通过jquery，获取jQuery对象
+        // var $username = $("#username");
+        var $username = jQuery("#username");
+        alert($username.val());
+    </script>
+</html>
