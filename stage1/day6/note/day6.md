@@ -45,7 +45,14 @@
 ### DQL：数据查询语言(Data Query Language)
 1. 查询
     1. `select [distinct 字段名] 字段名1,字段名2 from 表名 [where 条件] [group by 分组字段] [having 条件] [order by 排序字段(asc|desc)] `
-    2. distinct关键字去重复
+    2. 执行顺序
+        1. 确定数据来自哪张表：from
+        2. 是否需要筛选：where
+        3. 是否需要分组：group by
+        4. 分组后是否需要筛选：having
+        5. 是否需要排序：order by
+        6. 确定显示哪些数据：select
+    3. distinct关键字去重复
 2. 给列起别名:`字段名 as 别名`
 3. 模糊匹配
     1. 格式：字段名 like "匹配规则"
