@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 常量 :开发模式-->
+	<constant name="struts.devMode" value="true"></constant>
+	<!-- 使用简单标签主题 -->
+	<constant name="struts.ui.theme" value="simple"></constant>
+	
+	<!-- 公共内容 -->
+	<package name="common" namespace="/" extends="struts-default">
+		<!-- 1 配置拦截器 -->
+		<interceptors>
+			<!-- 1.1 注册拦截器 -->
+			<interceptor name="loginInterceptor" class="cn.itcast.crm.web.interceptor.LoginInterceptor"></interceptor>
+			
+			<!-- 1.2 自定义拦截器栈，包含：默认拦截器栈、自定义拦截器 -->
+			<interceptor-stack name="crmStack">
+				<!-- 1) 默认拦截器栈-->
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<!-- 2) struts其他拦截器-->
+				<!-- 3) 自定义拦截器-->
+				<interceptor-ref name="loginInterceptor">
+					<!-- 排除不需要拦截的方法 ,如果需要排除多个方法，使用逗号分隔-->
+					<param name="excludeMethods">login</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+		<!-- 1.3 将自定的拦截器栈，设置成默认拦截器栈，当前package以及子包，所有的action都使用 
+		<default-interceptor-ref name="crmStack"></default-interceptor-ref>
+		-->
+		
+		
+		<!-- 1.4 配置全局结果集 -->
+		<global-results>
+			<result name="login">/WEB-INF/pages/login.jsp</result>
+		</global-results>
+		
+		<!-- 显示jsp页面的 
+			版本1：
+				<action name="uiAction">
+					<result>/WEB-INF/pages/frame/top.jsp</result>
+				</action>
+				1）当请求 uiAction 时，将执行 action.class ，默认值：ActionSupport
+					struts-default.xml 源码中  <default-class-ref class="com.opensymphony.xwork2.ActionSupport" />
+				2）执行指定类，指定的方法 action.method ，默认值：execute
+					public String execute() throws Exception {
+				        return SUCCESS;
+				    }
+				3）当方法执行完成后，返回“success” ，result.name ，默认值：success
+			版本2：
+				<action name="uiAction_*_*">
+					<result>/WEB-INF/pages/{1}/{2}.jsp</result>
+				</action>
+				1)第一个星匹配的子文件夹，例如：/WEB-INF/pages/frame
+				2)第二个星匹配的jsp文件名 例如：top.jsp
+				访问路径：uiAction_frame_top
+				访问资源：/WEB-INF/pages/frame/top.jsp
+		
+		
+		-->
+		<action name="uiAction_*_*">
+			<result>/WEB-INF/pages/{1}/{2}.jsp</result>
+		</action>
+	</package>
+	
+	
+</struts>
