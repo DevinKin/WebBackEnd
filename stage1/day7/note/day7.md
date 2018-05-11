@@ -114,7 +114,7 @@ static {
     2. 配置文件
         1. 实现编写一个properties文件
         2. `new BasicDataSourceFactory().createDataSource(Properties properties)`
-3. 例子
+3. 例子<br>
 (1)硬编码  
 ```java
     public void func1()  {
