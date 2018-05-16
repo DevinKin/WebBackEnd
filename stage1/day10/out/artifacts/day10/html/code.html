@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="/VerifyCodeServlet" alt="验证码" title="看不清楚，换一张" onclick="changeImg(this)">
+</body>
+<script type="text/javascript">
+    function changeImg(obj) {
+        //操作src属性
+        obj.src = "/VerifyCodeServlet?i=" + Math.random();
+    }
+</script>
+</html>

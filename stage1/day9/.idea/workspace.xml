@@ -53,8 +53,6 @@
                   <element signature="e#5387#5399#0" expanded="false" />
                   <element signature="e#6033#6067#0" expanded="false" />
                   <element signature="e#6406#6422#0" expanded="false" />
-                  <marker date="1526193306221" expanded="true" signature="4930:5064" ph="..." />
-                  <marker date="1526193306221" expanded="true" signature="5086:5200" ph="..." />
                 </folding>
               </first_editor>
               <second_editor />
@@ -213,8 +211,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="825" />
-    <option name="y" value="72" />
+    <option name="x" value="319" />
+    <option name="y" value="101" />
     <option name="width" value="1156" />
     <option name="height" value="865" />
   </component>
@@ -523,7 +521,7 @@
       <workItem from="1526085058953" duration="1461000" />
       <workItem from="1526100780127" duration="1845000" />
       <workItem from="1526166474572" duration="14081000" />
-      <workItem from="1526181587838" duration="4443000" />
+      <workItem from="1526181587838" duration="5148000" />
     </task>
     <servers />
   </component>
@@ -536,10 +534,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21830000" />
+    <option name="totallyTimeSpent" value="22535000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="825" y="72" width="1156" height="865" extended-state="0" />
+    <frame x="319" y="101" width="1156" height="865" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -550,7 +548,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3184797" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3184797" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -603,8 +601,6 @@
               <element signature="e#5387#5399#0" expanded="false" />
               <element signature="e#6033#6067#0" expanded="false" />
               <element signature="e#6406#6422#0" expanded="false" />
-              <marker date="1526193306221" expanded="true" signature="4930:5064" ph="..." />
-              <marker date="1526193306221" expanded="true" signature="5086:5200" ph="..." />
             </folding>
           </first_editor>
           <second_editor />
@@ -704,8 +700,6 @@
               <element signature="e#5387#5399#0" expanded="false" />
               <element signature="e#6033#6067#0" expanded="false" />
               <element signature="e#6406#6422#0" expanded="false" />
-              <marker date="1526193306221" expanded="true" signature="4930:5064" ph="..." />
-              <marker date="1526193306221" expanded="true" signature="5086:5200" ph="..." />
             </folding>
           </first_editor>
           <second_editor />
@@ -948,8 +942,6 @@
               <element signature="e#5387#5399#0" expanded="false" />
               <element signature="e#6033#6067#0" expanded="false" />
               <element signature="e#6406#6422#0" expanded="false" />
-              <marker date="1526193306221" expanded="true" signature="4930:5064" ph="..." />
-              <marker date="1526193306221" expanded="true" signature="5086:5200" ph="..." />
             </folding>
           </first_editor>
           <second_editor />
