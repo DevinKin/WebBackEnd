@@ -1,6 +1,5 @@
 package cn.devinkin.web.servlet.login;
 
-
 import cn.devinkin.login.domain.User;
 import cn.devinkin.login.service.UserService;
 
@@ -12,9 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-//@WebServlet(name = "LoginServlet", urlPatterns = {"/login"},loadOnStartup = 1)
-@WebServlet("/login")
+@WebServlet(name = "LoginServlet",urlPatterns = {"/LoginServlet"})
 public class LoginServlet extends HttpServlet {
+
     private UserService userService = new UserService();
 
     @Override
@@ -24,7 +23,7 @@ public class LoginServlet extends HttpServlet {
          * 2. 初始化次数
          * 3. 将次数存入ServletContext中
          */
-         ServletContext servletContext = this.getServletContext();
+        ServletContext servletContext = this.getServletContext();
         servletContext.setAttribute("count", 0);
 
     }
@@ -48,7 +47,7 @@ public class LoginServlet extends HttpServlet {
         //3.
         if (user == null || !password.equals(user.getPassword())) {
             response.getWriter().print("用户名和密码不匹配，3秒后跳转");
-            response.setHeader("refresh", "3;url=/login.htm");
+            response.setHeader("refresh", "3;url=/day9/login.htm");
         } else {
             response.getWriter().print(username + " :欢迎回来");
             ServletContext servletContext = this.getServletContext();

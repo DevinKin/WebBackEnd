@@ -8,8 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-//@WebServlet(name = "ShowServlet", urlPatterns = {"/show"},loadOnStartup = 1)
-@WebServlet("/show")
+@WebServlet(name = "ShowServlet", urlPatterns = {"/ShowServlet"})
 public class ShowServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         /**
@@ -22,5 +21,6 @@ public class ShowServlet extends HttpServlet {
         response.setContentType("text/html;charset=utf-8");
         Integer count = (Integer) context.getAttribute("count");
         response.getWriter().print("登录成功的总次数为：" + count);
+
     }
 }

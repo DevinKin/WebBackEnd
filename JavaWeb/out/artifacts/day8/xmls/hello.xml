@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+    <!--bean 标签-->
+    <bean id="a" class="com.devinkin.a">
+        id为a
+    </bean>
+    <bean>
+        没有任何属性的标签
+    </bean>
+    <bean>
+        我们在html中学习过&lt;a&gt;标签
+        <![CDATA[
+            <img>标签，<<table><标签和input>标签</标签和input></table>
+        ]]>
+    </bean>
+</beans>

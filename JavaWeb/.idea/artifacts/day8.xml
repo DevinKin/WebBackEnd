@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="day8">
+    <output-path>$PROJECT_DIR$/out/artifacts/day8</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="day8" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/day8/web/WEB-INF/lib/dom4j-1.6.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day8/web/WEB-INF/lib/jaxen-1.1-beta-6.jar" />
+          <element id="library" level="module" name="JUnit4" module-name="day8" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="day8/web/Web" />
+    </root>
+  </artifact>
+</component>

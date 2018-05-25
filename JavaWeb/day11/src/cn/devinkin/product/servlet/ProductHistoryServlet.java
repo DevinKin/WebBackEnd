@@ -74,7 +74,6 @@ public class ProductHistoryServlet extends HttpServlet {
         cookie.setMaxAge(3600);
         response.addCookie(cookie);
         response.setContentType("text/html;charset=utf-8");
-        System.out.println(request.getContextPath());
-        response.sendRedirect(request.getContextPath() + "shop/product_info" + id + ".htm");
+        response.sendRedirect(request.getContextPath() + "/shop/product_info" + id + ".htm");
     }
 }
