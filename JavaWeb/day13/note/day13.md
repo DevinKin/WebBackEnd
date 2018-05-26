@@ -65,6 +65,44 @@
 ### 持久性(Durability)
 1. 持久性是指一个事务一旦被提交了，那么对数据库中的数据的改变就是永久性的，即便是在数据库系统遇到故障的情况下也不会丢失提交事务的操作。
 
+## 不考虑隔离性会出现的读问题
+1. 脏读：在一个事务中读取到另一个事务没有提交的数据
+2. 不可重复读：在一个事务中，两次查询的结果不一致(针对update操作)
+3. 虚读(幻读)：在一个事务中，两次查询的结果不一致(针对的insert操作)
+### 通过数据库的隔离级别来避免上面的问题
+|隔离级别|说明|避免的问题|
+|---|---|---|
+|read uncommited|读未提交|不能避免上面所有问题|
+|read commited|读已提交|避免脏读的发生|
+|repeatable read|可重复读|避免脏读和不可重复读的发生|
+|serializable|串行化|避免所有问题，但出现锁表现象|
+
+### mysql设置隔离级别的操作
+1. 将数据库的隔离级别设置成读未提交：`set session transaction isolation level read uncommitted;`
+2. 将数据库的隔离级别设置成读已提交：`set session transaction isolation level read committed;`
+3. 将数据库的隔离级别设置成可重复读：`set session transaction isolation level repeatable read;`
+3. 将数据库的隔离级别设置成串行化：`set session transaction isolation level serializable;`
+4. 查看数据库的隔离级别：`select @@tx_isolation;`
+
+### 四种隔离级别的效率
+1. `read uncommitted > read committed > repeatable read > serializable `
+
+### 四种隔离级别的安全性
+1. `read uncommitted < read committed < repeatable read < serializable `
+
+### 各大数据库的默认隔离级别
+1. mysql中默认级别：`repeatable read`
+2. oracle中默认级别：`read committed`
+
+### java中控制隔离级别
+1. Connection#void setTransactionIsolation(int level)
+    1. TRANSACTION_NONE
+    2. TRANSACTION_READ_COMMITTED
+    3. TRANSACTION_READ_UNCOMMITTED
+    4. TRANSACTION_REPEATABLE_READ
+    5. TRANSACTION_SERIALIZABLE
+
+
 ## mysql中的事务
 1. mysql中事务默认是自动提交的，一条sql语句就是一个事务
 2. oracle中事务默认是手动

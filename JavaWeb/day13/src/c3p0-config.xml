@@ -4,8 +4,8 @@
 		<!-- 基本配置 -->
 		<property name="driverClass">com.mysql.jdbc.Driver</property>
 		<property name="jdbcUrl">jdbc:mysql://127.0.0.1:3306/day13</property>
-		<property name="user">root</property>
-		<property name="password">1234</property>
+		<property name="user">dbuser</property>
+		<property name="password">secret</property>
 	
 		<!--扩展配置-->
 		<property name="checkoutTimeout">30000</property>
