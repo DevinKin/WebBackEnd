@@ -7,6 +7,13 @@
         <element id="directory" name="classes">
           <element id="module-output" name="day12" />
         </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/day12/web/WEB-INF/lib/jstl.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day12/web/WEB-INF/lib/standard.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day12/web/WEB-INF/lib/c3p0-0.9.1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day12/web/WEB-INF/lib/commons-dbutils-1.4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day12/web/WEB-INF/lib/mysql-connector-java-5.0.8-bin.jar" />
+        </element>
       </element>
     </root>
   </artifact>
