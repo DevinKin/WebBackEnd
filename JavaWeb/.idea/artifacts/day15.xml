@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="day15">
+    <output-path>$PROJECT_DIR$/out/artifacts/day15</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="day15/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="day15" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/day15/web/WEB-INF/lib/itcast-tools.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

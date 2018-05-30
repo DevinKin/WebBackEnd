@@ -1,4 +1,4 @@
-<%@ page import="cn.devinkin.utils.CookieUtils" %>
+<%@ page import="cn.devinkin.cn.devinkin.utils.CookieUtils" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!doctype html>
