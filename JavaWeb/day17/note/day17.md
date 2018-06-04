@@ -61,6 +61,8 @@
 ### Part常用方法
 1. String getName()：获取name属性值
 2. String getHeader()：获取Part头信息
+3. String getInputStream()：获取文件的流
+4. void delete()：删除临时文件
 
 ## 文件上传注意的问题
 1. 名字重复，使用随机名称解决
