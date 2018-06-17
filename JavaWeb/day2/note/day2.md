@@ -1,77 +1,77 @@
 # css
-    - 层叠样式表
-    - 作用
-        - 渲染页面
-        - 提高工作效率
-    - 格式
-        - 选择器{属性:值;属性1:值1;}
-    - 后缀名
-        - .css 独立的css样式文件
-    - 与html元素的整合
-        - 方式1：内联样式表，通过标签的style属性设置样式
-            - style=""
-        - 方式2：内部样式表，在当前页面中使用的样式
-            - `<style></style>`
-        - 方式3：外部样式表，有独立的css文件
-            - `<link rel="stylesheet" href="css/1.css" type="text/css"></link>`
-    - 选择器
-        - id选择器
-            - 要求：html元素必须有id属性且有值 `<xxx id="id1"></xxx>`
-            - css中通过`#`引入，后面加上id的值`#id1{...}`
-        - 类选择器
-            - 要求：html元素必须有class属性且有值`<xxx class="cls1"></xxx>`
-            - css中通过`.`引入，后面加上class的值`.cls1{...}`
-        - 元素选择器
-            - 直接用元素名引入即可`xxx{...}`
-        - 派生的选择器
-            - 属性的选择器
-                - 要求：html元素必须有一个属性，不论属性是什么，但是必须有值`<xxx nihao="wohenhao"></xxx>`
-                - 在css中通过该方式使用`元素名[属性="属性值"]{...}`
-            - 后代选择器
+1. 层叠样式表
+    1. 作用
+        1. 渲染页面
+        2. 提高工作效率
+    2. 格式
+        1. 选择器{属性:值;属性1:值1;}
+    3. 后缀名
+        1. .css 独立的css样式文件
+    4. 与html元素的整合
+        1. 方式1：内联样式表，通过标签的style属性设置样式
+            1. style=""
+        2. 方式2：内部样式表，在当前页面中使用的样式
+            1. `<style></style>`
+        3. 方式3：外部样式表，有独立的css文件
+            1. `<link rel="stylesheet" href="css/1.css" type="text/css"></link>`
+    5. 选择器
+        1. id选择器
+            1. 要求：html元素必须有id属性且有值 `<xxx id="id1"></xxx>`
+            2. css中通过`#`引入，后面加上id的值`#id1{...}`
+        2. 类选择器
+            1. 要求：html元素必须有class属性且有值`<xxx class="cls1"></xxx>`
+            2. css中通过`.`引入，后面加上class的值`.cls1{...}`
+        3. 元素选择器
+            1. 直接用元素名引入即可`xxx{...}`
+        4. 派生的选择器
+            1. 属性的选择器
+                1. 要求：html元素必须有一个属性，不论属性是什么，但是必须有值`<xxx nihao="wohenhao"></xxx>`
+                2. 在css中通过该方式使用`元素名[属性="属性值"]{...}`
+            2. 后代选择器
                 - 后代选择器:`选择器 后代选择器 {...}`，在满足第一个选择器的条件找后代的选择器，给满足条件的元素添加样式
-        - 了解的选择器
-            - 锚伪类选择器
-                - `a:link {color #FF0000}`  未访问的链接
-                - `a:visited {color #00ff00}` 已访问的链接
-                - `a:hover {color #ff00ff}`  鼠标移动到链接上
-                - `a:active {color #0000ff}` 选定的链接
-        - 选择器使用小结
-            - id选择器：针对一个元素
-            - class选择器：针对一类元素
-            - 元素选择器：针对一种元素
-            - 属性选择器：元素选择器的特殊用法
-            - 若多个样式作用于一个元素的时候
-                - 不同的样式，会叠加
-                - 相同的样式，就近原则
-            - 若多个选择器作用于一个元素的时候
-                - 越特殊，优先级越高，id优先级最高
-    - 属性
-        - 字体
-            - font-family
-            - font-size
-            - font-style
-            - color
-            - line-height
-            - text-decoration:文本添加下划线,none,underline
-            - text-align
-        - 列表
-            - list-style-type
-            - list-style-image:url("...")
-        - 背景
-            - background-color
-            - background-image:url
-        - 尺寸
-            - width
-            - height
-        - 浮动
-            - float
-            - clear：设置元素的两边是否有其他的浮动元素
-                - both: 两边都不允许
-        - 分类
-            - display:设置是否及如何显示元素
-                - none，此元素不显示
-                - block
-                - inline
+        5. 了解的选择器
+            1. 锚伪类选择器
+                1. `a:link {color #FF0000}`  未访问的链接
+                2. `a:visited {color #00ff00}` 已访问的链接
+                3. `a:hover {color #ff00ff}`  鼠标移动到链接上
+                4. `a:active {color #0000ff}` 选定的链接
+        6. 选择器使用小结
+            1. id选择器：针对一个元素
+            2. class选择器：针对一类元素
+            3. 元素选择器：针对一种元素
+            4. 属性选择器：元素选择器的特殊用法
+            5. 若多个样式作用于一个元素的时候
+                1. 不同的样式，会叠加
+                2. 相同的样式，就近原则
+            6. 若多个选择器作用于一个元素的时候
+                1. 越特殊，优先级越高，id优先级最高
+    6. 属性
+        1. 字体
+            1. font-family
+            2. font-size
+            3. font-style
+            4. color
+            5. line-height
+            6. text-decoration:文本添加下划线,none,underline
+            7. text-align
+        2. 列表
+            1. list-style-type
+            2. list-style-image:url("...")
+        3. 背景
+            1. background-color
+            2. background-image:url
+        4. 尺寸
+            1. width
+            2. height
+        5. 浮动
+            1. float
+            2. clear：设置元素的两边是否有其他的浮动元素
+                1. both: 两边都不允许
+        6. 分类
+            1. display:设置是否及如何显示元素
+                1. none，此元素不显示
+                2. block
+                3. inline
 
 # 框模型
 1. margin：外边距，元素最外层的空白
