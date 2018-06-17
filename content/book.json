@@ -1,0 +1,14 @@
+
+{
+  "plugins": [
+    "toggle-chapters",
+    "multipart",
+    "disqus"
+  ],
+  "pluginsConfig": {
+        "disqus": {
+            "shortName": "introducetogitbook"
+        }
+    }  
+}
+
