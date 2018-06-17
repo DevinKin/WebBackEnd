@@ -118,15 +118,11 @@
     2. 编写一个类，实现Convert接口
     3. 实现方法convert(转换的类型,参数)
     4. 在封装数据之前注册转换器
-        1. ConvertUtils.regist(...)
+        1. `ConvertUtils.regist(...)`
+
+6. <br>
 ```java
 public class DateConvert implements Converter{
-    /**
-     * 自定义转换器
-     * @param aClass 要转换成的类型
-     * @param o 传入的值
-     * @return 转换后的值
-     */
     @Override
     public Object convert(Class aClass, Object o) {
         //将Object转换成Date
@@ -139,9 +135,8 @@ public class DateConvert implements Converter{
         }
         return null;
     }
+    ConvertUtils.register(new DateConvert(), Date.class);
 }
-
-ConvertUtils.register(new DateConvert(), Date.class);
 ```
 
 ### 扩展-使用算法加密密码
@@ -215,6 +210,7 @@ ConvertUtils.register(new DateConvert(), Date.class);
     2. findAll方法用来查询所有
     3. 在head.jsp加载成功之后发送一个ajax请求
         1. `$.get(url,params,funciton(){},"json")`
+<br>
 ```javascript
     $(function () {
         //发送ajax请求
@@ -252,7 +248,8 @@ ConvertUtils.register(new DateConvert(), Date.class);
         3. 通过指定的key获取element
         4. 判断element是否为空
             1. 若为空，查询，将结果封装成Element，通过put方法放入Cache对象
-            2. 若不为空，getObjectValue()
+            2. 若不为空，`getObjectValue()`
+<br>
 ```java
     public List<Category> findAll() throws Exception {
         /**
@@ -283,7 +280,6 @@ ConvertUtils.register(new DateConvert(), Date.class);
         }
         return clist;
     }
-
 ```           
 
 ## 案例2-首页上的热门商品和最新商品
@@ -582,7 +578,7 @@ mysql -uroot -p1234 数据库名 < 数据库备份文件
     
 ### 修改分类步骤
 1. 编写一个连接`/onlineshop/adminCategory?method=editCategoryUI`
-2. 请求转发到`/admin/category/edit.jsp`，填写完参数后，请求参数发送到`/onlineshop/adminCategory?method=editCategory&cid=#`
+2. 请求转发到`/admin/category/edit.jsp`，填写完参数后，请求参数发送到`/onlineshop/adminCategory?method=editCategory&cid=?`
 3. adminCategory#editCategoryUI
     1. 获取cid
     2. 调用service通过id获取一个分类
@@ -604,7 +600,7 @@ mysql -uroot -p1234 数据库名 < 数据库备份文件
     
     
 ### 删除分类步骤
-1. 在list.jsp编写一个连接`/onlineshop/adminCategory?method=deleteCategory&cid=#`
+1. 在list.jsp编写一个连接`/onlineshop/adminCategory?method=deleteCategory&cid=?`
 2. 在deleteCategory方法中
     1. 获取cid
     2. 调用service的deleteCategory方法
@@ -616,6 +612,8 @@ mysql -uroot -p1234 数据库名 < 数据库备份文件
     4. 事务提交 
     5. 清空缓存
     
+   
+   
    
 ## 案例2-商品管理
 ### 技术分析
@@ -699,7 +697,7 @@ mysql -uroot -p1234 数据库名 < 数据库备份文件
 
 
 ### 扩展
-1. 在所有的方法上做日志记录，使用动态代理
+1. 在所有的方法上做日志记录，使用动态代理<br>
 ```java
     /**
      * 对service中相关添加操作的方法进行增强，使用动态代理
@@ -724,5 +722,4 @@ mysql -uroot -p1234 数据库名 < 数据库备份文件
         }
         return obj;
     }
-``
-`
+```

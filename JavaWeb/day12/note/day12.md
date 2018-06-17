@@ -56,17 +56,17 @@
 1. 在jsp页面上可以直接使用的对象
 
 ### 9大内置对象
-内置对象|类型|
-------|---|
-out|JspWriter|
-request|HttpSErvletRequest|
-response|HttpServletResponse|
-session|HttpSession|
-exception|Throwable|
-page|HttpServlet|
-config|ServletConfig|
-application|ServletContext|
-pageContext|PageContext|
+|内置对象|类型|
+|------|---|
+|out|JspWriter|
+|request|HttpSErvletRequest|
+|response|HttpServletResponse|
+|session|HttpSession|
+|exception|Throwable|
+|page|HttpServlet|
+|config|ServletConfig|
+|application|ServletContext|
+|pageContext|PageContext|
 
 ## Jsp的域对象
 1. application：整个项目中可以使用

@@ -19,5 +19,6 @@
     * [day15](./note/JavaWeb/day15.md)
     * [day16](./note/JavaWeb/day16.md)
     * [day17](./note/JavaWeb/day17.md)
-* [Project](./note/Project/JavaWeb/JavaWeb.md)
+* [Project](./note/Project/project.md)
+    * [JavaWeb](./note/Project/JavaWeb/JavaWeb.md)
 

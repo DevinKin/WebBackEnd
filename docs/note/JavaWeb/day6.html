@@ -342,9 +342,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../Project/JavaWeb/JavaWeb.html">
+        <li class="chapter " data-level="1.3" data-path="../Project/project.html">
             
-                <a href="../Project/JavaWeb/JavaWeb.html">
+                <a href="../Project/project.html">
             
                     
                     Project
@@ -352,6 +352,25 @@
                 </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Project/JavaWeb/JavaWeb.html">
+            
+                <a href="../Project/JavaWeb/JavaWeb.html">
+            
+                    
+                    JavaWeb
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -770,48 +789,56 @@
 <li>&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x8BA2;&#x5355;&#x4EF7;&#x683C;&#x5927;&#x4E8E;300&#x7684;&#x6240;&#x6709;&#x7528;&#x6237;&#x4FE1;&#x606F;<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">user</span> <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">id</span> <span class="hljs-keyword">IN</span> (<span class="hljs-keyword">SELECT</span> user_id <span class="hljs-keyword">FROM</span> orders <span class="hljs-keyword">WHERE</span> price &gt; <span class="hljs-number">300</span> <span class="hljs-keyword">AND</span> price);
 </code></pre>
 </li>
-<li>&#x67E5;&#x8BE2;&#x8BA2;&#x5355;&#x4EF7;&#x683C;&#x5927;&#x4E8E;300&#x7684;&#x8BA2;&#x5355;&#x4FE1;&#x606F;&#x53CA;&#x76F8;&#x5173;&#x7528;&#x6237;&#x7684;&#x4FE1;&#x606F;
-```sql
---&#x5185;&#x8FDE;&#x63A5;
-SELECT orders.<em>, user.</em> from orders, user WHERE orders.user_id = user.id AND orders.price &gt; 300;</li>
+<li>&#x67E5;&#x8BE2;&#x8BA2;&#x5355;&#x4EF7;&#x683C;&#x5927;&#x4E8E;300&#x7684;&#x8BA2;&#x5355;&#x4FE1;&#x606F;&#x53CA;&#x76F8;&#x5173;&#x7528;&#x6237;&#x7684;&#x4FE1;&#x606F;<br><pre><code class="lang-sql">&#x5185;&#x8FDE;&#x63A5;
+<span class="hljs-keyword">SELECT</span> orders.*, <span class="hljs-keyword">user</span>.* <span class="hljs-keyword">from</span> orders, <span class="hljs-keyword">user</span> <span class="hljs-keyword">WHERE</span> orders.user_id = <span class="hljs-keyword">user</span>.<span class="hljs-keyword">id</span> <span class="hljs-keyword">AND</span> orders.price &gt; <span class="hljs-number">300</span>;
+</code></pre>
+<br><pre><code class="lang-sql">&#x5B50;&#x67E5;&#x8BE2;
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">user</span>.*,tmp.* <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">user</span>,(<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> orders <span class="hljs-keyword">WHERE</span> price&gt;<span class="hljs-number">300</span>) <span class="hljs-keyword">AS</span> tmp <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">user</span>.<span class="hljs-keyword">id</span>=tmp.user_id;
+</code></pre>
+</li>
 </ol>
-<p>--&#x5B50;&#x67E5;&#x8BE2;
-SELECT user.<em>,tmp.</em> FROM user,(SELECT * FROM orders WHERE price&gt;300) AS tmp WHERE user.id=tmp.user_id;</p>
-<pre><code>
+<h1 id="&#x6848;&#x4F8B;1-&#x5355;&#x8868;&#x7684;curd&#x64CD;&#x4F5C;">&#x6848;&#x4F8B;1-&#x5355;&#x8868;&#x7684;curd&#x64CD;&#x4F5C;</h1>
+<h2 id="&#x9700;&#x6C42;">&#x9700;&#x6C42;</h2>
+<ol>
+<li>&#x5BF9;&#x4E00;&#x5F20;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x589E;&#x5220;&#x6539;&#x67E5;&#x64CD;&#x4F5C;<ol>
+<li>C:create &#x521B;&#x5EFA;</li>
+<li>U:update &#x4FEE;&#x6539;</li>
+<li>R:read &#x8BFB;&#x53D6;|&#x7D22;&#x5F15; &#x67E5;&#x8BE2;</li>
+<li>delete &#x5220;&#x9664;</li>
+</ol>
+</li>
+</ol>
+<h2 id="&#x6280;&#x672F;&#x5206;&#x6790;">&#x6280;&#x672F;&#x5206;&#x6790;</h2>
+<ol>
+<li>&#x6570;&#x636E;&#x5E93;</li>
+<li>sql&#x8BED;&#x53E5;</li>
+</ol>
+<h1 id="&#x6848;&#x4F8B;2-&#x521B;&#x5EFA;&#x591A;&#x8868;&#xFF0C;&#x53EF;&#x4EE5;&#x63CF;&#x8FF0;&#x51FA;&#x8868;&#x4E0E;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;">&#x6848;&#x4F8B;2-&#x521B;&#x5EFA;&#x591A;&#x8868;&#xFF0C;&#x53EF;&#x4EE5;&#x63CF;&#x8FF0;&#x51FA;&#x8868;&#x4E0E;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;</h1>
+<h2 id="&#x9700;&#x6C42;">&#x9700;&#x6C42;</h2>
+<ol>
+<li>&#x628A;&#x7F51;&#x4E0A;&#x5546;&#x57CE;&#x91CC;&#x9762;&#x7528;&#x7684;&#x5B9E;&#x4F53;&#x521B;&#x5EFA;&#x6210;&#x8868;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x4ED6;&#x4EEC;&#x4E4B;&#x95F4;&#x5EFA;&#x7ACB;&#x5173;&#x7CFB;.</li>
+</ol>
+<h2 id="&#x7F51;&#x4E0A;&#x5546;&#x57CE;&#x7684;&#x5B9E;&#x4F53;">&#x7F51;&#x4E0A;&#x5546;&#x57CE;&#x7684;&#x5B9E;&#x4F53;</h2>
+<h3 id="&#x5173;&#x7CFB;">&#x5173;&#x7CFB;</h3>
+<ol>
+<li><p>&#x4E00;&#x5BF9;&#x591A;</p>
+<ol>
+<li><p>&#x7528;&#x6237;&#x548C;&#x8BA2;&#x5355;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">user</span>(
+<span class="hljs-keyword">id</span> <span class="hljs-built_in">INT</span> PRIMARY <span class="hljs-keyword">KEY</span> AUTO_INCREMENT,
+username <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">20</span>)
+);
 
-# &#x6848;&#x4F8B;1-&#x5355;&#x8868;&#x7684;curd&#x64CD;&#x4F5C;
-## &#x9700;&#x6C42;
-1. &#x5BF9;&#x4E00;&#x5F20;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x589E;&#x5220;&#x6539;&#x67E5;&#x64CD;&#x4F5C;
-    1. C:create &#x521B;&#x5EFA;
-    2. U:update &#x4FEE;&#x6539;
-    3. R:read &#x8BFB;&#x53D6;|&#x7D22;&#x5F15; &#x67E5;&#x8BE2;
-    4. delete &#x5220;&#x9664;
-
-## &#x6280;&#x672F;&#x5206;&#x6790;
-1. &#x6570;&#x636E;&#x5E93;
-2. sql&#x8BED;&#x53E5;
-
-# &#x6848;&#x4F8B;2-&#x521B;&#x5EFA;&#x591A;&#x8868;&#xFF0C;&#x53EF;&#x4EE5;&#x63CF;&#x8FF0;&#x51FA;&#x8868;&#x4E0E;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;
-## &#x9700;&#x6C42;
-1. &#x628A;&#x7F51;&#x4E0A;&#x5546;&#x57CE;&#x91CC;&#x9762;&#x7528;&#x7684;&#x5B9E;&#x4F53;&#x521B;&#x5EFA;&#x6210;&#x8868;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x4ED6;&#x4EEC;&#x4E4B;&#x95F4;&#x5EFA;&#x7ACB;&#x5173;&#x7CFB;.
-
-## &#x7F51;&#x4E0A;&#x5546;&#x57CE;&#x7684;&#x5B9E;&#x4F53;
-### &#x5173;&#x7CFB;
-1. &#x4E00;&#x5BF9;&#x591A;
-    1. &#x7528;&#x6237;&#x548C;&#x8BA2;&#x5355;
-    ```sql
-    CREATE TABLE user(
-     id INT PRIMARY KEY AUTO_INCREMENT,
-     username VARCHAR(20)
-    );
-
-    CREATE TABLE orders(
-     id INT PRIMARY KEY AUTO_INCREMENT,
-     totalprice DOUBLE,
-     user_id INT 
-    );
-</code></pre><pre><code>2. &#x5206;&#x7C7B;&#x548C;&#x5546;&#x54C1;
-</code></pre><ol>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> orders(
+<span class="hljs-keyword">id</span> <span class="hljs-built_in">INT</span> PRIMARY <span class="hljs-keyword">KEY</span> AUTO_INCREMENT,
+totalprice <span class="hljs-keyword">DOUBLE</span>,
+user_id <span class="hljs-built_in">INT</span> 
+);
+</code></pre>
+</li>
+<li>&#x5206;&#x7C7B;&#x548C;&#x5546;&#x54C1;</li>
+</ol>
+</li>
 <li><p>&#x591A;&#x5BF9;&#x591A;</p>
 <ol>
 <li><p>&#x8BA2;&#x5355;&#x548C;&#x5546;&#x54C1;</p>
@@ -904,7 +931,7 @@ pid <span class="hljs-built_in">INT</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"day6","level":"1.2.6","depth":2,"next":{"title":"day7","level":"1.2.7","depth":2,"path":"note/JavaWeb/day7.md","ref":"./note/JavaWeb/day7.md","articles":[]},"previous":{"title":"day5","level":"1.2.5","depth":2,"path":"note/JavaWeb/day5.md","ref":"./note/JavaWeb/day5.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"note/JavaWeb/day6.md","mtime":"2018-06-17T07:01:23.144Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-17T07:02:58.530Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"day6","level":"1.2.6","depth":2,"next":{"title":"day7","level":"1.2.7","depth":2,"path":"note/JavaWeb/day7.md","ref":"./note/JavaWeb/day7.md","articles":[]},"previous":{"title":"day5","level":"1.2.5","depth":2,"path":"note/JavaWeb/day5.md","ref":"./note/JavaWeb/day5.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"note/JavaWeb/day6.md","mtime":"2018-06-17T08:40:01.906Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-17T08:39:14.881Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -912,6 +939,10 @@ pid <span class="hljs-built_in">INT</span>
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>

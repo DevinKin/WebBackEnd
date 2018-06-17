@@ -281,12 +281,14 @@ SELECT * FROM orders WHERE user_id=(SELECT id FROM user WHERE username='张三')
 ```sql
 SELECT * FROM user WHERE id IN (SELECT user_id FROM orders WHERE price > 300 AND price);
 ```
-3. 查询订单价格大于300的订单信息及相关用户的信息
+3. 查询订单价格大于300的订单信息及相关用户的信息<br>
 ```sql
---内连接
+内连接
 SELECT orders.*, user.* from orders, user WHERE orders.user_id = user.id AND orders.price > 300;
-
---子查询
+```
+<br>
+```sql
+子查询
 SELECT user.*,tmp.* FROM user,(SELECT * FROM orders WHERE price>300) AS tmp WHERE user.id=tmp.user_id;
 ```
 
