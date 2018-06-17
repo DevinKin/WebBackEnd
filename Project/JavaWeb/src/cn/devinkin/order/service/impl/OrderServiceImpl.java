@@ -42,6 +42,7 @@ public class OrderServiceImpl implements OrderService {
 
     /**
      * 通过uid获取所有订单
+     *
      * @param uid 用户id
      * @return 订单列表
      * @throws Exception
@@ -65,6 +66,7 @@ public class OrderServiceImpl implements OrderService {
 
     /**
      * 通过oid查找订单
+     *
      * @param oid 订单号
      * @return 订单
      * @throws Exception
@@ -77,6 +79,7 @@ public class OrderServiceImpl implements OrderService {
 
     /**
      * 更新订单状态到1，已付款状态
+     *
      * @param order 订单
      * @throws Exception
      */
@@ -85,8 +88,29 @@ public class OrderServiceImpl implements OrderService {
         orderDao.updateOrder(order);
     }
 
+
+    /**
+     * 通过状态查找订单
+     *
+     * @param state
+     * @return 订单列表
+     * @throws Exception
+     */
     @Override
     public List<Order> findAllByState(String state) throws Exception {
         return orderDao.findAllByState(state);
+    }
+
+
+    /**
+     * 更新订单状态
+     *
+     * @param oid   订单id
+     * @param state 状态
+     * @throws Exception
+     */
+    @Override
+    public void updateOrderState(String oid, String state) throws Exception {
+        orderDao.updateOrderState(oid, state);
     }
 }

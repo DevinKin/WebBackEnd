@@ -6,7 +6,6 @@ import cn.devinkin.product.domain.Product;
 import cn.devinkin.utils.DataSourceUtils;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.dbutils.QueryRunner;
-import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.MapHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
@@ -93,61 +92,35 @@ public class ProductDaoImpl implements ProductDao {
      *
      * @param currentPage 当前页
      * @param pageSize    每页的记录数
-     * @param cid 分类id
+     * @param cid         分类id
+     * @param pflag
      * @return 商品列表
      * @throws Exception
      */
     @Override
-    public List<Product> findByCurrentPage(int currentPage, int pageSize, String cid) throws Exception {
-        String sql = "select * from product where cid = ? limit ?,?";
-        Object[] params = {cid, (currentPage - 1) * pageSize, pageSize};
+    public List<Product> findByCurrentPage(int currentPage, int pageSize, String cid, int pflag) throws Exception {
+        String sql = "select * from product where cid = ? and pflag = ? limit ?,?";
+        Object[] params = {cid, pflag, (currentPage - 1) * pageSize, pageSize};
         return qr.query(sql, new BeanListHandler<>(Product.class), params);
     }
 
-
-    /**
-     * 查找当前页商品
-     *
-     * @param currentPage 当前页
-     * @param pageSize    每页的记录数
-     * @param cid 分类id
-     * @return 商品列表，带有pflag查询
-     * @throws Exception
-     */
-    @Override
-    public List<Product> findByCurrentPageWithFlag(int currentPage, int pageSize, String cid) throws Exception {
-        String sql = "select * from product where cid = ? and pflag=1 limit ?,? ";
-        Object[] params = {cid, (currentPage - 1) * pageSize, pageSize};
-        return qr.query(sql, new BeanListHandler<>(Product.class), params);
-    }
 
 
     /**
      * 查找商品总记录条数
      *
      * @param cid
+     * @param pflag
      * @return 查找商品总记录条数
      * @throws Exception
      */
     @Override
-    public int getTotalRecord(String cid) throws Exception {
-        String sql = "select count(*) from product where cid=?";
-        return ((Long) qr.query(sql, new ScalarHandler(), cid)).intValue();
+    public int getTotalRecord(String cid, int pflag) throws Exception {
+        String sql = "select count(*) from product where cid=? and pflag=?";
+        Object[] params = new Object[]{cid, pflag};
+        return ((Long) qr.query(sql, new ScalarHandler(), params)).intValue();
     }
 
-
-    /**
-     * 查找商品总记录条数，带有pflag查询
-     *
-     * @param cid
-     * @return 查找商品总记录条数
-     * @throws Exception
-     */
-    @Override
-    public int getTotalRecordWithFlag(String cid) throws Exception {
-        String sql = "select count(*) from product where cid=? and pflag=1";
-        return ((Long) qr.query(sql, new ScalarHandler(), cid)).intValue();
-    }
 
 
     /**
@@ -168,27 +141,33 @@ public class ProductDaoImpl implements ProductDao {
      *
      * @param currentPage
      * @param pageSize
+     * @param pflag
      * @return 商品列表
      * @throws Exception
      */
     @Override
-    public List<Product> findAllByPage(int currentPage, int pageSize) throws Exception {
-        String sql = "select * from product order by pdate desc limit ?,?";
-        Object[] params = {(currentPage - 1) * pageSize, pageSize};
+    public List<Product> findAllByPage(int currentPage, int pageSize, int pflag) throws Exception {
+        String sql = "select * from product where pflag=? order by pdate desc limit ?,?";
+        Object[] params = {pflag, (currentPage - 1) * pageSize, pageSize};
         return qr.query(sql, new BeanListHandler<>(Product.class), params);
     }
+
+
 
     /**
      * 查询商品记录条数
      *
      * @return
      * @throws Exception
+     * @param pflag
      */
     @Override
-    public int getAllProductRecord() throws Exception {
-        String sql = "select count(*) from product";
-        return ((Long) qr.query(sql, new ScalarHandler())).intValue();
+    public int getAllProductRecord(int pflag) throws Exception {
+        String sql = "select count(*) from product where pflag = ?";
+        return ((Long) qr.query(sql, new ScalarHandler(),pflag)).intValue();
     }
+
+
 
     /**
      * 添加商品

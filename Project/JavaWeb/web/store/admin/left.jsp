@@ -34,9 +34,10 @@
                         d.add('010201', '0102', '展示所有', '<c:url value='/adminCategory?method=findAll'></c:url>', '', 'mainFrame');
                         d.add('010202', '0102', '添加分类', '<c:url value='/adminCategory?method=addCategoryUI'></c:url>', '', 'mainFrame');
                         d.add('0104', '01', '商品管理');
-                        d.add('010401', '0104', '所有商品', '<c:url value='/adminProduct?method=findByPage&currentPage=1'></c:url>', '', 'mainFrame');
-                        d.add('010402', '0104', '商品分类', '<c:url value='/adminProduct?method=findByPage&currentPage=1'></c:url>', '', 'mainFrame');
-                        d.add('010403', '0104', '添加商品', '<c:url value='/adminProduct?method=addProductUI'></c:url>', '', 'mainFrame');
+                        d.add('010401', '0104', '所有商品', '<c:url value='/adminProduct?method=findByPage&currentPage=1&pflag=1'></c:url>', '', 'mainFrame');
+                        d.add('010402', '0104', '已下架商品', '<c:url value='/adminProduct?method=findByPage&currentPage=1&pflag=0'></c:url>', '', 'mainFrame');
+                        d.add('010403', '0104', '商品分类', '<c:url value='/adminProduct?method=findByPage&currentPage=1'></c:url>', '', 'mainFrame');
+                        d.add('010404', '0104', '添加商品', '<c:url value='/adminProduct?method=addProductUI'></c:url>', '', 'mainFrame');
                         d.add('0105', '01', '订单管理');
                         d.add('010501', '0105', '所有订单', '<c:url value='/adminOrder?method=findAllByState&state='></c:url>', '', 'mainFrame');
                         d.add('010502', '0105', '未付款订单', '<c:url value='/adminOrder?method=findAllByState&state=0'></c:url>', '', 'mainFrame');
@@ -53,8 +54,8 @@
                                     cids.push(this.cid);
                                 });
                                 for (var i = 0; i < cArray.length; i++) {
-                                    var str = '010402' + (i + 1);
-                                    d.add(str, '010402', cArray[i], '${pageContext.request.contextPath}/adminProduct?method=findByPage&currentPage=1&cid=' + cids[i], '', 'mainFrame');
+                                    var str = '010403' + (i + 1);
+                                    d.add(str, '010403', cArray[i], '${pageContext.request.contextPath}/adminProduct?method=findByPage&currentPage=1&pflag=1&cid=' + cids[i], '', 'mainFrame');
                                 }
                                 document.write(d);
                             }, "json");

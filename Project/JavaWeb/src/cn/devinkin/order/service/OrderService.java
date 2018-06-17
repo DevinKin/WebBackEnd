@@ -16,4 +16,6 @@ public interface OrderService {
     void updateOrder(Order order) throws Exception;
 
     List<Order> findAllByState(String state) throws Exception;
+
+    void updateOrderState(String oid, String state) throws Exception;
 }

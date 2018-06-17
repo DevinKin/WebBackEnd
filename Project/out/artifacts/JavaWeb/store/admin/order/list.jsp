@@ -92,8 +92,9 @@
                             <td style="CURSOR: hand; HEIGHT: 22px" align="center"
                                 width="17%">
                                 <c:if test="${o.state == 0}">未付款</c:if>
-                                <c:if test="${o.state == 1}"><a
-                                        href="<c:url value='adminOrder?method=updateState&oid=${o.oid}'></c:url>">发货</a></c:if>
+                                <c:if test="${o.state == 1}">
+                                    <a href="<c:url value='adminOrder?method=updateOrderState&oid=${o.oid}&state=2'></c:url>">发货</a>
+                                </c:if>
                                 <c:if test="${o.state == 2}">等待确认收货</c:if>
                                 <c:if test="${o.state == 3}">已收货</c:if>
                                 <c:if test="${o.state == 4}">订单已完成</c:if>

@@ -5,6 +5,10 @@ import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+
 /**
  * 实体工厂类
  * @author king
@@ -22,7 +26,14 @@ public class BeanFactory {
             Document doc = new SAXReader().read(BeanFactory.class.getClassLoader().getResourceAsStream("beans.xml"));
             Element element = (Element) doc.selectSingleNode("//bean[@id='" + id + "']");
             String value = element.attributeValue("class");
-            return Class.forName(value).newInstance();
+
+            //以前的逻辑直接返回的是实例
+//            return Class.forName(value).newInstance();
+
+            //5. 现在对service的add方法进行加强，返回值是代理对象
+            Object obj = Class.forName(value).newInstance();
+            return enhance(id,obj);
+
 
         } catch (DocumentException e) {
             e.printStackTrace();
@@ -34,6 +45,30 @@ public class BeanFactory {
             e.printStackTrace();
         }
         return null;
+    }
+
+    /**
+     * 对service中相关添加操作的方法进行增强，使用动态代理
+     * @param id 类路径
+     * @param obj 被代理对象
+     * @return
+     */
+    public static Object enhance(String id, Object obj) {
+        //加强的是service的实现类
+        if (id.endsWith("Service")) {
+            Object proxyObj = Proxy.newProxyInstance(obj.getClass().getClassLoader(), obj.getClass().getInterfaces(), new InvocationHandler() {
+                @Override
+                public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                    //继续判断是否调用的是add方法或者是regist方法
+                    if (method.getName().contains("add") || "regist".equals(method.getName())) {
+                        System.out.println("添加操作");
+                    }
+                    return method.invoke(obj,args);
+                }
+            });
+            return proxyObj;
+        }
+        return obj;
     }
 
     public static void main(String[] args) {

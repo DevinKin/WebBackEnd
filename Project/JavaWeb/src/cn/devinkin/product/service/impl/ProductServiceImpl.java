@@ -1,7 +1,6 @@
 package cn.devinkin.product.service.impl;
 
 import cn.devinkin.product.dao.ProductDao;
-import cn.devinkin.product.dao.impl.ProductDaoImpl;
 import cn.devinkin.product.domain.PageBean;
 import cn.devinkin.product.domain.Product;
 import cn.devinkin.product.service.ProductService;
@@ -52,37 +51,17 @@ public class ProductServiceImpl implements ProductService {
      * @param currentPage 当前页码
      * @param pageSize    总页数
      * @param cid         分类id
+     * @param pflag
      * @return 商品列表
      * @throws Exception
      */
     @Override
-    public PageBean<Product> findByPage(int currentPage, int pageSize, String cid) throws Exception {
+    public PageBean<Product> findByPage(int currentPage, int pageSize, String cid, int pflag) throws Exception {
         //当前页数据
-        List<Product> productList = productDao.findByCurrentPage(currentPage, pageSize, cid);
+        List<Product> productList = productDao.findByCurrentPage(currentPage, pageSize, cid, pflag);
 
         //该分类商品总记录数
-        int totalRecord = productDao.getTotalRecord(cid);
-
-        //封装PageBean对象
-        return new PageBean<>(productList, currentPage, pageSize, totalRecord);
-    }
-
-    /**
-     * 分页查询商品
-     *
-     * @param currentPage 当前页码
-     * @param pageSize    总页数
-     * @param cid         分类id
-     * @return 商品列表
-     * @throws Exception
-     */
-    @Override
-    public PageBean<Product> findByPageWithFlag(int currentPage, int pageSize, String cid) throws Exception {
-        //当前页数据
-        List<Product> productList = productDao.findByCurrentPageWithFlag(currentPage, pageSize, cid);
-
-        //该分类商品总记录数
-        int totalRecord = productDao.getTotalRecordWithFlag(cid);
+        int totalRecord = productDao.getTotalRecord(cid,pflag);
 
         //封装PageBean对象
         return new PageBean<>(productList, currentPage, pageSize, totalRecord);
@@ -92,21 +71,24 @@ public class ProductServiceImpl implements ProductService {
     /**
      * 分页查询所有商品
      *
+     *
+     * @param currentPage 当前页
      * @param currentPage
      * @param pageSize
      * @return
      * @throws Exception
      */
     @Override
-    public PageBean<Product> findAllByPage(int currentPage, int pageSize) throws Exception {
+    public PageBean<Product> findAllByPage(int currentPage, int pageSize, int pflag) throws Exception {
         //当前页数据
-        List<Product> productList = productDao.findAllByPage(currentPage, pageSize);
+        List<Product> productList = productDao.findAllByPage(currentPage, pageSize, pflag);
 
         //所有商品的记录数
-        int totalRecord = productDao.getAllProductRecord();
+        int totalRecord = productDao.getAllProductRecord(pflag);
 
         return new PageBean<>(productList, currentPage, pageSize, totalRecord);
     }
+
 
 
     /**

@@ -41,6 +41,7 @@ public class AdminOrderServlet extends BaseServlet {
 
     /**
      * 通过oid查询订单详情
+     *
      * @param request
      * @param response
      * @return
@@ -57,7 +58,7 @@ public class AdminOrderServlet extends BaseServlet {
         String oid = request.getParameter("oid");
         List<OrderItem> orderItemList = null;
         try {
-             orderItemList = orderService.getOrderByOid(oid).getOrderItemList();
+            orderItemList = orderService.getOrderByOid(oid).getOrderItemList();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -67,14 +68,41 @@ public class AdminOrderServlet extends BaseServlet {
          * 1. 获取JsonConfig，给定排除的数据
          * 2. 使用JSONArray.fromObject转换为json
          */
-        JsonConfig config = JsonUtil.configJson(new String[]{"class","itemid","order"});
+        JsonConfig config = JsonUtil.configJson(new String[]{"class", "itemid", "order"});
         //必须将java.sql.Date转换为java.util.Date，不然会抛出异常
         for (OrderItem oi : orderItemList) {
             Date date = new Date(oi.getProduct().getPdate().getTime());
             oi.getProduct().setPdate(date);
         }
-        JSONArray json = JSONArray.fromObject(orderItemList,config);
+        JSONArray json = JSONArray.fromObject(orderItemList, config);
         response.getWriter().println(json.toString());
         return null;
     }
+
+
+    /**
+     * 更新订单状态
+     *
+     * @param request
+     * @param response
+     * @return 重定向路径
+     * @throws ServletException
+     * @throws IOException
+     */
+    public String updateOrderState(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        /**
+         * 1. 获取oid和state
+         * 2. 调用service更新state
+         * 3. 重定向到所有订单页面
+         */
+        String oid = request.getParameter("oid");
+        String state = request.getParameter("state");
+        try {
+            orderService.updateOrderState(oid, state);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "r:/adminOrder?method=findAllByState&state=";
+    }
+
 }

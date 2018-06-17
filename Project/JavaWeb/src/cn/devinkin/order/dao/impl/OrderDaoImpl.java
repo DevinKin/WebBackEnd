@@ -142,6 +142,20 @@ public class OrderDaoImpl implements OrderDao {
 
     }
 
+
+    /**
+     * 更新订单状态
+     * @param oid
+     * @param state
+     * @throws Exception
+     */
+    @Override
+    public void updateOrderState(String oid, String state) throws Exception {
+        String sql = "update orders set state=? where oid=?";
+        Object[] params = {state, oid};
+        qrn.update(sql, params);
+    }
+
     /**
      * 通过uid获取所有订单
      *

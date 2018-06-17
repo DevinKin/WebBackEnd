@@ -50,13 +50,15 @@ public class AdminProductServlet extends BaseServlet {
          */
         int currentPage = Integer.parseInt(request.getParameter("currentPage"));
         String cid = request.getParameter("cid");
+        int pflag = Integer.parseInt(request.getParameter("pflag"));
         final int pageSize = 8;
         PageBean<Product> pb = null;
         try {
             if (cid == null) {
-                pb = productService.findAllByPage(currentPage, pageSize);
+                    pb = productService.findAllByPage(currentPage, pageSize, pflag);
+
             } else {
-                pb = productService.findByPage(currentPage, pageSize, cid);
+                    pb = productService.findByPage(currentPage, pageSize, cid,pflag);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -208,6 +210,7 @@ public class AdminProductServlet extends BaseServlet {
 
     /**
      * 上架商品
+     *
      * @param request
      * @param response
      * @return 重定向路径

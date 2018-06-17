@@ -688,6 +688,41 @@ mysql -uroot -p1234 数据库名 < 数据库备份文件
 2. 步骤分析
     1. 给按钮添加事件
     
-    
 ### 更新订单状态
+1. 例如：在后台页面上点击发货，需要将订单的状态修改为2
+2. 点击发货，修改状态`/onlineshop/adminOrder?method=updateOrderState&oid=#&state=#`
+3. 在adminOrder#updateOrderState方法中
+    1. 接受参数：oid、state
+    2. 调用orderService修改状态
+    3. 修改完成以后，页面重定向到查询所有订单页面
+
+
+
+### 扩展
+1. 在所有的方法上做日志记录，使用动态代理
+```java
+    /**
+     * 对service中相关添加操作的方法进行增强，使用动态代理
+     * @param id 类路径
+     * @param obj 被代理对象
+     * @return
+     */
+    public static Object enhance(String id, Object obj) {
+        //加强的是service的实现类
+        if (id.endsWith("Service")) {
+            Object proxyObj = Proxy.newProxyInstance(obj.getClass().getClassLoader(), obj.getClass().getInterfaces(), new InvocationHandler() {
+                @Override
+                public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                    //继续判断是否调用的是add方法或者是regist方法
+                    if (method.getName().contains("add") || "regist".equals(method.getName())) {
+                        System.out.println("添加操作");
+                    }
+                    return method.invoke(obj,args);
+                }
+            });
+            return proxyObj;
+        }
+        return obj;
+    }
+```
 

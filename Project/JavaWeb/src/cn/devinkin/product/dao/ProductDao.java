@@ -11,19 +11,15 @@ public interface ProductDao {
 
     Product getProductByPid(String pid) throws Exception;
 
-    List<Product> findByCurrentPage(int currentPage, int pageSize, String cid) throws Exception;
+    List<Product> findByCurrentPage(int currentPage, int pageSize, String cid, int pflag) throws Exception;
 
-    List<Product> findByCurrentPageWithFlag(int currentPage, int pageSize, String cid) throws Exception;
-
-    int getTotalRecord(String cid) throws Exception;
-
-    int getTotalRecordWithFlag(String cid) throws Exception;
+    int getTotalRecord(String cid, int pflag) throws Exception;
 
     void deleteCategory(String cid) throws Exception;
 
-    List<Product> findAllByPage(int currentPage, int pageSize) throws Exception;
+    List<Product> findAllByPage(int currentPage, int pageSize, int pflag) throws Exception;
 
-    int getAllProductRecord() throws Exception;
+    int getAllProductRecord(int pflag) throws Exception;
 
     void addProduct(Product p) throws Exception;
 

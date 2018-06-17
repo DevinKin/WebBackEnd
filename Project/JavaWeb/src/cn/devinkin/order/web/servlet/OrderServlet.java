@@ -314,4 +314,31 @@ public class OrderServlet extends BaseServlet {
         return "/store/jsp/msg.jsp";
     }
 
+
+    /**
+     * 更新订单状态
+     *
+     * @param request
+     * @param response
+     * @return 重定向路径
+     * @throws ServletException
+     * @throws IOException
+     */
+    public String updateOrderState(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        /**
+         * 1. 接受oid、state参数
+         * 2. 调用service#updateOrderState方法完成修改操作
+         * 3. 重定向到我的订单页面
+         */
+        String oid = request.getParameter("oid");
+        String state = request.getParameter("state");
+        try {
+            orderService.updateOrderState(oid, state);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "r:/order?method=getOrdersByUid&uid=" +
+                ((User) request.getSession().getAttribute("user")).getUid() +
+                "&currentPage=1";
+    }
 }

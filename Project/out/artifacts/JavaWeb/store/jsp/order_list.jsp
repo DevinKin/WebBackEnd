@@ -48,7 +48,7 @@
                             <c:choose>
                                 <c:when test="${order.state == 0}"><a href="<c:url value='/order?method=getOrderByOid&oid=${order.oid}'></c:url> ">待付款</a> </c:when>
                                 <c:when test="${order.state == 1}"><font color="#9acd32">已付款</font> </c:when>
-                                <c:when test="${order.state == 2}"><font color="green">已发货</font> </c:when>
+                                <c:when test="${order.state == 2}"><font color="green"> <a href="<c:url value='/order?method=updateOrderState&oid=${order.oid}&state=3'></c:url>">确认收货</a> </font> </c:when>
                                 <c:when test="${order.state == 3}"><font color="grey">已收货</font> </c:when>
                             </c:choose>
                         </th>
@@ -75,10 +75,10 @@
                             <td width="20%">
                                 ￥${orderItem.product.shop_price}
                             </td>
-                            <td width="10%">
+                            <td width="5%">
                                     ${orderItem.count}
                             </td>
-                            <td width="15%">
+                            <td width="20%">
                                 <span class="subtotal">￥${orderItem.subtotal}</span>
                             </td>
                         </tr>

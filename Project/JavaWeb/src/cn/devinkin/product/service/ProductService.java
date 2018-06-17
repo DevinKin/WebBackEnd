@@ -12,11 +12,9 @@ public interface ProductService {
 
     Product getProductByPid(String pid) throws Exception;
 
-    PageBean<Product> findByPage(int currentPage, int pageSize, String cid) throws Exception;
+    PageBean<Product> findByPage(int currentPage, int pageSize, String cid, int pflag) throws Exception;
 
-    PageBean<Product> findByPageWithFlag(int currentPage, int pageSize, String cid) throws Exception;
-
-    PageBean<Product> findAllByPage(int currentPage, int pageSize) throws Exception;
+    PageBean<Product> findAllByPage(int currentPage, int pageSize,int pflag) throws Exception;
 
     void addProduct(Product p) throws Exception;
 

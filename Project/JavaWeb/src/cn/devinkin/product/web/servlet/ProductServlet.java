@@ -116,7 +116,7 @@ public class ProductServlet extends BaseServlet {
 
         PageBean<Product> pageBean = null;
         try {
-            pageBean = productService.findByPageWithFlag(currentPage, pageSize,cid);
+            pageBean = productService.findByPage(currentPage, pageSize,cid,1);
         } catch (Exception e) {
             e.printStackTrace();
         }
