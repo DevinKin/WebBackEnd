@@ -7,37 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17917028-dc83-4898-8643-b71a4c750256" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../JavaWeb/day12/note/day12.md" afterPath="$PROJECT_DIR$/../JavaWeb/day12/note/day12.md" />
-      <change beforePath="$PROJECT_DIR$/../JavaWeb/day6/note/day6.md" afterPath="$PROJECT_DIR$/../JavaWeb/day6/note/day6.md" />
+      <change beforePath="$PROJECT_DIR$/../Nginx/note/day24.md" afterPath="$PROJECT_DIR$/../Nginx/note/day24.md" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JavaWeb.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/JavaWeb.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/JavaWeb/note/JavaWeb.md" afterPath="$PROJECT_DIR$/JavaWeb/note/JavaWeb.md" />
-      <change beforePath="$PROJECT_DIR$/../content/README.md" afterPath="$PROJECT_DIR$/../content/README.md" />
-      <change beforePath="$PROJECT_DIR$/../content/SUMMARY.md" afterPath="$PROJECT_DIR$/../content/SUMMARY.md" />
-      <change beforePath="$PROJECT_DIR$/../content/note/JavaWeb/day12.md" afterPath="$PROJECT_DIR$/../content/note/JavaWeb/day12.md" />
-      <change beforePath="$PROJECT_DIR$/../content/note/JavaWeb/day6.md" afterPath="$PROJECT_DIR$/../content/note/JavaWeb/day6.md" />
-      <change beforePath="$PROJECT_DIR$/../content/note/JavaWeb/javaweb.md" afterPath="$PROJECT_DIR$/../content/note/JavaWeb/javaweb.md" />
-      <change beforePath="$PROJECT_DIR$/../content/note/Project/JavaWeb/JavaWeb.md" afterPath="$PROJECT_DIR$/../content/note/Project/JavaWeb/JavaWeb.md" />
-      <change beforePath="$PROJECT_DIR$/../docs/index.html" afterPath="$PROJECT_DIR$/../docs/index.html" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day1.html" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day1.html" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day10.html" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day10.html" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day11.html" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day11.html" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day12.html" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day12.html" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day13.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day14.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day15.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day16.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day17.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day2.html" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day2.html" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day3.html" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day3.html" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day4.html" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day4.html" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day5.html" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day5.html" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day6.html" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day6.html" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day7.html" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day7.html" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day8.html" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day8.html" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day9.html" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day9.html" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/javaweb.html" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/javaweb.html" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Project/JavaWeb/JavaWeb.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../docs/search_index.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/JavaWeb/web/WEB-INF/ehcache/category%0043ache.data" afterPath="$PROJECT_DIR$/JavaWeb/web/WEB-INF/ehcache/category%0043ache.data" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/JavaWeb/404.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/JavaWeb/500.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/JavaWeb/WEB-INF/ehcache/category%0043ache.data" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/JavaWeb/WEB-INF/ehcache/ehcache_auto_created5838227734843969110diskstore/.ehcache-diskstore.lock" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/JavaWeb/WEB-INF/ehcache/ehcache_auto_created5838227734843969110diskstore/category%0043ache.data" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/JavaWeb/WEB-INF/web.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/JavaWeb/index.jsp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/JavaWeb/test/form.jsp" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -235,8 +216,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="169" />
-    <option name="y" value="88" />
+    <option name="x" value="566" />
+    <option name="y" value="115" />
     <option name="width" value="1281" />
     <option name="height" value="836" />
   </component>
@@ -263,7 +244,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -276,17 +257,43 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/JavaWeb/web/WEB-INF/lib" />
+    <property name="last_opened_file_path" value="$USER_HOME$/tomcat/apache-tomcat-7.0.85/webapps/store" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
@@ -606,11 +613,11 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Local" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.Demo1.func1" />
-      <item index="2" class="java.lang.String" itemvalue="Application.CategoryServiceImpl" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Insert" />
-      <item index="4" class="java.lang.String" itemvalue="Application.BeanFactory" />
-      <item index="5" class="java.lang.String" itemvalue="Application.JsonDemo" />
+      <item index="1" class="java.lang.String" itemvalue="Application.CategoryServiceImpl" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Insert" />
+      <item index="3" class="java.lang.String" itemvalue="Application.BeanFactory" />
+      <item index="4" class="java.lang.String" itemvalue="Application.JsonDemo" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.Demo1.func1" />
     </list>
     <recent_temporary>
       <list size="5">
@@ -677,6 +684,9 @@
       <workItem from="1529164030673" duration="10023000" />
       <workItem from="1529205499149" duration="485000" />
       <workItem from="1529215306737" duration="2060000" />
+      <workItem from="1529236532762" duration="24000" />
+      <workItem from="1529236580928" duration="680000" />
+      <workItem from="1529237586111" duration="876000" />
     </task>
     <servers />
   </component>
@@ -710,26 +720,26 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="326585000" />
+    <option name="totallyTimeSpent" value="328165000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="169" y="88" width="1281" height="836" extended-state="0" />
-    <editor active="true" />
+    <frame x="566" y="115" width="1281" height="836" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31448275" sideWeight="0.49754602" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39739415" sideWeight="0.5072917" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885087" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3462069" sideWeight="0.48954985" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34344828" sideWeight="0.48954985" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827586" sideWeight="0.49509203" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.49754602" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35092026" sideWeight="0.49453822" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22248244" sideWeight="0.4344569" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22248244" sideWeight="0.4344569" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21701795" sideWeight="0.5671642" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -744,7 +754,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31448275" sideWeight="0.49754602" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Mybatis datasource" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1030,9 +1039,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1235">
           <caret line="104" column="57" lean-forward="false" selection-start-line="104" selection-start-column="57" selection-end-line="104" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1075,7 +1081,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
           <caret line="50" column="165" lean-forward="false" selection-start-line="50" selection-start-column="165" selection-end-line="50" selection-end-column="165" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1286,6 +1291,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Java EE 6-Java EE 6</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
