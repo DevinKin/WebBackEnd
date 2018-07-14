@@ -109,6 +109,8 @@ public class PaymentUtil {
 		// 交易结果返回类型
 		sValue.append(r9_BType);
 		String sNewString = PaymentUtil.hmacSign(sValue.toString(), keyValue);
+		System.out.println(hmac);
+		System.out.println(sNewString);
 		return sNewString.equals(hmac);
 	}
 	
