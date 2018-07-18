@@ -38,8 +38,8 @@
 2. ed命令：`ed`
     1. 将sql语句放入系统默认的编辑器中编辑
 
-## break on column
-1. `break on column`：column列的值，相同值只显示以此
+## 显示记录数的限制
+1. `break on num`：只显示num列的值，相同值只显示一次
 
 ## skip x
 1. 不同的列跳过两行
@@ -57,7 +57,7 @@ EXPLAIN PLAN FOR SELECT * FROM emp WHERE deptno=10;
 SELECT * FROM TABLE(dbms_xplan.display);
 ```
 
-## 设置oracle系统输出开启
+## 开启oracle系统输出
 ```oracle
 set serveroutput on;
 ```
@@ -261,7 +261,7 @@ ALTER SESSION SET NLS_DATE_FORMAT='yyyy-mm-dd';
 4. 子查询和多表查询功能相同时，尽量使用多表查询
 5. UNION和UNION ALL，尽量使用UNION ALL
     1. `UNION=UNION ALL + DISTINCT`
-6. 尽量不要使用集合预案算
+6. 尽量不要使用集合运算
 
 # oracle中的连接符
 1. `||`：与mysql的concat类似，拼接字符串
@@ -315,7 +315,7 @@ ALTER SESSION SET NLS_DATE_FORMAT='yyyy-mm-dd';
 ### 通用函数
 这些函数适用于任何数据类型，同样也适用于空值
 1. `NVL(expr1,expr2)`：如果expr1为null，返回expr2
-2. `NVL2(expr1,expr2,expr3)`：当expr1为null的时候，返回c，否则返回b
+2. `NVL2(expr1,expr2,expr3)`：当expr1为null的时候，返回expr3，否则返回expr2
 3. `NULLIF(expr1,expr2)`：判断expr1和expr2是否相等，相等，返回NULL，否则返回expr1
 4. `COALESCE(expr1,expr2,...,exprn)`：在行中从左到右找到第一个不为null的值
 
@@ -522,7 +522,7 @@ SELECT round(sysdate, 'month') mon, round(sysdate, 'year') year FROM dual;
 #### CASE表达式
 格式
 ```oracle
-CASE expr WHEN comparison_expr1 THEN return_expr1
+CASE expr WHEN comparison_expr THEN return_expr
           [WHEN comparison_expr1 THEN return_expr1
            WHEN comparison_expr2 THEN return_expr2
            WHEN comparison_expr3 THEN return_expr3
@@ -774,7 +774,7 @@ WHERE e.mgr = b.empno;
 ```oracle
 SELECT ***
 FROM emp 
-CONNECT BY 上一层的员工=当前层的老板
+CONNECT BY PRIOR 上一层的员工=当前层的老板
 START WITH 起始条件
 ```
 例子：

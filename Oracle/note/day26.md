@@ -1,6 +1,6 @@
 # 子查询
 1. 在一个查询内部还包括另一个查询，则此查询称为子查询，SQL的任何位置都可以插入子查询
-2. 子查询(内查询)主查询之前一次执行完成
+2. 子查询(内查询)在主查询之前依次执行完成
 3. 子查询的结果被主查询(外查询)使用
 
 ## 子查询的语法
@@ -304,7 +304,7 @@ SELECT to_number(NULL ), to_char(NULL), sum(sal) FROM emp GROUP BY deptno,job ;
     1. insert
     2. update
     3. delete
-    4. selct
+    4. select
 2. DDL(Data Definition Language)：数据定义语言(不可以回滚)
     1. create table
     2. alter table
@@ -314,8 +314,6 @@ SELECT to_number(NULL ), to_char(NULL), sum(sal) FROM emp GROUP BY deptno,job ;
 3. DCL(Data Control Language)：数据控制语言 
     1. GRANT：授权
     2. REVOKE：撤销权限
-    
-    
     
     
     
@@ -362,11 +360,11 @@ DELETE FROM table
 [WHERE condition];
 ```
 
-## delte和truncate的区别
+## delete和truncate的区别
 1. delete逐条删除
 2. truncate先摧毁表，再重建
 3. DELETE是DML语句(可以回滚)，TRUNCATE是DDL语句(不可以回滚)(清空表+commit)
-4. delte不会释放空间，truncate会释放空间
+4. delete不会释放空间，truncate会释放空间
 5. delete语句可以闪回(flashback)，truncate不可以闪回(flashback)，提交事务后仍可以撤销事务
 6. delete会产生碎片，truncate不会产生碎片
 
@@ -375,6 +373,10 @@ DELETE FROM table
 2. 数据的导出和导入
     1. 导出的命令:`exp 和 expdp`
     2. 导入命令：`imp 和 imdp`
+    
+    
+    
+    
     
     
     
@@ -529,7 +531,7 @@ FLASHBACK [TABLE|DATABASE] "BIN$cGoOQYkZzWrgUBKsAgABtA==$0" TO BEFORE DROP RENAM
 
 # 约束
 1. 约束是表一级的限制
-2. 如果存在以来关系，约束可以防止错误的删除数据
+2. 如果存在依赖关系，约束可以防止错误的删除数据
 3. 约束的类型
     1. NOT NULL
     2. UNIQUE
@@ -561,7 +563,7 @@ ORA-02290: check constraint (SCOTT.SYS_C0011281) violated
 1. `FOREIGN KEY`：在子表中，定义了一个表级的约束
 2. `REFERENCES`：指定表和父表中的列
 3. `ON DELETE CASCADE`：当删除父表时，级联删除字表记录
-4. `ON DELETE SET NULL`：将字表的相关依赖记录d额外键值置为null
+4. `ON DELETE SET NULL`：将子表的相关依赖记录的外键值置为null
 
 例：
 ```oracle

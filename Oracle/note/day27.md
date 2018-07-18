@@ -195,7 +195,7 @@ open c1;
 3. `%found`
 4. `%notfound`
 
-### 取消一行光标的值到变量中
+### 取出一行光标的值到变量中
 ```postgresplsql
 fetch c1 into pename;
 ```
@@ -290,7 +290,6 @@ begin
 end;
 ```
 
-
 # Oracle的异常处理
 1. 系统定义例外
 2. 用户定义的例外
@@ -328,7 +327,7 @@ end;
 
 ## 进程监视器进程(PMON)
 1. 在用户进程失败时执行进程恢复
-    1. 清楚数据缓存区告诉缓存
+    1. 清除数据缓存区高速缓存
     2. 释放该用户进程使用的资源
 2. 监视会话，查看是否发生空闲会话超时
 3. 在监听程序中注册数据库服务
@@ -546,7 +545,6 @@ begin
 end;
 ```
 
-
 # 存储过程和存储函数
 1. 指存储在数据库中供所有用户程序调用的子程序叫存储过程、存储函数。
 2. 存储过程不能通过return子句返回函数值
@@ -641,7 +639,7 @@ end;
 ```oracle
 CREATE OR REPLACE PACKAGE MYPACKAGE AS
     type empcursor is ref cursor
-    procedure queryEmpList(dno in number, empList, empList out empcursor);
+    procedure queryEmpList(dno in number, empList out empcursor);
 END MYPACKAGE;
 ```
 - 创建包体
@@ -666,7 +664,7 @@ END MYPACKAGE;
     1. 在指定的操作语句操作之前或之后执行一次，不管这条语句影响了多少行。
 
 2. 行触发器(FOR EACH ROW)
-    1. 触发语句作用的每一条记录都被除法。在行级触发器中使用`:old`和`:new`伪记录变量，识别值的状态。
+    1. 触发语句作用的每一条记录都被触发。在行级触发器中使用`:old`和`:new`伪记录变量，识别值的状态。
 
 ## 触发器的作用
 1. 数据确认
