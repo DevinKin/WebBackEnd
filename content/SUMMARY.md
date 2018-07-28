@@ -26,5 +26,9 @@
     * [day25](./note/Oracle/day25.md)
     * [day26](./note/Oracle/day26.md)
     * [day27](./note/Oracle/day27.md)
-
+* [Hibernate](./note/Hibernate/Hibernate.md)
+    * [day28](./note/Hibernate/day28.md)
+    * [day29](./note/Hibernate/day29.md)
+    * [day30](./note/Hibernate/day30.md)
+    * [day31](./note/Hibernate/day31.md)
 
