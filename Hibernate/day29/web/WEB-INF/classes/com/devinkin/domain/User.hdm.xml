@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.devinkin.domain.User" table="t_user">
+        <id name="id" column="id">
+            <!-- increment：获取主键的最大值，进行+1，作为主键 -->
+            <generator class="increment"/>
+        </id>
+
+        <!-- 乐观锁，就使用version标签 -->
+        <version name="version"/>
+
+        <property name="name" column="name" length="30"/>
+        <property name="age" column="age"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 1. Services and Registries</title><link rel="stylesheet" type="text/css" href="css/hibernate.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"/><link rel="home" href="index.html" title="Hibernate Integrations Guide"/><link rel="up" href="index.html" title="Hibernate Integrations Guide"/><link rel="prev" href="pr01.html" title="Preface"/><meta xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/></head><body><p xmlns:d="http://docbook.org/ns/docbook" id="title"><a href="http://www.hibernate.org" class="site_href"><strong>Hibernate.org</strong></a><a href="http://hibernate.org/Documentation/DocumentationOverview" class="doc_href"><strong>Community Documentation</strong></a></p><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="pr01.html"><strong>Prev</strong></a></li><li class="next"/></ul><div class="chapter" title="Chapter 1. Services and Registries"><div class="titlepage"><div><div><h2 class="title"><a id="services"/>Chapter 1. Services and Registries</h2></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="section"><a href="ch01.html#services-service">1.1. What is a Service?</a></span></dt><dd><dl><dt><span class="section"><a href="ch01.html#services-contracts">1.1.1. Service contracts</a></span></dt><dt><span class="section"><a href="ch01.html#services-dependencies">1.1.2. Service dependencies</a></span></dt></dl></dd><dt><span class="section"><a href="ch01.html#services-registry">1.2. What is a ServiceRegistry?</a></span></dt><dt><span class="section"><a href="ch01.html#services-binding">1.3. ServiceBinding</a></span></dt><dt><span class="section"><a href="ch01.html#services-registry-types">1.4. Types of ServiceRegistries</a></span></dt><dd><dl><dt><span class="section"><a href="ch01.html#services-registry-boot">1.4.1. BootstrapServiceRegistry</a></span></dt><dt><span class="section"><a href="ch01.html#services-registry-standard">1.4.2. StandardServiceRegistry</a></span></dt><dt><span class="section"><a href="ch01.html#services-registry-sf">1.4.3. SessionFactoryServiceRegistry</a></span></dt></dl></dd><dt><span class="section"><a href="ch01.html#services-custom">1.5. Custom Services</a></span></dt><dd><dl><dt><span class="section"><a href="ch01.html#services-overriding">1.5.1. Custom Service Implementations (overriding)</a></span></dt><dt><span class="section"><a href="ch01.html#services-extending">1.5.2. Custom Service Roles (extending)</a></span></dt></dl></dd></dl></div>
+
+    
+
+    <p>
+        Services and registries are new *as a formalized concept* starting in 4.0.  But the functionality provided by
+        the different Services have actually been around in Hibernate much, much longer.  What is new is managing them,
+        their lifecycles and dependencies through a lightweight, dedicated container we call a ServiceRegistry.  The
+        goal of this guide is to describe the design and purpose of these Services and Registries, as well as to look at
+        details of their implementations where appropriate.  It will also delve into the ways third-party integrators and
+        applications can leverage and customize Services and Registries.
+    </p>
+
+    <div class="section" title="1.1. What is a Service?"><div class="titlepage"><div><div><h2 class="title"><a id="services-service"/>1.1. What is a Service?</h2></div></div></div>
+        
+
+        <p>
+            A services provides a certain types of functionality, in a pluggable manner.  Specifically they are
+            interfaces defining certain functionality and then implementations of those service contract interfaces.
+            The interface is known as the service role; the implementation class is known as the service implementation.
+            The pluggability comes from the fact that the service implementation adheres to contract defined by the
+            interface of the service role and that consumers of the service program to the service role, not the
+            implementation.
+        </p>
+
+        <p>
+            Generally speaking, users can plug in alternate implementations of all standard service roles (overriding);
+            they can also define additional services beyond the base set of service roles (extending).
+        </p>
+
+        <p>
+            Let's look at an example to better define what a Service is.  Hibernate needs to be able to access
+            JDBC Connections to the database.  The way it obtains and releases these Connections is through the
+            ConnectionProvider service.  The service is defined by the interface (service role)
+            <code class="interfacename">org.hibernate.engine.jdbc.connections.spi.ConnectionProvider</code> which declares
+            methods for obtaining and releasing the Connections.  There are then multiple implementations of that
+            service contract, varying in how they actually manage the Connections.
+        </p>
+
+        <p>
+            Internally Hibernate always references <code class="interfacename">org.hibernate.engine.jdbc.connections.spi.ConnectionProvider</code>
+            rather than specific implementations in consuming the service (we will get to producing the service later
+            when we talk about registries).  Because of that fact, other ConnectionProvider service implementations
+            could easily be plugged in.
+        </p>
+
+        <p>
+            There is nothing revolutionary here; programming to interfaces is generally accepted as good programming
+            practice.  What's interesting is the ServiceRegistry and the pluggable swapping of the different implementors.
+        </p>
+
+        <div class="section" title="1.1.1. Service contracts"><div class="titlepage"><div><div><h3 class="title"><a id="services-contracts"/>1.1.1. Service contracts</h3></div></div></div>
+            
+
+            <p>
+                The basic requirement for a service is to implement the marker interface
+                <code class="interfacename">org.hibernate.service.Service</code>.  Hibernate uses this internally for some
+                basic type safety.
+            </p>
+
+            <p>
+                The service can also implement a number of optional life-cycle related contracts:
+                </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">
+                        <p>
+                            <code class="interfacename">org.hibernate.service.spi.Startable</code> - allows the service
+                            impl to be notified that it is being started and about to be put into use.
+                        </p>
+                    </li><li class="listitem">
+                        <p>
+                            <code class="interfacename">org.hibernate.service.spi.Stoppable</code> - allows the service
+                            impl to be notified that it is being stopped and will be removed from use.
+                        </p>
+                    </li><li class="listitem">
+                        <p>
+                            <code class="interfacename">org.hibernate.service.spi.ServiceRegistryAwareService</code> - allows
+                            the service to be injected with a reference to the registry that is managing it.  See
+                            <a class="xref" href="ch01.html#services-dependencies" title="1.1.2. Service dependencies">Section 1.1.2, “Service dependencies”</a>.
+                        </p>
+                    </li><li class="listitem">
+                        <p>
+                            <code class="interfacename">org.hibernate.service.spi.Manageable</code> - marks the service
+                            as manageable in JMX provided the JMX integration is enabled.  This feature is still incomplete.
+                        </p>
+                    </li><li class="listitem">
+                        <p>
+                            The different registry implementations also understand additional optional contracts specific
+                            to that registry.  For details, see the details for each registry under
+                            <a class="xref" href="ch01.html#services-registry" title="1.2. What is a ServiceRegistry?">Section 1.2, “What is a ServiceRegistry?”</a>
+                        </p>
+                    </li></ul></div><p>
+            </p>
+        </div>
+
+        <div class="section" title="1.1.2. Service dependencies"><div class="titlepage"><div><div><h3 class="title"><a id="services-dependencies"/>1.1.2. Service dependencies</h3></div></div></div>
+            
+            <p>
+                Services are allowed to declare dependencies on other services using either of 2 approaches.
+            </p>
+            <div class="section" title="1.1.2.1. @org.hibernate.service.spi.InjectService"><div class="titlepage"><div><div><h4 class="title"><a id="d5e96"/>1.1.2.1. @<code class="interfacename">org.hibernate.service.spi.InjectService</code></h4></div></div></div>
+                
+                <p>
+                    Any method on the service implementation class accepting a single parameter and annotated with
+                    @<code class="interfacename">InjectService</code> is considered requesting injection of another service.
+                </p>
+                <p>
+                    By default the type of the method parameter is expected to be the service role to be injected.  If the
+                    parameter type is different than the service role, the <code class="methodname">serviceRole</code> attribute
+                    of the <code class="interfacename">InjectService</code> annotation should be used to explicitly name the role.
+                </p>
+                <p>
+                    By default injected services are considered required, that is the start up will fail if a named
+                    dependent service is missing.  If the service to be injected is optional, the
+                    <code class="methodname">required</code> attribute of the <code class="interfacename">InjectService</code>
+                    annotation should be declared as <code class="literal">false</code> (default is <code class="literal">true</code>).
+                </p>
+            </div>
+            <div class="section" title="1.1.2.2. org.hibernate.service.spi.ServiceRegistryAwareService"><div class="titlepage"><div><div><h4 class="title"><a id="d5e109"/>1.1.2.2. <code class="interfacename">org.hibernate.service.spi.ServiceRegistryAwareService</code></h4></div></div></div>
+                
+                <p>
+                    The second approach is a pull approach where the service implements the optional service interface
+                    <code class="interfacename">org.hibernate.service.spi.ServiceRegistryAwareService</code> which declares
+                    a single <code class="methodname">injectServices</code> method.  During startup, Hibernate will inject the
+                    <code class="interfacename">org.hibernate.service.ServiceRegistry</code> itself into services which
+                    implement this interface.  The service can then use the <code class="interfacename">ServiceRegistry</code>
+                    reference to locate any additional services it needs.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section" title="1.2. What is a ServiceRegistry?"><div class="titlepage"><div><div><h2 class="title"><a id="services-registry"/>1.2. What is a ServiceRegistry?</h2></div></div></div>
+        
+
+        <p>
+            A ServiceRegistry, at its most basic, hosts and manages Services.  Its contract is defined by the
+            <code class="interfacename">org.hibernate.service.ServiceRegistry</code> interface.
+        </p>
+
+        <p>
+            We already gave a basic overview and definition of services.  But services have other interesting
+            characteristics as well.  Services have a lifecycle.  They have a scope.  Services might depend on other
+            services.  And they need to be produced (choose using one implementation over another).  The ServiceRegistry
+            fulfills all these needs.
+        </p>
+
+        <p>
+            In a concise definition, the ServiceRegistry acts as a inversion-of-control (IoC) container.
+        </p>
+
+        <div xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h2>Note</h2>
+            <p>
+                Despite some recent revisionist history, Spring did not invent IoC nor dependency injection nor were
+                they even the first to bring it into Java.  Projects like JBoss MicroContainer and Apache Avalon
+                pre-date Spring by many years and each did IoC and dependency injection.  The concepts in ServiceRegistry
+                are actually very similar to Apache Avalon.
+            </p>
+        </div>
+
+        <p>
+            Why not just use an existing IoC framework?  The main reason was that this had to be as light-weight and as
+            small of a footprint as possible.  The initial design also had called for Services to be swappable at runtime,
+            which unfortunately had to be removed due to performance problems in the proxy-based swapping-solution; the
+            plan is to investigate alternate ways to achieve swap-ability with better performance at a later date.
+        </p>
+
+        <p>
+            A Service is associated with a ServiceRegistry.  The ServiceRegistry scopes the Service.  The
+            ServiceRegistry manages the lifecycle of the Service.  The ServiceRegistry handles injecting dependencies
+            into the Service (actually both a pull and a push/injection approach are supported).  ServiceRegistries are
+            also hierarchical, meaning a ServiceRegistry can have a parent ServiceRegistry.  Services in one registry
+            can depend on and utilize services in that same registry as well as any parent registries.
+        </p>
+
+    </div>
+
+
+    <div class="section" title="1.3. ServiceBinding"><div class="titlepage"><div><div><h2 class="title"><a id="services-binding"/>1.3. ServiceBinding</h2></div></div></div>
+        
+
+        <p>
+            The association of a given Service to a given ServiceRegistry is called a binding and is represented by the
+            <code class="interfacename">org.hibernate.service.spi.ServiceBinding</code> interface.  Furthermore, the specific
+            contract between a ServiceBinding and the ServiceRegistry is represented by the
+            <code class="interfacename">org.hibernate.service.spi.ServiceBinding.ServiceLifecycleOwner</code> interface.
+        </p>
+
+        <p>
+            There are 2 ways a Service becomes associated (bound) to a ServiceRegistry.
+            </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">
+                    <p>
+                        the Service can be directly instantiated and then handed to the ServiceRegistry
+                    </p>
+                </li><li class="listitem">
+                    <p>
+                        a ServiceInitiator can be given to the ServiceRegistry (which the ServiceRegistry will use if and when the Service is needed)
+                    </p>
+                </li></ul></div><p>
+            ServiceRegistry implementations register bindings through calls to the overloaded
+            <code class="methodname">org.hibernate.service.internal.AbstractServiceRegistryImpl#createServiceBinding</code>
+            method accepting either a Service instance or a ServiceInitiator instance.
+        </p>
+
+        <p>
+            Each specific type of registry defines its own ServiceInitiator specialization.
+        </p>
+    </div>
+
+
+    <div class="section" title="1.4. Types of ServiceRegistries"><div class="titlepage"><div><div><h2 class="title"><a id="services-registry-types"/>1.4. Types of ServiceRegistries</h2></div></div></div>
+        
+
+        <p>
+            Currently Hibernate utilizes 3 different ServiceRegistry implementations forming a hierarchy.  Each
+            type is a specialization for the purpose of type-safety, but they add no new functionality.
+        </p>
+
+        <div class="section" title="1.4.1. BootstrapServiceRegistry"><div class="titlepage"><div><div><h3 class="title"><a id="services-registry-boot"/>1.4.1. BootstrapServiceRegistry</h3></div></div></div>
+            
+
+            <p>
+                The <code class="interfacename">org.hibernate.boot.registry.BootstrapServiceRegistry</code>
+                holds 3 service and is normally built by means of the
+                <code class="classname">org.hibernate.boot.registry.BootstrapServiceRegistryBuilder</code> factory class.
+                The builder gives type safe access to customizing these 3 Services.
+            </p>
+
+            <div xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="important" style="margin-left: 0.5in; margin-right: 0.5in;"><h2>Important</h2>
+                <p>
+                    This registry holds services that absolutely have to be available for most things in Hibernate to work.
+                </p>
+            </div>
+
+            <p>
+                In normal usage, the BootstrapServiceRegistry has no parent.
+            </p>
+
+            <p>
+                The services of the BootstrapServiceRegistry cannot be extended (added to) nor overridden (replaced).
+            </p>
+
+            <div class="section" title="1.4.1.1. ClassLoaderService"><div class="titlepage"><div><div><h4 class="title"><a id="d5e152"/>1.4.1.1. ClassLoaderService</h4></div></div></div>
+                
+
+                <p>
+                    The service role for this service is <code class="interfacename">org.hibernate.boot.registry.classloading.spi.ClassLoaderService</code>.
+                </p>
+
+                <p>
+                    This service defines Hibernate's ability to interact with ClassLoaders.  The manner in which
+                    Hibernate (or any library) should interact with ClassLoaders varies based on the runtime environment
+                    which is hosting the application.  Application servers, OSGi containers, and other modular class
+                    loading systems impose very specific class-loading requirements.  This service is provides
+                    Hibernate an abstraction from this environmental complexity.  And just as importantly, it does so
+                    in a centralized, swappable manner.
+                </p>
+
+                <p>
+                    The specific capabilities exposed on this service include:
+                    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">
+                            <p>
+                                Locating Class references by name.  This includes application classes as well as "integration" classes.
+                            </p>
+                        </li><li class="listitem">
+                            <p>
+                                Locating resources (properties files, xml files, etc) as "classpath resources"
+                            </p>
+                        </li><li class="listitem">
+                            <p>
+                                Interacting with <code class="classname">java.util.ServiceLoader</code>, Java's own service
+                                provider discovery mechanism
+                            </p>
+                        </li></ul></div><p>
+                </p>
+            </div>
+
+            <div class="section" title="1.4.1.2. IntegratorService"><div class="titlepage"><div><div><h4 class="title"><a id="d5e166"/>1.4.1.2. IntegratorService</h4></div></div></div>
+                
+
+                <p>
+                    The service role for this service is <code class="interfacename">org.hibernate.integrator.spi.IntegratorService</code>.
+                </p>
+
+                <p>
+                    Applications, third-party integrators and others all need to integrate with Hibernate.  Historically
+                    this used to require something (usually the application) to coordinate registering the pieces of each
+                    integration needed on behalf of each integration.  The
+                    <code class="interfacename">org.hibernate.integrator.spi.Integrator</code> contract formalized this
+                    "integration SPI".  The IntegratorService manages all known integrators.
+                </p>
+
+                <div xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h2>Tip</h2>
+                    <p>
+                        The concept of "Integrator" is still being actively defined and developed.  Expect changes in
+                        these SPIs.
+                    </p>
+                </div>
+
+                <p>
+                    There are 2 ways an integrator becomes known.
+                    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">
+                            <p>
+                                The integrator may be manually registered by calling
+                                <code class="methodname">BootstrapServiceRegistryBuilder#with(Integrator)</code>
+                            </p>
+                        </li><li class="listitem">
+                            <p>
+                                The integrator may be discovered, leveraging the standard Java ServiceLoader
+                                capability provided by the ClassLoaderService.  Integrators would simply define a file
+                                named <code class="filename">/META-INF/services/org.hibernate.integrator.spi.Integrator</code>
+                                and make it available on the classpath.  ServiceLoader covers the format of this file
+                                in detail, but essentially it lists classes by FQN that implement Integrator one
+                                per line.
+                            </p>
+                        </li></ul></div><p>
+                </p>
+            </div>
+
+            <div class="section" title="1.4.1.3. StrategySelector"><div class="titlepage"><div><div><h4 class="title"><a id="d5e182"/>1.4.1.3. StrategySelector</h4></div></div></div>
+                
+
+                <p>
+                    The service role for this service is <code class="interfacename">org.hibernate.boot.registry.selector.spi.StrategySelector</code>.
+                </p>
+
+                <p>
+                    Think of this as the "short naming" service.  Historically to configure Hibernate users would
+                    often need to give FQN references to internal Hibernate classes.  Of course this has caused lots
+                    of problems as we refactor internal code and move these classes around into different package
+                    structures.  Enter the concept of short-naming, using a well defined and well known "short name"
+                    for the strategy/implementation class.
+                </p>
+
+                <p>
+                    The short name mappings in this service can be managed, even by applications and integrators
+                    which can be very powerful.  For more information on this aspect, see:
+                    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">
+                            <p>
+                                <code class="methodname">BootstrapServiceRegistryBuilder#applyStrategySelector</code>
+                            </p>
+                        </li><li class="listitem">
+                            <p>
+                                <code class="methodname">BootstrapServiceRegistryBuilder#applyStrategySelectors</code>
+                            </p>
+                        </li><li class="listitem">
+                            <p>
+                                <code class="interfacename">org.hibernate.boot.registry.selector.StrategyRegistrationProvider</code>
+                                via ServiceLoader discovery
+                            </p>
+                        </li><li class="listitem">
+                            <p>
+                                <code class="methodname">StrategySelector#registerStrategyImplementor`</code> /
+                                <code class="methodname">StrategySelector#unRegisterStrategyImplementor</code>
+                            </p>
+                        </li></ul></div><p>
+                </p>
+            </div>
+        </div>
+
+
+        <div class="section" title="1.4.2. StandardServiceRegistry"><div class="titlepage"><div><div><h3 class="title"><a id="services-registry-standard"/>1.4.2. StandardServiceRegistry</h3></div></div></div>
+            
+
+            <p>
+                The <code class="interfacename">org.hibernate.boot.registry.StandardServiceRegistry</code> defines the
+                main Hibernate ServiceRegistry, building on the BootstrapServiceRegistry (BootstrapServiceRegistry is
+                its parent).  This registry is generally built using the
+                <code class="classname">org.hibernate.boot.registry.StandardServiceRegistryBuilder</code> class.  By default
+                it holds most of the Services used by Hibernate.  For the full list of Services typically held in the
+                StandardServiceRegistry, see the source code of <code class="classname">org.hibernate.service.StandardServiceInitiators</code>.
+                Some particular StandardServiceRegistry Services of note include:
+            </p>
+
+            <p>
+                In normal usage, the parent of the StandardServiceRegistry is the BootstrapServiceRegistry.
+            </p>
+
+            <p>
+                The services of the StandardServiceRegistry can be extended (added to) and overridden (replaced).
+            </p>
+
+            <div class="section" title="1.4.2.1. ConnectionProvider/MultiTenantConnectionProvider"><div class="titlepage"><div><div><h4 class="title"><a id="d5e210"/>1.4.2.1. ConnectionProvider/MultiTenantConnectionProvider</h4></div></div></div>
+                
+                <p>
+                    The Service providing Hibernate with Connections as needed.  Comes in 2 distinct (and mutually
+                    exclusive) roles:
+                    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">
+                            <p>
+                                <code class="interfacename">org.hibernate.engine.jdbc.connections.spi.ConnectionProvider</code> -
+                                provides Connections in normal environments
+                            </p>
+                        </li><li class="listitem">
+                            <p>
+                                <code class="interfacename">org.hibernate.engine.jdbc.connections.spi.MultiTenantConnectionProvider</code> -
+                                provides (tenant-specific) Connections in multi-tenant environments
+                            </p>
+                        </li></ul></div><p>
+                </p>
+            </div>
+
+            <div class="section" title="1.4.2.2. JdbcServices"><div class="titlepage"><div><div><h4 class="title"><a id="d5e220"/>1.4.2.2. JdbcServices</h4></div></div></div>
+                
+                <p>
+                    <code class="interfacename">org.hibernate.engine.jdbc.spi.JdbcServices</code> is an aggregator
+                    Service (a Service that aggregates other Services) exposing unified functionality around JDBC
+                    accessibility.
+                </p>
+            </div>
+
+            <div class="section" title="1.4.2.3. TransactionCoordinatorBuilder"><div class="titlepage"><div><div><h4 class="title"><a id="d5e224"/>1.4.2.3. TransactionCoordinatorBuilder</h4></div></div></div>
+                
+                <p>
+                    <code class="interfacename">org.hibernate.resource.transaction.TransactionCoordinatorBuilder</code>
+                    is used by Hibernate to integrate with and underlying transaction system.  It is responsible for
+                    building <code class="interfacename">org.hibernate.resource.transaction.TransactionCoordinator</code>
+                    instances for use by each Hibernate Session.
+                </p>
+            </div>
+
+            <div class="section" title="1.4.2.4. JtaPlatform"><div class="titlepage"><div><div><h4 class="title"><a id="d5e229"/>1.4.2.4. JtaPlatform</h4></div></div></div>
+                
+                <p>
+                    When using a JTA-based TransactionCoordinatorBuilder, the
+                    <code class="interfacename">org.hibernate.engine.transaction.jta.platform.spi.JtaPlatform</code> Service
+                    provides Hibernate access to the JTA TransactionManager and UserTransaction, as well handling
+                    Synchronization registration.
+                </p>
+            </div>
+
+            <div class="section" title="1.4.2.5. JndiService"><div class="titlepage"><div><div><h4 class="title"><a id="d5e233"/>1.4.2.5. JndiService</h4></div></div></div>
+                
+                <p>
+                    The <code class="interfacename">org.hibernate.engine.jndi.spi.JndiService</code> service is used
+                    by Hibernate to interact with JNDI contexts.  Hibernate's default JndiService assumes just a single
+                    InitialContext.
+                </p>
+            </div>
+
+            <div class="section" title="1.4.2.6. RegionFactory"><div class="titlepage"><div><div><h4 class="title"><a id="d5e237"/>1.4.2.6. RegionFactory</h4></div></div></div>
+                
+                <p>
+                    The <code class="interfacename">org.hibernate.cache.spi.RegionFactory</code> service defines the
+                    integration with third party cache implementors as second-level caching providers.
+                </p>
+            </div>
+
+            <div class="section" title="1.4.2.7. SessionFactoryServiceRegistryFactory"><div class="titlepage"><div><div><h4 class="title"><a id="d5e241"/>1.4.2.7. SessionFactoryServiceRegistryFactory</h4></div></div></div>
+                
+                <p>
+                    <code class="interfacename">org.hibernate.service.spi.SessionFactoryServiceRegistryFactory</code> is a
+                    service that acts as a factory for building the third type of ServiceRegistry
+                    (the SessionFactoryServiceRegistry) which we will discuss next.  I opted for the "factory as
+                    service" approach because in the current design there is really not a good exposed hook-in spot
+                    for when the SessionFactoryServiceRegistry needs to be built.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="section" title="1.4.3. SessionFactoryServiceRegistry"><div class="titlepage"><div><div><h3 class="title"><a id="services-registry-sf"/>1.4.3. SessionFactoryServiceRegistry</h3></div></div></div>
+            
+
+            <p>
+                <code class="interfacename">org.hibernate.service.spi.SessionFactoryServiceRegistry</code> is the 3rd
+                standard Hibernate ServiceRegistry.  SessionFactoryServiceRegistry is designed to hold Services which
+                need access to the SessionFactory.
+            </p>
+
+            <p>
+                Typically its parent registry is the StandardServiceRegistry.
+            </p>
+
+            <div xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h2>Note</h2>
+                <p>
+                    Integrators, as it stands in 4.x, operate on the SessionFactoryServiceRegistry...
+                </p>
+            </div>
+
+            <p>
+                Currently SessionFactoryServiceRegistry holds just 4 Services:
+            </p>
+
+            <div class="section" title="1.4.3.1. EventListenerRegistry"><div class="titlepage"><div><div><h4 class="title"><a id="d5e253"/>1.4.3.1. EventListenerRegistry</h4></div></div></div>
+                
+                <p>
+                    <code class="interfacename">org.hibernate.event.service.spi.EventListenerRegistry</code> is the main
+                    service managed in the SessionFactoryServiceRegistry.  The is the Service that manages all of
+                    Hibernate's event listeners.  A major use-case for Integrators is to alter the listener registry.
+                </p>
+                <p>
+                    If doing custom listener registration, it is important to understand the
+                    <code class="classname">org.hibernate.event.service.spi.DuplicationStrategy</code> and its effect on
+                    registration.  The basic idea is to tell Hibernate:
+                    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>what makes a listener a duplicate</p></li><li class="listitem"><p>how to handle duplicate registrations (error, first wins, last wins)</p></li></ul></div><p>
+                </p>
+            </div>
+
+            <div class="section" title="1.4.3.2. StatisticsImplementor"><div class="titlepage"><div><div><h4 class="title"><a id="d5e264"/>1.4.3.2. StatisticsImplementor</h4></div></div></div>
+                
+                <p>
+                    <code class="interfacename">org.hibernate.stat.spi.StatisticsImplementor</code> is the SPI portion of
+                    the Statistics API; the collector portion, if you will.
+                </p>
+            </div>
+
+            <div class="section" title="1.4.3.3. NativeQueryInterpreter"><div class="titlepage"><div><div><h4 class="title"><a id="d5e268"/>1.4.3.3. NativeQueryInterpreter</h4></div></div></div>
+                
+                <p>
+                    <code class="interfacename">org.hibernate.engine.query.spi.NativeQueryInterpreter</code> is the
+                    service Hibernate uses for interpreting native queries.  Exists as a service mainly so that
+                    integrations such as OGM can override it.
+                </p>
+            </div>
+
+            <div class="section" title="1.4.3.4. CacheImplementor"><div class="titlepage"><div><div><h4 class="title"><a id="d5e272"/>1.4.3.4. CacheImplementor</h4></div></div></div>
+                
+                <p>
+                    To be honest, I have no idea why this is a service... :)
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" title="1.5. Custom Services"><div class="titlepage"><div><div><h2 class="title"><a id="services-custom"/>1.5. Custom Services</h2></div></div></div>
+        
+        <p>
+            So far we have focused on the Hibernate provided services.  But applications and integrations
+            can provide their own services as well, either
+            </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">
+                    <p>providing a new implementation of a standard service (overriding)</p>
+                </li><li class="listitem">
+                    <p>providing a whole new service role (extending)</p>
+                </li></ul></div><p>
+        </p>
+
+        <div class="section" title="1.5.1. Custom Service Implementations (overriding)"><div class="titlepage"><div><div><h3 class="title"><a id="services-overriding"/>1.5.1. Custom Service Implementations (overriding)</h3></div></div></div>
+            
+            <p>
+                We discussed swappability of service implementations above.  Lets look at an example in practice.
+                For the sake of illustration, lets say that we have developed a new ConnectionProvider integrating
+                with the wonderful new latest-and-greatest connection pooling library.  Let's look at the steps
+                necessary to make that happen.
+            </p>
+            <p>
+                The first step is to develop the actual integration by implementing the ConnectionProvider contract.
+            </p>
+            <div class="example"><a id="d5e287"/><p class="title"><strong>Example 1.1. Custom ConnectionProvider implementation</strong></p><div class="example-contents">
+                
+                <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">import java.lang.Override;
+
+public class LatestAndGreatestConnectionProviderImpl
+		implements ConnectionProvider, Startable, Stoppable, Configurable {
+
+	private LatestAndGreatestPoolBuilder lagPoolBuilder;
+	private LatestAndGreatestPool lagPool;
+	private boolean available = false;
+
+	@Override
+	public void configure(Map configurationValues) {
+		// extract our config from the settings map
+		lagPoolBuilder = buildBuilder( configurationValues );
+	}
+
+	@Override
+	public void start() {
+		// start the underlying pool
+		lagPool = lagPoolBuilder.buildPool();
+
+		available = true;
+	}
+
+	@Override
+	public void stop() {
+		available = true;
+
+		// stop the underlying pool
+		lagPool.shutdown();
+	}
+
+	@Override
+	public Connection getConnection() throws SQLException {
+		if ( !available ) {
+			throwException( "LatestAndGreatest ConnectionProvider not available for use" )
+		}
+
+		return lagPool.borrowConnection();
+	}
+
+	@Override
+	public void closeConnection(Connection conn) throws SQLException {
+		if ( !available ) {
+			warn( "LatestAndGreatest ConnectionProvider not available for use" )
+		}
+
+		if ( conn == null ) {
+			return;
+		}
+
+		lagPool.releaseConnection( conn );
+	}
+
+	...
+}</pre>
+            </div></div><br class="example-break"/>
+            <p>
+                At this point we have a decision about how to integrate this new ConnectionProvider into Hibernate.
+                As you might guess, there are multiple ways.
+            </p>
+            <p>
+                As a first option, we might just require that the code bootstrapping the StandardServiceRegistry do
+                the integration.
+            </p>
+            <div class="example"><a id="d5e292"/><p class="title"><strong>Example 1.2. Overriding service implementation via StandardServiceRegistryBuilder</strong></p><div class="example-contents">
+                
+                <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">StandardServiceRegistryBuilder builder = ...;
+...
+builder.addService(
+		ConnectionProvider.class,
+		new LatestAndGreatestConnectionProviderImpl()
+);
+...</pre>
+            </div></div><br class="example-break"/>
+            <p>
+                A second option, if our LatestAndGreatestConnectionProviderImpl should always be used, would be to
+                provide a <code class="interfacename">org.hibernate.service.spi.ServiceContributor</code> implementation
+                as well to handle the integration on the users behalf.
+            </p>
+            <div class="example"><a id="d5e297"/><p class="title"><strong>Example 1.3. LatestAndGreatestConnectionProviderImplContributor</strong></p><div class="example-contents">
+                
+                <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">public class LatestAndGreatestConnectionProviderImplContributor1
+		implements ServiceContributor {
+	@Override
+	public void contribute(StandardServiceRegistryBuilder serviceRegistryBuilder) {
+		serviceRegistryBuilder.addService(
+				ConnectionProvider.class,
+				new LatestAndGreatestConnectionProviderImpl()
+		);
+	}
+}</pre>
+            </div></div><br class="example-break"/>
+            <p>
+                We still need to be able to tell Hibernate to perform this integration for us.  To do that we leverage
+                Java's ServiceLoader.  When building the StandardServiceRegistry, Hibernate will look for JDK
+                service providers of type <code class="interfacename">org.hibernate.service.spi.ServiceContributor</code>
+                and automatically integrate them.  We discussed this behavior above.  Here we'd define a classpath
+                resource named <code class="filename">META-INF/services/org.hibernate.service.spi.ServiceContributor</code>.
+                This file will have just a single line naming our impl.
+            </p>
+            <div class="example"><a id="d5e303"/><p class="title"><strong>Example 1.4. META-INF/services/org.hibernate.service.spi.ServiceContributor</strong></p><div class="example-contents">
+                
+                <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">fully.qualified.package.LatestAndGreatestConnectionProviderImplContributor1</pre>
+            </div></div><br class="example-break"/>
+            <p>
+                A third option, if we simply want to make our LatestAndGreatestConnectionProviderImpl available
+                as a configuration choice, we would again use a ServiceContributor but in a slightly
+                different way.
+            </p>
+            <div class="example"><a id="d5e307"/><p class="title"><strong>Example 1.5. LatestAndGreatestConnectionProviderImplContributor</strong></p><div class="example-contents">
+                
+                <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">public class LatestAndGreatestConnectionProviderImplContributor1
+		implements ServiceContributor {
+	@Override
+	public void contribute(StandardServiceRegistryBuilder serviceRegistryBuilder) {
+		// here we will register a short-name for our service strategy
+		StrategySelector selector = serviceRegistryBuilder.getBootstrapServiceRegistry().
+				.getService( StrategySelector.class );
+		selector.registerStrategyImplementor(
+				ConnectionProvider.class,
+				"lag"
+				LatestAndGreatestConnectionProviderImpl.class
+		);
+	}
+}</pre>
+            </div></div><br class="example-break"/>
+            <p>
+                That all allows the appication to pick our LatestAndGreatestConnectionProviderImpl by a short-name.
+            </p>
+            <div class="example"><a id="d5e311"/><p class="title"><strong>Example 1.6. Custom service short-name</strong></p><div class="example-contents">
+                
+                <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">StandardServiceRegistryBuilder builder = ...;
+...
+builder.applySetting( "hibernate.connection.provider_class", "lag" );
+...</pre>
+            </div></div><br class="example-break"/>
+        </div>
+
+        <div class="section" title="1.5.2. Custom Service Roles (extending)"><div class="titlepage"><div><div><h3 class="title"><a id="services-extending"/>1.5.2. Custom Service Roles (extending)</h3></div></div></div>
+            
+            <p>
+                We can also have the ServiceRegistry host custom services (completely new Service roles).  As an example,
+                let's say our application publishes Hibernate events to a JMS Topic and that we want to leverage the
+                Hibernate ServiceRegistry to host a Service representing our publishing of events.  So we will expand the
+                ServiceRegistry to host this completely new Service role for us and manage its lifecycle.
+            </p>
+
+            <div class="example"><a id="d5e317"/><p class="title"><strong>Example 1.7. The EventPublishingService service role</strong></p><div class="example-contents">
+                
+                <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">public interface EventPublishingService extends Service {
+	public void publish(Event theEvent);
+}</pre>
+            </div></div><br class="example-break"/>
+
+            <div class="example"><a id="d5e320"/><p class="title"><strong>Example 1.8. The EventPublishingService implementation</strong></p><div class="example-contents">
+                
+                <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">public class EventPublishingServiceImpl
+		implements EventPublishingService,
+				Configurable,
+				Startable,
+				Stoppable,
+				ServiceRegistryAwareService {
+
+	private ServiceRegistryImplementor serviceRegistry;
+	private String jmsConnectionFactoryName;
+	private String destinationName;
+
+	private Connection jmsConnection;
+	private Session jmsSession;
+	private MessageProducer publisher;
+
+	@Override
+	public void injectServices(ServiceRegistryImplementor serviceRegistry) {
+		this.serviceRegistry = serviceRegistry;
+	}
+
+	public void configure(Map configurationValues) {
+		this.jmsConnectionFactoryName = configurationValues.get( JMS_CONNECTION_FACTORY_NAME_SETTING );
+		this.destinationName = configurationValues.get( JMS_DESTINATION_NAME_SETTING );
+	}
+
+	@Override
+	public void start() {
+		final JndiService jndiService = serviceRegistry.getService( JndiService.class );
+		final ConnectionFactory jmsConnectionFactory = jndiService.locate( jmsConnectionFactoryName );
+
+		this.jmsConnection = jmsConnectionFactory.createConnection();
+		this.jmsSession = jmsConnection.createSession( true,  Session.AUTO_ACKNOWLEDGE );
+
+		final Destination destination = jndiService.locate( destinationName );
+
+		this.publisher = jmsSession.createProducer( destination );
+	}
+
+	@Override
+	public void publish(Event theEvent) {
+		publisher.send( theEvent );
+	}
+
+	@Override
+	public void stop() {
+		publisher.close();
+		jmsSession.close();
+		jmsConnection.close();
+	}
+}</pre>
+            </div></div><br class="example-break"/>
+
+            <div class="example"><a id="d5e323"/><p class="title"><strong>Example 1.9. An alternative EventPublishingService implementation</strong></p><div class="example-contents">
+                
+                <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">public class EventPublishingServiceImpl
+		implements EventPublishingService,
+				Configurable,
+				Startable,
+				Stoppable,
+				ServiceRegistryAwareService {
+
+	private ServiceRegistryImplementor serviceRegistry;
+	private String jmsConnectionFactoryName;
+	private String destinationName;
+
+	private Connection jmsConnection;
+	private Session jmsSession;
+	private MessageProducer publisher;
+
+	@Override
+	public void injectServices(ServiceRegistryImplementor serviceRegistry) {
+		this.serviceRegistry = serviceRegistry;
+	}
+
+	public void configure(Map configurationValues) {
+		this.jmsConnectionFactoryName = configurationValues.get( JMS_CONNECTION_FACTORY_NAME_SETTING );
+		this.destinationName = configurationValues.get( JMS_DESTINATION_NAME_SETTING );
+	}
+
+	@Override
+	public void start() {
+		final JndiService jndiService = serviceRegistry.getService( JndiService.class );
+		final ConnectionFactory jmsConnectionFactory = jndiService.locate( jmsConnectionFactoryName );
+
+		this.jmsConnection = jmsConnectionFactory.createConnection();
+		this.jmsSession = jmsConnection.createSession( true,  Session.AUTO_ACKNOWLEDGE );
+
+		final Destination destination = jndiService.locate( destinationName );
+
+		this.publisher = jmsSession.createProducer( destination );
+	}
+
+	@Override
+	public void publish(Event theEvent) {
+		publisher.send( theEvent );
+	}
+
+	@Override
+	public void stop() {
+		publisher.close();
+		jmsSession.close();
+		jmsConnection.close();
+	}
+}</pre>
+            </div></div><br class="example-break"/>
+
+            <p>
+                Because we have alternative implementations, it is a good idea to develop an initiator as well
+                that can choose between them at runtime.
+            </p>
+
+            <div class="example"><a id="d5e327"/><p class="title"><strong>Example 1.10. The EventPublishingServiceInitiator</strong></p><div class="example-contents">
+                
+                <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">public class EventPublishingServiceInitiator implements StandardServiceInitiator&lt;EventPublishingService&gt; {
+	public static EventPublishingServiceInitiator INSTANCE = new EventPublishingServiceInitiator();
+	public static final String ENABLE_PUBLISHING_SETTING = "com.acme.EventPublishingService.enabled";
+
+	@Override
+	public Class&lt;R&gt; getServiceInitiated() {
+		return EventPublishingService.class;
+	}
+
+	@Override
+	public R initiateService(Map configurationValues, ServiceRegistryImplementor registry) {
+		final boolean enabled = extractBoolean( configurationValues, ENABLE_PUBLISHING_SETTING );
+		if ( enabled ) {
+			return new EventPublishingServiceImpl();
+		}
+		else {
+			return DisabledEventPublishingServiceImpl.INSTANCE;
+		}
+	}
+
+	...
+}</pre>
+            </div></div><br class="example-break"/>
+
+            <p>
+                We could have the application register the EventPublishingServiceInitiator with the
+                StandardServiceRegistryBuilder, but it is much nicer to write a ServiceContributor to handle this
+                for the application.
+            </p>
+        </div>
+    </div>
+</div><hr xmlns="" xmlns:d="http://docbook.org/ns/docbook"/><a xmlns="" xmlns:d="http://docbook.org/ns/docbook" href="legalnotice.html"/><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="pr01.html"><strong>Prev</strong>Preface</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li></ul></body></html>

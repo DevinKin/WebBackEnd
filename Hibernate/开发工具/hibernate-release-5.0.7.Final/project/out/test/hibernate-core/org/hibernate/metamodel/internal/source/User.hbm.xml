@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+
+hibernate-mapping package="org.hibernate.metamodel.internal.source"
+        xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
+
+    <class name="User">
+        <id name="id">
+            <generator class="increment"/>
+        </id>
+        <natural-id>
+            <property name="userName" column="UNAME"/>
+        </natural-id>
+        <component name="name" class="User$Name">
+            <property name="firstName" column="FNAME"/>
+            <property name="middleName" column="MNAME"/>
+            <property name="lastName" column="LNAME"/>
+        </component>
+        <property name="lastLogin" type="timestamp"/>
+
+    </class>
+
+</hibernate-mapping>

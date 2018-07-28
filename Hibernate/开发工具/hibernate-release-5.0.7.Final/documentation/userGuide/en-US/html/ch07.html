@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 7. JNDI</title><link rel="stylesheet" type="text/css" href="css/hibernate.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"/><link rel="home" href="index.html" title="Hibernate User Guide"/><link rel="up" href="index.html" title="Hibernate User Guide"/><link rel="prev" href="ch06.html" title="Chapter 6. Transactions and concurrency control"/><link rel="next" href="ch08.html" title="Chapter 8. Locking"/><meta xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/></head><body><p xmlns:d="http://docbook.org/ns/docbook" id="title"><a href="http://www.hibernate.org" class="site_href"><strong>Hibernate.org</strong></a><a href="http://hibernate.org/Documentation/DocumentationOverview" class="doc_href"><strong>Community Documentation</strong></a></p><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="ch06.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="ch08.html"><strong>Next</strong></a></li></ul><div xml:lang="en" class="chapter" title="Chapter 7. JNDI"><div class="titlepage"><div><div><h2 class="title"><a id="jndi"/>Chapter 7. JNDI</h2></div></div></div>
+    
+
+    <p>
+        Hibernate does optionally interact with JNDI on the applications behalf.  Generally
+        it does this when the application:
+        </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">
+                <p>has asked the SessionFactory be bound to JNDI</p>
+            </li><li class="listitem">
+                <p>has specified a DataSource to use by JNDI name</p>
+            </li><li class="listitem">
+                <p>is using JTA transactions and the JtaPlatform needs to do JNDI lookups for TM, UT, etc</p>
+            </li></ul></div><p>
+    </p>
+
+    <p>
+        All of these JNDI calls route through a single service whose role is
+        <code class="interfacename">org.hibernate.engine.jndi.spi.JndiService</code>.  The standard JndiService
+        accepts a number of configuration settings
+        </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">
+                <p>
+                    <code class="literal">hibernate.jndi.class</code> - names the
+                    <code class="interfacename">javax.naming.InitialContext</code> implementation class to use.  See
+                    <code class="constant">javax.naming.Context#INITIAL_CONTEXT_FACTORY</code>
+                </p>
+            </li><li class="listitem">
+                <p>
+                    <code class="literal">hibernate.jndi.url</code> - names the JNDI InitialContext connection url.  See
+                    <code class="constant">javax.naming.Context.PROVIDER_URL</code>
+                </p>
+            </li><li class="listitem">
+                <p>
+                    Any other settings prefixed with <code class="literal">hibernate.jndi.</code> will be collected
+                    and passed along to the JNDI provider.
+                </p>
+            </li></ul></div><p>
+    </p>
+
+    <div xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h2>Note</h2>
+        <p>
+            The standard JndiService assumes that all JNDI calls are relative to the same InitialContext.  If your
+            application uses multiple naming servers for whatever reason, you will need a custom JndiService
+            implementation to handle those details.
+        </p>
+    </div>
+</div><hr xmlns="" xmlns:d="http://docbook.org/ns/docbook"/><a xmlns="" xmlns:d="http://docbook.org/ns/docbook" href="legalnotice.html"/><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="ch06.html"><strong>Prev</strong>Chapter 6. Transactions and concurrency control</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="ch08.html"><strong>Next</strong>Chapter 8. Locking</a></li></ul></body></html>

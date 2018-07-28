@@ -1,0 +1,66 @@
+/*
+ * Hibernate, Relational Persistence for Idiomatic Java
+ *
+ * License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+ * See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+ */
+apply plugin: 'hibernate-matrix-testing'
+
+dependencies {
+    compile( project( ':hibernate-core' ) )
+    compile( project( ':hibernate-entitymanager' ) )
+
+    provided( [group: 'org.hibernate', name: 'hibernate-tools', version: '3.2.0.ga'] )
+    provided( libraries.ant )
+    provided( project( ':hibernate-jpamodelgen' ) )
+
+    testCompile( project(':hibernate-testing') )
+    testCompile( project(path: ':hibernate-entitymanager', configuration: 'tests') )
+
+    testRuntime( libraries.javassist )
+}
+
+mavenPom {
+    name = 'ENtity VERSioning support'
+    description = 'ENtity VERSioning support'
+}
+
+def osgiDescription() {
+	return mavenPom.description
+}
+
+sourceSets {
+    test {
+        ext {
+            enversDemoJavaDir = file( "src/demo/java" )
+            enversDemoResourcesDir = file( "src/demo/resources" )
+        }
+        java {
+            srcDir enversDemoJavaDir
+        }
+        resources {
+            srcDir enversDemoResourcesDir
+        }
+    }
+}
+
+jar {
+    manifest {
+        instructionFirst 'Import-Package',
+            // TODO: Shouldn't have to explicitly list the JPA packages, but
+            // the plugin generates them with [1.0,2) versions.
+            'javax.persistence;version="2.1.0"',
+            'javax.persistence.criteria;version="2.1.0"',
+            'javax.persistence.metamodel;version="2.1.0"',
+            'javax.persistence.spi;version="2.1.0"',
+            // optionals
+            'javax.naming;resolution:=optional',
+            'org.apache.tools.ant;resolution:=optional'
+    }
+}
+
+tasks."matrix_mariadb" {
+    beforeTest { descriptor ->
+        println "Starting test: " + descriptor
+    }
+}

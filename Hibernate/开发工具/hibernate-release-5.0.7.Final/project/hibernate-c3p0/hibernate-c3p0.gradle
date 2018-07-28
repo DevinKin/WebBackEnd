@@ -1,0 +1,29 @@
+/*
+ * Hibernate, Relational Persistence for Idiomatic Java
+ *
+ * License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+ * See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+ */
+dependencies {
+    compile project( ':hibernate-core' )
+    compile( libraries.c3p0 )
+
+    testCompile project( ':hibernate-testing' )
+
+    testCompile( libraries.validator ) {
+        // for test runtime
+        transitive = true
+    }
+    // EL libraries are provided scope in Validator
+    testRuntime( libraries.expression_language_api )
+    testRuntime( libraries.expression_language_impl )
+}
+
+mavenPom {
+    name = 'Hibernate/c3p0 Integration'
+    description = 'Integration for c3p0 Connection pooling into Hibernate O/RM'
+}
+
+def osgiDescription() {
+	return mavenPom.description
+}

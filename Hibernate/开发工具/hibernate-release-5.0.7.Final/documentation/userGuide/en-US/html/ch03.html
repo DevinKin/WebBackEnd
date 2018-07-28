@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 3. Bootstrap</title><link rel="stylesheet" type="text/css" href="css/hibernate.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"/><link rel="home" href="index.html" title="Hibernate User Guide"/><link rel="up" href="index.html" title="Hibernate User Guide"/><link rel="prev" href="ch02.html" title="Chapter 2. Domain Model"/><link rel="next" href="ch04.html" title="Chapter 4. Persistence Contexts"/><meta xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/></head><body><p xmlns:d="http://docbook.org/ns/docbook" id="title"><a href="http://www.hibernate.org" class="site_href"><strong>Hibernate.org</strong></a><a href="http://hibernate.org/Documentation/DocumentationOverview" class="doc_href"><strong>Community Documentation</strong></a></p><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="ch02.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="ch04.html"><strong>Next</strong></a></li></ul><div class="chapter" title="Chapter 3. Bootstrap"><div class="titlepage"><div><div><h2 class="title"><a id="bootstrap"/>Chapter 3. Bootstrap</h2></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="section"><a href="ch03.html#bootstrap-native">3.1. Native Bootstrapping</a></span></dt><dd><dl><dt><span class="section"><a href="ch03.html#bootstrap-native-registry">3.1.1. Building the ServiceRegistry</a></span></dt><dt><span class="section"><a href="ch03.html#bootstrap-native-metadata">3.1.2. Building the Metadata</a></span></dt><dt><span class="section"><a href="ch03.html#bootstrap-native-sessionfactory">3.1.3. Building the SessionFactory</a></span></dt></dl></dd><dt><span class="section"><a href="ch03.html#bootstrap-jpa">3.2. JPA Bootstrapping</a></span></dt><dd><dl><dt><span class="section"><a href="ch03.html#bootstrap-jpa-compliant">3.2.1. JPA-compliant bootstrapping</a></span></dt><dt><span class="section"><a href="ch03.html#bootstrap-jpa-hibernate">3.2.2. Proprietary 2-phase bootstrapping</a></span></dt></dl></dd></dl></div>
+    
+
+    <p>
+        The term <em class="firstterm">bootstrapping</em> refers to initializing and starting a software
+        component.  In Hibernate we are specifically talking about the process of building a fully functional
+        SessionFactory instance or EntityManagerFactory instance for JPA.  The process is very different for
+        each.
+    </p>
+
+    <div xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h2>Note</h2>
+        <p>
+            This chapter will not focus on all the possibilities of bootstrapping.  Those will be covered
+            in each specific more-relevant chapters later on.  Instead we focus here on the API calls needed
+            to perform the bootstrapping.
+        </p>
+    </div>
+
+    
+
+    <div class="section" title="3.1. Native Bootstrapping"><div class="titlepage"><div><div><h2 class="title"><a id="bootstrap-native"/>3.1. Native Bootstrapping</h2></div></div></div>
+        
+
+        <p>
+            This section discusses the process of bootstrapping a Hibernate SessionFactory.  Specifically it discusses
+            the bootstrapping APIs as redesigned in 5.0.  For a discussion of the legacy bootstrapping API, see
+            <a class="xref" href="apa.html" title="Appendix A. Legacy Bootstrapping">Appendix A, <em>Legacy Bootstrapping</em></a>
+        </p>
+
+        <div class="section" title="3.1.1. Building the ServiceRegistry"><div class="titlepage"><div><div><h3 class="title"><a id="bootstrap-native-registry"/>3.1.1. Building the ServiceRegistry</h3></div></div></div>
+            
+            <p>
+                The first step in native bootstrapping is the building of a ServiceRegistry holding the
+                services Hibernate will need at bootstrap and run time.
+            </p>
+
+            
+
+            <p>
+                Actually we are concerned with building 2 different ServiceRegistries.  First is the
+                <code class="interfacename">org.hibernate.boot.registry.BootstrapServiceRegistry</code>. The
+                BootstrapServiceRegistry is intended to hold services that Hibernate needs at both bootstrap and
+                run time.  This boils down to 3 services:
+                </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">
+                        <p>
+                            <code class="interfacename">org.hibernate.boot.registry.classloading.spi.ClassLoaderService</code> -
+                            which controls how Hibernate interacts with ClassLoaders
+                        </p>
+                    </li><li class="listitem">
+                        <p>
+                            <code class="interfacename">org.hibernate.integrator.spi.IntegratorService</code> -
+                            which controls the management ands discovery of
+                            <code class="interfacename">org.hibernate.integrator.spi.Integrator</code> instances.
+                        </p>
+                    </li><li class="listitem">
+                        <p>
+                            <code class="interfacename">org.hibernate.boot.registry.selector.spi.StrategySelector</code> -
+                            which control how Hibernate resolves implementations of various strategy contracts.  This
+                            is a very powerful service, but a full discussion of it is beyond the scope of this guide.
+                        </p>
+                    </li></ul></div><p>
+            </p>
+
+            <p>
+                If you are ok with the default behavior of Hibernate in regards to these BootstrapServiceRegistry
+                services (which is quite often the case, especially in SE environments), then building the
+                BootstrapServiceRegistry can be skipped.
+            </p>
+
+            <p>
+                If you wish to alter how the BootstrapServiceRegistry is built, that is controlled through the
+                <code class="interfacename">org.hibernate.boot.registry.BootstrapServiceRegistryBuilder</code>:
+            </p>
+
+            <div class="example"><a id="d5e250"/><p class="title"><strong>Example 3.1. Controlling BootstrapServiceRegistry building</strong></p><div class="example-contents">
+                
+                <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">BootstrapServiceRegistryBuilder bootstrapRegistryBuilder
+		= new BootstrapServiceRegistryBuilder();
+
+// add a special ClassLoader
+bootstrapRegistryBuilder.applyClassLoader( mySpecialClassLoader );
+// manually add an Integrator
+bootstrapRegistryBuilder.applyIntegrator( mySpecialIntegrator );
+...
+
+BootstrapServiceRegistry bootstrapRegistry = bootstrapRegistryBuilder.build();</pre>
+            </div></div><br class="example-break"/>
+
+            <p>
+                The services of the BootstrapServiceRegistry cannot be extended (added to) nor overridden (replaced).
+            </p>
+
+            <p>
+                The second ServiceRegistry is the <code class="interfacename">org.hibernate.boot.registry.StandardServiceRegistry</code>.
+                You will almost always need to configure the StandardServiceRegistry, which is done through
+                <code class="classname">org.hibernate.boot.registry.StandardServiceRegistryBuilder</code>:
+            </p>
+
+            <div class="example"><a id="d5e257"/><p class="title"><strong>Example 3.2. Building a BootstrapServiceRegistryBuilder</strong></p><div class="example-contents">
+                
+                <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">// An example using an implicitly built BootstrapServiceRegistry
+StandardServiceRegistryBuilder standardRegistryBuilder
+		= new StandardServiceRegistryBuilder();</pre>
+                <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">// An example using an explicitly built BootstrapServiceRegistry
+BootstrapServiceRegistry bootstrapRegistry = ...;
+
+StandardServiceRegistryBuilder standardRegistryBuilder
+		= new StandardServiceRegistryBuilder( bootstrapRegistry );</pre>
+            </div></div><br class="example-break"/>
+
+            <p>
+                A StandardServiceRegistry is also highly configurable via the StandardServiceRegistryBuilder API.
+                See the StandardServiceRegistryBuilder javadocs for full details.  Some specific methods of interest:
+            </p>
+
+            <div class="example"><a id="d5e262"/><p class="title"><strong>Example 3.3. Controlling StandardServiceRegistry building</strong></p><div class="example-contents">
+                
+                <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">StandardServiceRegistryBuilder standardRegistryBuilder = ...;
+
+// load some properties via resource lookup
+standardRegistryBuilder.loadProperties( "org/hibernate/example/MyProperties.properties" );
+
+// configure the registry from a resource lookup for a cfg.xml config file
+standardRegistryBuilder.configure( "org/hibernate/example/my.cfg.xml" );
+
+// apply a random setting
+standardRegistryBuilder.applySetting( "myProp", "some value" );
+
+// apply a service initiator
+standardRegistryBuilder.addInitiator( new CustomServiceInitiator() );
+
+// apply a service impl
+standardRegistryBuilder.addService( SomeCustomService.class, new SomeCustomServiceImpl() );
+
+// and finally build the StandardServiceRegistry
+StandardServiceRegistry standardRegistry = standardRegistryBuilder.build();</pre>
+            </div></div><br class="example-break"/>
+        </div>
+
+        <div class="section" title="3.1.2. Building the Metadata"><div class="titlepage"><div><div><h3 class="title"><a id="bootstrap-native-metadata"/>3.1.2. Building the Metadata</h3></div></div></div>
+            
+            <p>
+                The second step in native bootstrapping is the building of a <code class="interfacename">org.hibernate.boot.Metadata</code>
+                object containing the parsed representations of an application's domain model and its mapping to
+                a database.  The first thing we obviously need to build a parsed representation is the source
+                information to be parsed (annotated classes, `hbm.xml` files, `orm.xml` files).  This is
+                the purpose of <code class="classname">org.hibernate.boot.MetadataSources</code>:
+            </p>
+
+            <div class="example"><a id="d5e270"/><p class="title"><strong>Example 3.4. Configuring a MetadataSources</strong></p><div class="example-contents">
+                
+                <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">MetadataSources sources = new MetadataSources( standardRegistry );
+
+// alternatively, we can build the MetadataSources without passing
+// a service registry, in which case it will build a default
+// BootstrapServiceRegistry to use.  But the approach shown
+// above is preferred
+// MetadataSources sources = new MetadataSources();
+
+// add a class using JPA/Hibernate annotations for mapping
+sources.addAnnotatedClass( MyEntity.class );
+
+// add the name of a class using JPA/Hibernate annotations for mapping.
+// differs from above in that accessing the Class is deferred which is
+// important if using runtime bytecode-enhancement
+sources.addAnnotatedClassName( "org.hibernate.example.Customer" );
+
+// Adds the named hbm.xml resource as a source: which performs the
+// classpath lookup and parses the XML
+sources.addResource( "org/hibernate/example/Order.hbm.xml" );
+
+// Adds the named JPA orm.xml resource as a source: which performs the
+// classpath lookup and parses the XML
+sources.addResource( "org/hibernate/example/Product.orm.xml" );</pre>
+            </div></div><br class="example-break"/>
+
+            <p>
+                MetadataSources has many other methods as well; explore its API and javadocs for more information.
+                Also, all methods on MetadataSources allow for chaining should you prefer that style:
+            </p>
+
+            <div class="example"><a id="d5e274"/><p class="title"><strong>Example 3.5. Configuring a MetadataSources with method chaining</strong></p><div class="example-contents">
+                
+                <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">MetadataSources sources = new MetadataSources( standardRegistry )
+		.addAnnotatedClass( MyEntity.class )
+		.addAnnotatedClassName( "org.hibernate.example.Customer" )
+		.addResource( "org/hibernate/example/Order.hbm.xml" )
+		.addResource( "org/hibernate/example/Product.orm.xml" );</pre>
+            </div></div><br class="example-break"/>
+
+            <p>
+                Once we have the sources of mapping information defined, we need to build the Metadata object.  If
+                you are ok with the default behavior in building the Metadata then you can simply call
+                MetadataSources#buildMetadata.
+            </p>
+
+            <div xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h2>Note</h2>
+                <p>
+                    Notice that a ServiceRegistry can be passed at a number of points in this bootstrapping process.
+                    The suggested approach is to build a StandardServiceRegistry yourself and pass that along to the
+                    MetadataSources constructor.  From there, MetadataBuilder, Metadata, SessionFactoryBuilder and
+                    SessionFactory will all pick up that same StandardServiceRegistry.
+                </p>
+            </div>
+
+            <p>
+                However, if you wish to adjust the process of building Metadata from MetadataSources you will need
+                to use the MetadataBuilder as obtained via MetadataSources#getMetadataBuilder.  MetadataBuilder
+                allows a lot of control over the Metadata building process.  See its javadocs for full details.
+            </p>
+
+            <div class="example"><a id="d5e281"/><p class="title"><strong>Example 3.6. Building Metadata via MetadataBuilder</strong></p><div class="example-contents">
+                
+                <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">MetadataBuilder metadataBuilder = sources.getMetadataBuilder();
+
+// Use the JPA-compliant implicit naming strategy
+metadataBuilder.applyImplicitNamingStrategy( ImplicitNamingStrategyJpaCompliantImpl.INSTANCE );
+
+// specify the schema name to use for tables, etc when none is explicitly specified
+metadataBuilder.applyImplicitSchemaName( "my_default_schema" );
+
+Metadata metadata = metadataBuilder.build();</pre>
+            </div></div><br class="example-break"/>
+        </div>
+
+        <div class="section" title="3.1.3. Building the SessionFactory"><div class="titlepage"><div><div><h3 class="title"><a id="bootstrap-native-sessionfactory"/>3.1.3. Building the SessionFactory</h3></div></div></div>
+            
+            <p>
+                The final step in native bootstrapping is to build the SessionFactory itself.  Much like
+                discussed above, if you are ok with the default behavior of building a SessionFactory from a Metadata
+                reference, you can simply call Metadata#buildSessionFactory.
+            </p>
+
+            <p>
+                However, if you would like to adjust that building process you will need to use
+                SessionFactoryBuilder as obtained via Metadata#getSessionFactoryBuilder.   Again, see its
+                javadocs for full details.
+            </p>
+
+            <div class="example"><a id="d5e288"/><p class="title"><strong>Example 3.7. Building SessionFactory via SessionFactoryBuilder</strong></p><div class="example-contents">
+                
+                <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">SessionFactoryBuilder sessionFactoryBuilder = metadata.getSessionFactoryBuilder();
+
+// Supply an SessionFactory-level Interceptor
+sessionFactoryBuilder.applyInterceptor( new MySessionFactoryInterceptor() );
+
+// Add a custom observer
+sessionFactoryBuilder.addSessionFactoryObservers( new MySessionFactoryObserver() );
+
+// Apply a CDI BeanManager (for JPA event listeners)
+sessionFactoryBuilder.applyBeanManager( getBeanManagerFromSomewhere() );
+
+SessionFactory sessionFactory = sessionFactoryBuilder.build();</pre>
+            </div></div><br class="example-break"/>
+
+            <p>
+                The bootstrapping API is quite flexible, but in most cases it makes the most sense to think of
+                it as a 3 step process:
+                </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+                        Build the StandardServiceRegistry
+                    </li><li class="listitem">
+                        Build the Metadata
+                    </li><li class="listitem">
+                        Use those 2 things to build the SessionFactory
+                    </li></ol></div><p>
+            </p>
+
+            <div class="example"><a id="d5e296"/><p class="title"><strong>Example 3.8. Native Bootstrapping - Putting it all together</strong></p><div class="example-contents">
+                
+                <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder()
+		.configure( "org/hibernate/example/MyCfg.xml" )
+		.build();
+
+Metadata metadata = new MetadataSources( standardRegistry )
+		.addAnnotatedClass( MyEntity.class )
+		.addAnnotatedClassName( "org.hibernate.example.Customer" )
+		.addResource( "org/hibernate/example/Order.hbm.xml" )
+		.addResource( "org/hibernate/example/Product.orm.xml" )
+		.getMetadataBuilder()
+		.applyImplicitNamingStrategy( ImplicitNamingStrategyJpaCompliantImpl.INSTANCE )
+		.build();
+
+SessionFactory sessionFactory = metadata.getSessionFactoryBuilder()
+		.applyBeanManager( getBeanManagerFromSomewhere() )
+		.build();</pre>
+            </div></div><br class="example-break"/>
+        </div>
+    </div>
+
+    <div class="section" title="3.2. JPA Bootstrapping"><div class="titlepage"><div><div><h2 class="title"><a id="bootstrap-jpa"/>3.2. JPA Bootstrapping</h2></div></div></div>
+        
+
+        <p>
+            Bootstrapping Hibernate as a JPA provider can be done in a JPA-spec compliant manner or using a proprietary
+            bootstrapping approach.  The standardized approach has some limitations in certain environments, but aside
+            from those limitations, it is *highly* recommended that you use JPA-standardized bootstrapping.
+        </p>
+
+        
+
+        <div class="section" title="3.2.1. JPA-compliant bootstrapping"><div class="titlepage"><div><div><h3 class="title"><a id="bootstrap-jpa-compliant"/>3.2.1. JPA-compliant bootstrapping</h3></div></div></div>
+            
+
+            <p>
+                In JPA we are ultimately interested in bootstrapping an javax.persistence.EntityManagerFactory instance.
+                The JPA specification defines 2 primary standardized bootstrap approaches depending on how the
+                application intends to access the javax.persistence.EntityManager instances from an
+                EntityManagerFactory. It uses the terms "EE" and "SE" for these 2 approaches, but those terms are very
+                misleading in this context.  What the JPA spec calls EE bootstrapping is cases where a container
+                (EE, OSGi, etc) will manage and inject the persistence context on behalf of the application.
+                What it calls SE bootstrapping is everything else.  We will use the terms
+                container-bootstrapping and application-bootstrapping in this guide.
+            </p>
+
+            <div class="sidebar"><div class="titlepage"/>
+                <p>
+                    If you would like additional details on accessing and using EntityManager instances, sections 7.6
+                    and 7.7 of the JPA 2.1 specification cover container-managed and application-managed EntityManagers,
+                    respectively.
+                </p>
+            </div>
+
+            <p>
+                For compliant container-bootstrapping, the container will build an EntityManagerFactory for each
+                persistent-unit defined in the deployment's META-INF/persistence.xml and make that available to the
+                application for injection via the javax.persistence.PersistenceUnit annotation or via JNDI lookup.
+            </p>
+
+            <div class="example"><a id="d5e308"/><p class="title"><strong>Example 3.9. Injecting a EntityManagerFactory</strong></p><div class="example-contents">
+                
+                <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">@PersistenceUnit
+EntityManagerFactory emf;</pre>
+            </div></div><br class="example-break"/>
+
+            <p>
+                For compliant application-bootstrapping, rather than the container building the
+                EntityManagerFactory for the application, the application builds the EntityManagerFactory itself
+                using the javax.persistence.Persistence bootstrap class.  The application creates an entity manager
+                factory by calling the createEntityManagerFactory method:
+            </p>
+
+            <div class="example"><a id="d5e312"/><p class="title"><strong>Example 3.10. Application bootstrapped EntityManagerFactory</strong></p><div class="example-contents">
+                
+                <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">// Create an EMF for our CRM persistence-unit.
+EntityManagerFactory emf = Persistence.createEntityManagerFactory("CRM");</pre>
+            </div></div><br class="example-break"/>
+        </div>
+        <div class="section" title="3.2.2. Proprietary 2-phase bootstrapping"><div class="titlepage"><div><div><h3 class="title"><a id="bootstrap-jpa-hibernate"/>3.2.2. Proprietary 2-phase bootstrapping</h3></div></div></div>
+            
+            <p>
+                
+                todo
+            </p>
+        </div>
+    </div>
+</div><hr xmlns="" xmlns:d="http://docbook.org/ns/docbook"/><a xmlns="" xmlns:d="http://docbook.org/ns/docbook" href="legalnotice.html"/><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="ch02.html"><strong>Prev</strong>Chapter 2. Domain Model</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="ch04.html"><strong>Next</strong>Chapter 4. Persistence Contexts</a></li></ul></body></html>

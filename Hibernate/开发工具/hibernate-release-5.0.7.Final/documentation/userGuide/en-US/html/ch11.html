@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 11. Caching</title><link rel="stylesheet" type="text/css" href="css/hibernate.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"/><link rel="home" href="index.html" title="Hibernate User Guide"/><link rel="up" href="index.html" title="Hibernate User Guide"/><link rel="prev" href="ch10.html" title="Chapter 10. Batching"/><link rel="next" href="ch12.html" title="Chapter 12. Interceptors and events"/><meta xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/></head><body><p xmlns:d="http://docbook.org/ns/docbook" id="title"><a href="http://www.hibernate.org" class="site_href"><strong>Hibernate.org</strong></a><a href="http://hibernate.org/Documentation/DocumentationOverview" class="doc_href"><strong>Community Documentation</strong></a></p><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="ch10.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="ch12.html"><strong>Next</strong></a></li></ul><div class="chapter" title="Chapter 11. Caching"><div class="titlepage"><div><div><h2 class="title"><a id="caching"/>Chapter 11. Caching</h2></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="section"><a href="ch11.html#caching-config">11.1. Configuring second-level caching</a></span></dt><dd><dl><dt><span class="section"><a href="ch11.html#caching-config-provider">11.1.1. RegionFactory</a></span></dt><dt><span class="section"><a href="ch11.html#caching-config-behavior">11.1.2. Caching behavior</a></span></dt></dl></dd><dt><span class="section"><a href="ch11.html#caching-management">11.2. Managing the Cached Data</a></span></dt></dl></div>
+    
+
+    <div class="section" title="11.1. Configuring second-level caching"><div class="titlepage"><div><div><h2 class="title"><a id="caching-config"/>11.1. Configuring second-level caching</h2></div></div></div>
+        
+
+        <p>
+            Hibernate defines the ability to integrate with pluggable providers for the purpose of
+            caching data outside the context of a particular Session.  This section defines
+            the settings which control that behavior.
+        </p>
+
+        <div class="section" title="11.1.1. RegionFactory"><div class="titlepage"><div><div><h3 class="title"><a id="caching-config-provider"/>11.1.1. RegionFactory</h3></div></div></div>
+            
+
+            <p>
+                <code class="interfacename">org.hibernate.cache.spi.RegionFactory</code> defines the integration
+                between Hibernate and a pluggable caching provider.  <code class="literal">hibernate.cache.region.factory_class</code>
+                is used to declare the provider to use.  Hibernate comes with support for 2 popular caching
+                libraries: Ehcache and Infinispan.
+            </p>
+
+            <div class="section" title="11.1.1.1. Ehcache"><div class="titlepage"><div><div><h4 class="title"><a id="caching-config-provider-ehcache"/>11.1.1.1. Ehcache</h4></div></div></div>
+                
+                <div xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="important" style="margin-left: 0.5in; margin-right: 0.5in;"><h2>Important</h2>
+                    <p>
+                        Use of the build-in integration for Ehcache requires that the hibernate-ehcache module
+                        jar (and all of its dependencies) are on the classpath.
+                    </p>
+                </div>
+                <p>
+                    The hibernate-ehcache module defines 2 specific providers:
+                    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">
+                            <p>
+                                
+                                <code class="literal">ehcache</code> - todo : document
+                            </p>
+                        </li><li class="listitem">
+                            <p>
+                                
+                                <code class="literal">ehcache-singleton</code> - todo : document
+                            </p>
+                        </li></ul></div><p>
+                </p>
+            </div>
+
+            <div class="section" title="11.1.1.2. Infinispan"><div class="titlepage"><div><div><h4 class="title"><a id="caching-config-provider-infinispan"/>11.1.1.2. Infinispan</h4></div></div></div>
+                
+                <div xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="important" style="margin-left: 0.5in; margin-right: 0.5in;"><h2>Important</h2>
+                    <p>
+                        Use of the build-in integration for Infinispan requires that the hibernate-infinispan module
+                        jar (and all of its dependencies) are on the classpath.
+                    </p>
+                </div>
+                <p>
+                    The hibernate-infinispan module defines 2 specific providers:
+                    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">
+                            <p>
+                                
+                                <code class="literal">infinispan</code> - todo : document
+                            </p>
+                        </li><li class="listitem">
+                            <p>
+                                
+                                <code class="literal">infinispan-jndi</code> - todo : document
+                            </p>
+                        </li></ul></div><p>
+                </p>
+            </div>
+        </div>
+
+        <div class="section" title="11.1.2. Caching behavior"><div class="titlepage"><div><div><h3 class="title"><a id="caching-config-behavior"/>11.1.2. Caching behavior</h3></div></div></div>
+            
+
+            <p>
+                Besides specific provider configuration, there are a number of configurations options on the
+                Hibernate side of the integration that control various caching behavior:
+                </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">
+                        <p>
+                            <code class="literal">hibernate.cache.use_second_level_cache</code> - Enable or disable
+                            second level caching overall.  Default is true.
+                        </p>
+                    </li><li class="listitem">
+                        <code class="literal">hibernate.cache.use_query_cache</code> - Enable or disable second level
+                        caching of query results.  Default is false.
+                    </li><li class="listitem">
+                        <code class="literal">hibernate.cache.query_cache_factory</code> - Query result caching is
+                        handled by a special contract that deals with staleness-based invalidation of the results.
+                        The default implementation does not allow stale results at all.  Use this for applications
+                        that would like to relax that.  Names an implementation of
+                        <code class="interfacename">org.hibernate.cache.spi.QueryCacheFactory</code>
+                    </li><li class="listitem">
+                        <code class="literal">hibernate.cache.use_minimal_puts</code> - Optimizes second-level cache
+                        operations to minimize writes, at the cost of more frequent reads.  Providers typically
+                        set this appropriately.
+                    </li><li class="listitem">
+                        <code class="literal">hibernate.cache.region_prefix</code> - Defines a name to be used as a prefix to
+                        all second-level cache region names.
+                    </li><li class="listitem">
+                        <code class="literal">hibernate.cache.default_cache_concurrency_strategy</code> - In Hibernate
+                        second-level caching, all regions can be configured differently including the concurrency
+                        strategy to use when accessing the region.  This setting allows to define a default strategy to
+                        be used.  This setting is very rarely required as the pluggable providers do specify the
+                        default strategy to use.  Valid values include: <code class="literal">read-only</code>,
+                        <code class="literal">read-write</code>, <code class="literal">nonstrict-read-write</code>,
+                        <code class="literal">transactional</code>.
+                    </li><li class="listitem">
+                        <code class="literal">hibernate.cache.use_structured_entries</code> - If <code class="literal">true</code>,
+                        forces Hibernate to store data in the second-level cache in a more human-friendly format.
+                        Can be useful if you'd like to be able to "browse" the data directly in your cache, but does
+                        have a performance impact.
+                    </li><li class="listitem">
+                        <code class="literal">hibernate.cache.auto_evict_collection_cache</code> - Enables or disables the
+                        automatic eviction of a bi-directional association's collection cache entry when the association
+                        is changed just from the owning side.  This is disabled by default, as it has a performance
+                        impact to track this state.  However if your application does not manage both sides
+                        of bi-directional association where the collection side is cached, the alternative is to
+                        have stale data in that collection cache.
+                    </li></ul></div><p>
+            </p>
+        </div>
+    </div>
+
+    <div class="section" title="11.2. Managing the Cached Data"><div class="titlepage"><div><div><h2 class="title"><a id="caching-management"/>11.2. Managing the Cached Data</h2></div></div></div>
+        
+
+        <p>
+            At runtime Hibernate handles moving data into and out of the second-level cache
+            in response to the operations performed by the Session.
+        </p>
+
+        
+
+        <p>
+            The <code class="interfacename">org.hibernate.Cache</code> interface (or the <code class="interfacename">javax.persistence.Cache</code>
+            interface if using JPA) allow to clear data from the second-level cache.
+        </p>
+    </div>
+</div><hr xmlns="" xmlns:d="http://docbook.org/ns/docbook"/><a xmlns="" xmlns:d="http://docbook.org/ns/docbook" href="legalnotice.html"/><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="ch10.html"><strong>Prev</strong>Chapter 10. Batching</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="ch12.html"><strong>Next</strong>Chapter 12. Interceptors and events</a></li></ul></body></html>

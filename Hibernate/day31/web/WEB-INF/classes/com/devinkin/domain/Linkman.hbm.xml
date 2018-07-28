@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <!-- 配置类和表结构的映射 -->
+    <class name="com.devinkin.domain.Linkman" table="cst_linkman">
+        <!-- 配置id，主键 -->
+        <!-- 见到name属性，JavaBean的属性
+             见到column的属性，是表结构的字段 -->
+        <id name="lkm_id" column="lkm_id">
+            <!-- 主键的生成策略 -->
+            <generator class="native"/>
+        </id>
+
+        <!-- 配置其他的属性 -->
+        <property name="lkm_name" column="lkm_name"/>
+        <property name="lkm_gender" column="lkm_gender"/>
+        <property name="lkm_phone" column="lkm_phone"/>
+        <property name="lkm_mobile" column="lkm_mobile"/>
+        <property name="lkm_email" column="lkm_email"/>
+        <property name="lkm_qq" column="lkm_qq"/>
+        <property name="lkm_position" column="lkm_position"/>
+        <property name="lkm_memo" column="lkm_memo"/>
+
+        <!-- 先配置多方
+            name：当前JavaBean中的属性
+            class：当前类的全路径
+            column：外键的字段
+        -->
+        <many-to-one name="customer"
+                     class="com.devinkin.domain.Customer"
+                     column="lkm_cust_id"
+                     cascade="save-update"
+                     fetch="join"
+                     lazy="false"
+        />
+    </class>
+</hibernate-mapping>

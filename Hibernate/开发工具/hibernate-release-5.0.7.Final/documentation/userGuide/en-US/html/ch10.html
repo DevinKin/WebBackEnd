@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 10. Batching</title><link rel="stylesheet" type="text/css" href="css/hibernate.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"/><link rel="home" href="index.html" title="Hibernate User Guide"/><link rel="up" href="index.html" title="Hibernate User Guide"/><link rel="prev" href="ch09.html" title="Chapter 9. Fetching"/><link rel="next" href="ch11.html" title="Chapter 11. Caching"/><meta xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/></head><body><p xmlns:d="http://docbook.org/ns/docbook" id="title"><a href="http://www.hibernate.org" class="site_href"><strong>Hibernate.org</strong></a><a href="http://hibernate.org/Documentation/DocumentationOverview" class="doc_href"><strong>Community Documentation</strong></a></p><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="ch09.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="ch11.html"><strong>Next</strong></a></li></ul><div class="chapter" title="Chapter 10. Batching"><div class="titlepage"><div><div><h2 class="title"><a id="batch"/>Chapter 10. Batching</h2></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="section"><a href="ch10.html#batch-jdbcbatch">10.1. JDBC batching</a></span></dt></dl></div>
+    
+
+    <p>
+        First we need to decide what all to discuss here as that phrase has so many connotations. Do we cover
+        </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">JDBC batch updates?</li><li class="listitem">Session w/ incremental flushing?</li><li class="listitem">StatelessSession?</li><li class="listitem">Java EE batching?</li><li class="listitem">Any/all of the above?</li><li class="listitem">Others?</li></ul></div><p>
+    </p>
+
+    <div class="section" title="10.1. JDBC batching"><div class="titlepage"><div><div><h2 class="title"><a id="batch-jdbcbatch"/>10.1. JDBC batching</h2></div></div></div>
+        
+
+        <p>
+            JDBC offers support for batching together SQL statements that can be represented
+            as a single PreparedStatement.  Implementation wise this generally means that drivers
+            will send the batched operation to the server in one call, which can save on network calls
+            to the database.  Hibernate can leverage JDBC batching.  The following settings control this
+            behavior.
+        </p>
+
+        <div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">
+                <p>
+                    <code class="literal">hibernate.jdbc.batch_size</code> - Controls the maximum number of
+                    statements Hibernate will batch together before asking the driver to execute
+                    the batch.  Zero or a negative number disables this feature.
+                </p>
+            </li><li class="listitem">
+                <p>
+                    <code class="literal">hibernate.jdbc.batch_versioned_data</code> - Some JDBC drivers
+                    return incorrect row counts when a batch is executed.  If your JDBC driver
+                    falls into this category this setting should be set to <code class="literal">false</code>.
+                    Otherwise it is safe to enable this which will allow Hibernate to still
+                    batch the DML for versioned entities and still use the returned row counts for
+                    optimitic lock checks.  Currently defaults to false to be safe.
+                </p>
+            </li><li class="listitem">
+                <p>
+                    <code class="literal">hibernate.jdbc.batch.builder</code> - Names the implementation class
+                    used to manage batching capabilities.  It is almost never a good idea to switch from
+                    Hibernate's default implementation.  But if you wish to, this setting would name the
+                    <code class="interfacename">org.hibernate.engine.jdbc.batch.spi.BatchBuilder</code>
+                    implementation to use.
+                </p>
+            </li><li class="listitem">
+                <p>
+                    <code class="literal">hibernate.order_update</code> - Forces Hibernate to order SQL updates by the
+                    entity type and the primary key value of the items being updated. This allows for more batching
+                    to be used.  It will also result in fewer transaction deadlocks in highly concurrent systems.
+                    Comes with a performance hit, so benchmark before and after to see if this actually helps or
+                    hurts your application.
+                </p>
+            </li><li class="listitem">
+                <p>
+                    <code class="literal">hibernate.order_inserts</code> - Forces Hibernate to order inserts to allow for
+                    more batching to be used.  Comes with a performance hit, so benchmark before and after to see
+                    if this actually helps or hurts your application.
+                </p>
+            </li></ul></div>
+    </div>
+</div><hr xmlns="" xmlns:d="http://docbook.org/ns/docbook"/><a xmlns="" xmlns:d="http://docbook.org/ns/docbook" href="legalnotice.html"/><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="ch09.html"><strong>Prev</strong>Chapter 9. Fetching</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="ch11.html"><strong>Next</strong>Chapter 11. Caching</a></li></ul></body></html>
