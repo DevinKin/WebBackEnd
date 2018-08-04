@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <package name="demo1" namespace="/" extends="struts-default">
+        <!-- 配置全局结果页面 -->
+        <global-results>
+            <result name="success" >/demo1/suc.jsp</result>
+        </global-results>
+
+
+        <!-- 完全解耦合的方式 -->
+		<action name="demo1Action" class="com.devinkin.demo1.Demo1Action">
+            <result name="success" >/demo1/suc.jsp</result>
+        </action>
+        <!-- 原生ServletAPI的方式 -->
+        <action name="demo2Action" class="com.devinkin.demo1.Demo2Action">
+            <result name="success">/demo1/suc.jsp</result>
+        </action>
+
+        <!-- 演示重定向到Action -->
+        <action name="demo3Action_*" class="com.devinkin.demo1.Demo3Action" method="{1}">
+            <result name="success" type="redirectAction">demo3Action_update.action</result>
+        </action>
+	</package>
+
+    <package name="demo2" extends="struts-default" namespace="/">
+        <!-- 属性驱动的方式 -->
+        <action name="regist1" class="com.devinkin.demo2.Regist1Action"></action>
+        <!-- 属性驱动的方式，把数据封装到JavaBean中 -->
+        <action name="regist2" class="com.devinkin.demo2.Regist2Action"></action>
+        <!-- 模型驱动的方式 -->
+        <action name="regist3" class="com.devinkin.demo2.Regist3Action"></action>
+        <!-- 将对象封装到List集合中 -->
+        <action name="regist4" class="com.devinkin.demo2.Regist4Action"></action>
+        <!-- 将对象封装到Map集合中 -->
+        <action name="regist5" class="com.devinkin.demo2.Regist5Action"></action>
+    </package>
+
+    <package name="demo3" extends="struts-default" namespace="/">
+        <!-- 第一种方式 -->
+        <!--<interceptors>-->
+            <!--<interceptor name="DemoInterceptor" class="com.devinkin.interceptor.DemoInterceptor"/>-->
+        <!--</interceptors>-->
+        
+        <!-- 第二种方式：定义拦截器栈 -->
+        <interceptors>
+            <interceptor name="DemoInterceptor" class="com.devinkin.interceptor.DemoInterceptor"/>
+            <!-- 定义拦截器栈 -->
+            <interceptor-stack name="myStack">
+                <interceptor-ref name="DemoInterceptor"/>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+        </interceptors>
+        <action name="userAction" class="com.devinkin.demo3.UserAction">
+            <!-- 只要是引用了自己的拦截器，默认栈的拦截器就不执行了，必须手动引入默认栈拦截器 -->
+            <!--<interceptor-ref name="defaultStack"/>-->
+            <!--<interceptor-ref name="DemoInterceptor" />-->
+
+            <!-- 引入拦截器栈 -->
+            <interceptor-ref name="myStack"/>
+        </action>
+    </package>
+</struts>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <!-- 编写常量 -->
+    <constant name="struts.action.extension" value="do"></constant>
+    <!-- 开启动态方法访问 -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+    <!-- 包结构 -->
+    <package name="default" namespace="/" extends="struts-default"> <!-- 配置Action -->
+        <action name="hello" class="com.devinkin.action.HelloAction" method="sayHello">
+        <!--<action name="hello" class="com.devinkin.action.HelloAction">-->
+            <!-- 配置跳转的页面，路径的写法，在Struts2框架中，不管是转发还是重定向，都不用写项目名 -->
+            <result name="ok">/com.devinkin.demo1/success.jsp</result>
+        </action>
+        <!-- POJO类的方式 -->
+        <action name="demo1Action" class="com.devinkin.action1.com.devinkin.demo1.Demo1Action"></action>
+        <!-- 实现Action接口的方式 -->
+        <action name="demo2Action" class="com.devinkin.action1.Demo2Action">
+            <result name="login">/com.devinkin.demo1/com.devinkin.demo1.jsp</result>
+        </action>
+        <!-- 继承了ActionSupport类的方式 -->
+        <action name="demo3Action" class="com.devinkin.action1.Demo3Action"/>
+
+    </package>
+
+    <!-- 引入其他的配置文件 -->
+    <!--<include file="com/devinkin/user/struts_user.xml"/>-->
+
+    <!-- 演示Action的访问 -->
+    <package name="demo2" namespace="/" extends="struts-default">
+        <!-- 传统的方式 -->
+        <action name="saveCust" class="com.devinkin.action2.CustomerAction" method="save"/>
+        <action name="delCust" class="com.devinkin.action2.CustomerAction" method="delete"/>
+
+        <!-- 通配符的方式 -->
+        <action name="linkman_*" class="com.devinkin.action2.LinkmanAction" method="{1}">
+            <result name="saveOK">/com.devinkin.demo1/com.devinkin.demo1.jsp</result>
+            <result name="deleteOK">/demo2/demo2.jsp</result>
+        </action>
+        <!-- 配置动态方法访问的方式 -->
+        <!--<action name="user" class="com.devinkin.action2.UserAction" />-->
+    </package>
+
+    <package name="crm" namespace="/" extends="struts-default">
+        <action name="user_login" class="com.devinkin.action.UserAction" method="login">
+            <result name="login">/login.htm</result>
+            <result name="success">/index.htm</result>
+        </action>
+    </package>
+
+</struts>
