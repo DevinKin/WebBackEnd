@@ -31,4 +31,8 @@
     * [day29](./note/Hibernate/day29.md)
     * [day30](./note/Hibernate/day30.md)
     * [day31](./note/Hibernate/day31.md)
+* [Struts2](./note/Struts2/Struts2.md)
+    * [day32](./note/Struts2/day32.md)
+    * [day33](./note/Struts2/day33.md)
+    * [day34](./note/Struts2/day34.md)
 
