@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+				        http://www.springframework.org/schema/beans
+				        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 使用bean标签 -->
+    <!--<bean id="userService" class="com.devinkin.demo2.UserServiceImpl" init-method="init" destroy-method="destory"/>-->
+    <bean id="userService" class="com.devinkin.demo2.UserServiceImpl" p:name="小风">
+        <!--<property name="name" value="小风"/>-->
+    </bean>
+
+    <!-- 演示的依赖注入-->
+    <bean id="customerDao" class="com.devinkin.demo3.CustomerDaoImpl"/>
+    <bean id="customerService" class="com.devinkin.demo3.CustomerServiceImpl">
+        <property name="customerDao" ref="customerDao"/>
+    </bean>
+
+    <!-- 演示的构造方法的注入的方式 -->
+    <bean id="car1" class="com.devinkin.demo4.Car1">
+        <!--<constructor-arg name="cname" value="奇瑞QQ"/>-->
+        <!--<constructor-arg name="price" value="25000"/>-->
+        <constructor-arg index="0" value="长安奔奔"/>
+        <constructor-arg index="1" value="45000"/>
+    </bean>
+
+    <!-- 采用名称空间方式注入 -->
+    <!--<bean id="car2" class="com.devinkin.demo4.Car2" p:cname="奔驰" p:price="123451"/>-->
+
+    <!-- 使用 SPEL 方式注入 -->
+    <bean id="car2" class="com.devinkin.demo4.Car2">
+        <property name="cname" value="#{'福特野马'}"/>
+        <property name="price" value="#{450000}"/>
+    </bean>
+
+    <bean id="person" class="com.devinkin.demo4.Person">
+        <constructor-arg name="pname" value="么么"/>
+        <constructor-arg name="car1" ref="car1"/>
+    </bean>
+
+    <!-- 注入集合 -->
+    <!--<bean id="user" class="com.devinkin.demo4.User">-->
+        <!--<property name="arrs">-->
+            <!--<list>-->
+                <!--<value>哈哈</value>-->
+                <!--<value>拉拉</value>-->
+                <!--<value>嘿嘿</value>-->
+            <!--</list>-->
+        <!--</property>-->
+
+        <!--<property name="list">-->
+            <!--<list>-->
+                <!--<value>美美</value>-->
+                <!--<value>拉拉</value>-->
+                <!--<value>会话</value>-->
+            <!--</list>-->
+        <!--</property>-->
+
+        <!--<property name="map">-->
+            <!--<map>-->
+                <!--<entry key="aaa" value="小苍"></entry>-->
+                <!--<entry key="bbb" value="小泽"></entry>-->
+            <!--</map>-->
+        <!--</property>-->
+
+        <!--<property name="pro">-->
+            <!--<props>-->
+                <!--<prop key="username">root</prop>-->
+                <!--<prop key="password">1234</prop>-->
+            <!--</props>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!-- 引入其他的配置文件 -->
+    <!--<import resource="com/devinkin/demo4/applicationContext2.xml"/>-->
+
+</beans>

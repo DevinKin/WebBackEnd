@@ -1,0 +1,28 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="day37">
+    <output-path>$PROJECT_DIR$/out/artifacts/day37</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="day37/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="day37" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="module" name="JUnit4" module-name="day37" />
+          <element id="library" level="module" name="com.springsource.org.aopalliance-1.0.0" module-name="day37" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37/web/WEB-INF/lib/spring-aop-4.2.4.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37/web/WEB-INF/lib/spring-core-4.2.4.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37/web/WEB-INF/lib/spring-test-4.2.4.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37/web/WEB-INF/lib/spring-beans-4.2.4.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37/web/WEB-INF/lib/spring-aspects-4.2.4.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37/web/WEB-INF/lib/spring-context-4.2.4.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37/web/WEB-INF/lib/spring-expression-4.2.4.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37/web/WEB-INF/lib/com.springsource.org.aopalliance-1.0.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37/web/WEB-INF/lib/com.springsource.org.apache.log4j-1.2.15.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37/web/WEB-INF/lib/com.springsource.org.apache.commons.logging-1.1.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37/web/WEB-INF/lib/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

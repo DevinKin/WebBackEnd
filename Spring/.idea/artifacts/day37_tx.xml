@@ -1,0 +1,31 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="day37_tx">
+    <output-path>$PROJECT_DIR$/out/artifacts/day37_tx</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="day37_tx/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="day37_tx" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/day37_tx/web/WEB-INF/lib/spring-tx-4.2.4.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37_tx/web/WEB-INF/lib/spring-aop-4.2.4.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37_tx/web/WEB-INF/lib/spring-core-4.2.4.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37_tx/web/WEB-INF/lib/spring-jdbc-4.2.4.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37_tx/web/WEB-INF/lib/spring-test-4.2.4.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37_tx/web/WEB-INF/lib/spring-beans-4.2.4.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37_tx/web/WEB-INF/lib/spring-aspects-4.2.4.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37_tx/web/WEB-INF/lib/spring-context-4.2.4.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37_tx/web/WEB-INF/lib/mysql-connector-java-5.1.7-bin.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37_tx/web/WEB-INF/lib/spring-expression-4.2.4.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37_tx/web/WEB-INF/lib/com.springsource.org.aopalliance-1.0.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37_tx/web/WEB-INF/lib/com.springsource.org.apache.log4j-1.2.15.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37_tx/web/WEB-INF/lib/com.springsource.com.mchange.v2.c3p0-0.9.1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37_tx/web/WEB-INF/lib/com.springsource.org.apache.commons.logging-1.1.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/day37_tx/web/WEB-INF/lib/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar" />
+          <element id="library" level="module" name="JUnit4" module-name="day37_tx" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

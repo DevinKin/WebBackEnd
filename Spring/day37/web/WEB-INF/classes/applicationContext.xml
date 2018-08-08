@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- 配置目标对象 -->
+	<bean id="customerDao" class="com.devinkin.demo1.CustomerDaoImpl">
+
+    </bean>
+
+    <!-- 配置切面类 -->
+    <bean id="myAspectAnno" class="com.devinkin.demo1.MyAspectAnno"/>
+    <!-- 开启自动代理 -->
+    <aop:aspectj-autoproxy/>
+
+    <!--<aop:config>-->
+        <!--<aop:aspect ref="myAspectAnno">-->
+            <!--<aop:before method="log" pointcut="execution(* *..*.*DaoImpl.save(..))"/>-->
+        <!--</aop:aspect>-->
+    <!--</aop:config>-->
+</beans>

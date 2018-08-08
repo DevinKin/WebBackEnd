@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd"> <!-- bean definitions here -->
+
+    <!-- 配置客户的dao -->
+    <bean id="customerDao" class="com.devinkin.demo3.CustomerDaoImpl"></bean>
+
+    <!-- 编写切面类配置好 -->
+    <bean id="myAspectXml" class="com.devinkin.demo3.MyAspectXml"/>
+
+    <!-- 配置AOP -->
+    <aop:config>
+        <!-- 配置切面类：包含切入点+通知(类型) -->
+        <aop:aspect ref="myAspectXml">
+            <!-- 配置前置通知，save方法执行之前，增强的方法会执行 -->
+            <!-- 切入点表达式：execution(public void com.devinkin.demo3.CustomerDaoImpl.save())-->
+            <aop:before method="log" pointcut="execution(public void com.devinkin.demo3.CustomerDaoImpl.save())"/>
+        </aop:aspect>
+    </aop:config>
+</beans>

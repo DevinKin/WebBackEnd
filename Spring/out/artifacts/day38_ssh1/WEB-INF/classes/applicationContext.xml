@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- 第二种方式：不带有hibernate.cfg.xml文件 -->
+    <!-- 先配置C3P0的连接池 -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql:///day38_ssh"/>
+        <property name="user" value="dbuser"/>
+        <property name="password" value="secret"/>
+    </bean>
+
+    <!-- LocalSessionFactoryBean加载配置文件 -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <!-- 先加载连接池 -->
+        <property name="dataSource" ref="dataSource"/>
+        <!-- 加载方言，加载可选项-->
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto>">update</prop>
+            </props>
+        </property>
+        <!-- 引入映射的配置文件 -->
+        <property name="mappingResources">
+            <list>
+                <value>com/devinkin/domain/Customer.hbm.xml</value>
+            </list>
+        </property>
+
+        <!-- 不能配置绑定当前线程的操作 -->
+    </bean>
+
+
+    <!-- 编写bean，名称都是固定，加载hibernate.cfg.xml的配置文件 -->
+    <!--<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">-->
+        <!--<property name="configLocation" value="classpath:hibernate.cfg.xml_bak"/>-->
+    <!--</bean>-->
+
+    <!-- 注解方式开启事务 -->
+    <!-- 先配置平台事务管理器-->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!-- 开启事务的注解 -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+
+    <!-- 强调：以后配置Action，必须是多例的 -->
+    <bean id="customerAction" class="com.devinkin.web.action.CustomerAction" scope="prototype">
+        <property name="customerService" ref="customerService"/>
+    </bean>
+
+    <bean id="customerService" class="com.devinkin.service.CustomerServiceImpl">
+        <property name="customerDao" ref="customerDao"/>
+    </bean>
+
+    <!-- 以后Dao都需要继承HibernateDaoSupport，注入SessionFactory -->
+    <bean id="customerDao" class="com.devinkin.dao.CustomerDaoImpl">
+        <!--<property name="hibernatbeTemplate" ref="hibernateTemplate"/>-->
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!--<bean id="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">-->
+        <!--<property name="sessionFactory"/>-->
+    <!--</bean>-->
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+

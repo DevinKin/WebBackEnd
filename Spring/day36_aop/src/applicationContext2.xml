@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd"> <!-- bean definitions here -->
+
+    <!-- 配置客户的dao -->
+    <bean id="customerDao" class="com.devinkin.demo3.CustomerDaoImpl"></bean>
+
+    <!-- 编写切面类配置好 -->
+    <bean id="myAspectXml" class="com.devinkin.demo3.MyAspectXml"/>
+
+    <!-- 配置AOP -->
+    <aop:config>
+        <aop:aspect ref="myAspectXml">
+            <!-- 切入点的表达式
+                1. execution()：固定的，不能不写
+                2. public：可以省略不写
+                3. void：返回值，可以出现 * ，表示任意的返回值，返回值类型不能不写
+                4. 包名：不能不便携，简写的方式，可以使用 * 代替，*..* 代表任意
+                5. 类名： *DaoImpl，所有持久层实现类都进行增强
+                6. 方法： save*，所有的save相关的方法进行增强
+                7. 方法的参数：一个*代表一个参数，.. 表示任意参数
+            -->
+
+            <!--<aop:before method="log" pointcut="execution(public void com.devinkin.demo3.CustomerDaoImpl.save())"/>-->
+            <!-- public 可以省略不写 -->
+            <!--<aop:before method="log" pointcut="execution( void com.devinkin.demo3.CustomerDaoImpl.save())"/>-->
+
+            <!-- void不可以不写，*为返回任意类型 -->
+            <!--<aop:before method="log" pointcut="execution( int com.devinkin.demo3.CustomerDaoImpl.save())"/>-->
+            <!--<aop:before method="log" pointcut="execution( * com.devinkin.demo3.CustomerDaoImpl.save())"/>-->
+
+            <!-- 包名可以使用 * 代替，不能不写 -->
+            <!--<aop:before method="log" pointcut="execution( * com.*.*.CustomerDaoImpl.save())"/>-->
+
+            <!-- 包的简写方式，任意的包的结构 -->
+            <!--<aop:before method="log" pointcut="execution( * *..*.CustomerDaoImpl.save())"/>-->
+
+            <!-- 编写类的写法 -->
+            <!--<aop:before method="log" pointcut="execution( * *..*.*DaoImpl.save())"/>-->
+
+            <!-- 编写方法的写法-->
+            <aop:before method="log" pointcut="execution( * *..*.*DaoImpl.save*(..))"/>
+
+            <!-- 参数列表，一个*代表一个参数，任意参数使用 .. -->
+            <!--<aop:before method="log" pointcut="execution( * *..*.*DaoImpl.save*(*))"/>-->
+        </aop:aspect>
+    </aop:config>
+</beans>

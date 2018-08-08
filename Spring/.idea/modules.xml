@@ -3,6 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Spring.iml" filepath="$PROJECT_DIR$/Spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day35/day35.iml" filepath="$PROJECT_DIR$/day35/day35.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day35_crm/day35_crm.iml" filepath="$PROJECT_DIR$/day35_crm/day35_crm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day36/day36.iml" filepath="$PROJECT_DIR$/day36/day36.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day36_aop/day36_aop.iml" filepath="$PROJECT_DIR$/day36_aop/day36_aop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day37/day37.iml" filepath="$PROJECT_DIR$/day37/day37.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day37_jdbc/day37_jdbc.iml" filepath="$PROJECT_DIR$/day37_jdbc/day37_jdbc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day37_tx/day37_tx.iml" filepath="$PROJECT_DIR$/day37_tx/day37_tx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day38_ssh1/day38_ssh1.iml" filepath="$PROJECT_DIR$/day38_ssh1/day38_ssh1.iml" />
     </modules>
   </component>
 </project>
