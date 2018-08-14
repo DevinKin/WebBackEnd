@@ -21,7 +21,7 @@
     * [day17](./note/JavaWeb/day17.md)
 * [Project](./note/Project/project.md)
     * [JavaWeb](./note/Project/JavaWeb/JavaWeb.md)
-    * [Latex](./note/Project/JavaWeb/latex.md)
+    * [SSH](./note/Project/SSH/SSH.md)
 * [Oracle](./note/Oracle/Oracle.md)
     * [day25](./note/Oracle/day25.md)
     * [day26](./note/Oracle/day26.md)
@@ -40,4 +40,6 @@
     * [day36](./note/Spring/day36.md)
     * [day37](./note/Spring/day37.md)
     * [day38](./note/Spring/day38.md)
-
+* [SSH](./note/SSH/SSH.md)
+    * [day39](./note/SSH/day39.md)
+    * [day40](./note/SSH/day40.md)

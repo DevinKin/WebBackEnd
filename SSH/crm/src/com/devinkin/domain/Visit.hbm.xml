@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	
+	<class name="com.devinkin.domain.Visit" table="sale_visit">
+		<id name="visit_id" column="visit_id">
+            <!-- 主键是字符串类型 -->
+			<generator class="uuid"/>
+		</id>
+
+		<property name="visit_time" column="visit_time"/>
+        <property name="visit_interviewee" column="visit_interviewee"/>
+        <property name="visit_addr" column="visit_addr"/>
+        <property name="visit_detail" column="visit_detail"/>
+        <property name="visit_nexttime" column="visit_nexttime"/>
+
+
+        <!-- 配置多对一 -->
+        <many-to-one name="customer" class="com.devinkin.domain.Customer" column="visit_cust_id"/>
+        <many-to-one name="user" class="com.devinkin.domain.User" column="visit_user_id"/>
+
+	</class>
+	
+</hibernate-mapping>    
