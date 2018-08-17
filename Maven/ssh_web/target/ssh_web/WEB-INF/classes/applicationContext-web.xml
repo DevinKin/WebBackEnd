@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+
+
+    <!-- 配置用户的模块 -->
+    <bean id="userAction" class="cn.devinkin.crm.web.action.UserAction" scope="prototype">
+        <property name="userService" ref="userService"/>
+    </bean>
+
+    <!-- 配置客户模块 -->
+    <!-- 强调：以后配置Action，必须是多例的 -->
+    <bean id="customerAction" class="cn.devinkin.crm.web.action.CustomerAction" scope="prototype">
+        <property name="customerService" ref="customerService"/>
+        <property name="linkmanService" ref="linkmanService"/>
+    </bean>
+
+
+    <!-- 数据字典 -->
+    <bean id="dictAction" class="cn.devinkin.crm.web.action.DictAction" scope="prototype">
+        <property name="dictService" ref="dictService"/>
+    </bean>
+
+
+    <!-- 配置联系人模块 -->
+    <bean id="linkmanAction" class="cn.devinkin.crm.web.action.LinkmanAction" scope="prototype">
+        <property name="linkmanService" ref="linkmanService"/>
+        <property name="customerService" ref="customerService"/>
+    </bean>
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+

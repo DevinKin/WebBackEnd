@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="crmstruts2" />
+        <module name="HelloWeb" />
+        <module name="ssh_dao" />
+        <module name="ssh_service" />
+        <module name="ssh_web" />
+        <module name="sshweb" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="crmstruts2" target="1.7" />
+      <module name="HelloWeb" target="1.7" />
+      <module name="helloworld" target="1.5" />
+      <module name="HelloWorld2" target="1.7" />
+      <module name="Maven" target="1.5" />
+      <module name="ssh_dao" target="1.5" />
+      <module name="ssh_service" target="1.6" />
+      <module name="ssh_web" target="1.7" />
+      <module name="sshweb" target="1.5" />
+      <module name="test1" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

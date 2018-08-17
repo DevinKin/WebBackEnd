@@ -43,3 +43,6 @@
 * [SSH](./note/SSH/SSH.md)
     * [day39](./note/SSH/day39.md)
     * [day40](./note/SSH/day40.md)
+* [Maven](./note/Maven/Maven.md)
+    * [day44](./note/Maven/day44.md)
+    * [day45](./note/Maven/day45.md)

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <script src="../../js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(
+            function(){
+                $("#lang").click(function(){
+                    if("block" == $("#huangbiao").css("display")){
+                        hideLi();
+                    }else{
+                        showLi();
+                    }
+                });
+
+                $("li").each(function(i,v){
+                    $(this).click(function(){
+                        $("#lang").val($(this).html());
+                        hideLi();
+                    });
+                });
+
+                $("#lang").blur(function(){
+                    setTimeout(hideLi,200);
+                });
+            }
+        );
+
+        function showLi(){
+            $("#huangbiao").show();
+        }
+        function hideLi(){
+            $("#huangbiao").hide();
+        }
+    </script>
+    <title>jquery实现div ul li模拟下拉选项功能_www.jbxue.com</title>
+</head>
+<body>
+<input type="text" id="lang" class="input" value="English" readonly="readonly"/>
+<DIV style="display: none" id="huangbiao">
+    <ul>
+        <li>dddd</li>
+        <li>ssss</li>
+    </ul>
+</DIV>
+</body>
+</html>

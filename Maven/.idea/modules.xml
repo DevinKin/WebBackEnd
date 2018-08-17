@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HelloWeb/HelloWeb.iml" filepath="$PROJECT_DIR$/HelloWeb/HelloWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Maven.iml" filepath="$PROJECT_DIR$/Maven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/crmstruts2/crmstruts2.iml" filepath="$PROJECT_DIR$/crmstruts2/crmstruts2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssh_service/ssh_service.iml" filepath="$PROJECT_DIR$/ssh_service/ssh_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssh_web/ssh_web.iml" filepath="$PROJECT_DIR$/ssh_web/ssh_web.iml" />
+    </modules>
+  </component>
+</project>

@@ -5,5 +5,6 @@
 ## [Struts2笔记](/note/Struts2/Struts2.html)
 ## [Spring笔记](/note/Spring/Spring.html)
 ## [SSH笔记](/note/SSH/SSH.html)
+## [Maven笔记](/note/Maven/Maven.html)
 ## Project-项目
 ### [JavaWeb项目笔记](/note/Project/JavaWeb/JavaWeb.html)

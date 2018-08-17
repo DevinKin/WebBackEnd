@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+    <!-- 开启注解的扫描-->
+    <context:component-scan base-package="cn.devinkin"/>
+
+    <!-- 注解方式开启事务 -->
+    <!-- 先配置平台事务管理器-->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!-- 开启事务的注解 -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <!-- 配置用户的模块 -->
+
+    <bean id="userService" class="cn.devinkin.crm.service.UserServiceImpl">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+
+    <!-- 配置客户模块 -->
+    <bean id="customerService" class="cn.devinkin.crm.service.CustomerServiceImpl">
+        <property name="customerDao" ref="customerDao"/>
+    </bean>
+
+
+    <!-- 数据字典 -->
+    <bean id="dictService" class="cn.devinkin.crm.service.DictServiceImpl">
+        <property name="dictDao" ref="dictDao"/>
+    </bean>
+
+
+    <!-- 配置联系人模块 -->
+
+    <bean id="linkmanService" class="cn.devinkin.crm.service.LinkmanServiceImpl">
+        <property name="linkmanDao" ref="linkmanDao"/>
+    </bean>
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
