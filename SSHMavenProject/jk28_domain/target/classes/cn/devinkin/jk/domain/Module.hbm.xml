@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.devinkin.jk.domain">
+    <class name="Module" table="MODULE_P" dynamic-update="true" dynamic-insert="true">
+        <id name="id" column="MODULE_ID">
+            <generator class="uuid"></generator>
+        </id>
+
+        <property name="parentId" column="PARENT_ID"/>
+        <property name="parentName" column="PARENT_NAME"/>
+        <property name="name" column="NAME"/>
+        <property name="layerNum" column="LAYER_NUM"/>
+        <property name="isLeaf" column="IS_LEAF"/>
+        <property name="ico" column="ICO"/>
+        <property name="cpermission" column="CPERMISSION"/>
+        <property name="curl" column="CURL"/>
+        <property name="ctype" column="CTYPE"/>
+        <property name="state" column="STATE"/>
+        <property name="belong" column="BELONG"/>
+        <property name="cwhich" column="CWHICH"/>
+        <property name="quoteNum" column="QUOTE_NUM"/>
+        <property name="remark" column="REMARK"/>
+        <property name="orderNo" column="ORDER_NO"/>
+
+        <property name="createBy" column="CREATE_BY"/>
+        <property name="createDept" column="CREATE_DEPT"/>
+        <property name="createTime" column="CREATE_TIME"/>
+        <property name="updateBy" column="UPDATE_BY"/>
+        <property name="updateTime" column="UPDATE_TIME"/>
+
+
+        <!-- 模块与角色，多对多 -->
+        <set name="roles" table="ROLE_MODULE_P">
+            <key column="MODULE_ID" ></key>
+            <many-to-many class="Role" column="ROLE_ID" order-by="ORDER_NO"></many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

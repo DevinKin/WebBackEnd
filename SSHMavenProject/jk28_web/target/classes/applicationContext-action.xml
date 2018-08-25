@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"       
+	xmlns:p="http://www.springframework.org/schema/p"  
+	xmlns:context="http://www.springframework.org/schema/context"   
+	xmlns:tx="http://www.springframework.org/schema/tx"  
+	xmlns:aop="http://www.springframework.org/schema/aop"  
+	xsi:schemaLocation="http://www.springframework.org/schema/beans    
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd    
+	http://www.springframework.org/schema/aop    
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd    
+	http://www.springframework.org/schema/tx    
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd    
+	http://www.springframework.org/schema/context    
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	
+	<bean id="loginAction" class="cn.devinkin.jk.action.LoginAction" scope="prototype"></bean>
+	<bean id="homeAction" class="cn.devinkin.jk.action.HomeAction" scope="prototype"></bean>
+
+    <bean id="deptAction" class="cn.devinkin.jk.action.sysadmin.DeptAction" scope="prototype">
+        <property name="deptService" ref="deptService"/>
+    </bean>
+    <bean id="userAction" class="cn.devinkin.jk.action.sysadmin.UserAction" scope="prototype">
+        <property name="userService" ref="userService"/>
+        <property name="deptService" ref="deptService"/>
+        <property name="roleService" ref="roleService"/>
+    </bean>
+    <bean id="roleAction" class="cn.devinkin.jk.action.sysadmin.RoleAction" scope="prototype">
+        <property name="roleService" ref="roleService"/>
+        <property name="moduleService" ref="moduleService"/>
+    </bean>
+    <bean id="moduleAction" class="cn.devinkin.jk.action.sysadmin.ModuleAction" scope="prototype">
+        <property name="moduleService" ref="moduleService"/>
+    </bean>
+
+    <bean id="contractAction" class="cn.devinkin.jk.action.cargo.ContractAction" scope="prototype">
+        <property name="contractService" ref="contractService"/>
+    </bean>
+
+    <bean id="contractProductAction" class="cn.devinkin.jk.action.cargo.ContractProductAction" scope="prototype">
+        <property name="contractProductService" ref="contractProductService"/>
+        <property name="factoryService" ref="factoryService"/>
+    </bean>
+
+    <bean id="extCproductAction" class="cn.devinkin.jk.action.cargo.ExtCproductAction" scope="prototype">
+        <property name="extCproductService" ref="extCproductService"/>
+        <property name="factoryService" ref="factoryService"/>
+    </bean>
+</beans>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.devinkin.jk.domain">
+    <class name="Role" table="ROLE_P" dynamic-insert="true" dynamic-update="true">
+        <id name="id" column="ROLE_ID">
+            <generator class="uuid"></generator>
+        </id>
+
+        <property name="name" column="NAME"/>
+        <property name="remark" column="REMARK"/>
+        <property name="orderNo" column="ORDER_NO"/>
+        <property name="createBy" column="CREATE_BY"/>
+        <property name="createDept" column="CREATE_DEPT"/>
+        <property name="createTime" column="CREATE_TIME"/>
+        <property name="updateBy" column="UPDATE_BY"/>
+        <property name="updateTime" column="UPDATE_TIME"/>
+
+        <!-- 用户与角色，多对多 -->
+        <set name="users" table="ROLE_USER_P">
+            <key column="ROLE_ID"></key>
+            <many-to-many class="User" column="USER_ID"></many-to-many>
+        </set>
+        <!-- 角色与模块 -->
+        <set name="modules" table="ROLE_MODULE_P">
+            <key column="ROLE_ID"></key>
+            <many-to-many class="Module" column="MODULE_ID" order-by="ORDER_NO"></many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

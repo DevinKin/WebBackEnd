@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SSHMavenProject.iml" filepath="$PROJECT_DIR$/SSHMavenProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jk28_dao/jk28_dao.iml" filepath="$PROJECT_DIR$/jk28_dao/jk28_dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jk28_domain/jk28_domain.iml" filepath="$PROJECT_DIR$/jk28_domain/jk28_domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jk28_exception/jk28_exception.iml" filepath="$PROJECT_DIR$/jk28_exception/jk28_exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jk28_service/jk28_service.iml" filepath="$PROJECT_DIR$/jk28_service/jk28_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jk28_utils/jk28_utils.iml" filepath="$PROJECT_DIR$/jk28_utils/jk28_utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jk28_web/jk28_web.iml" filepath="$PROJECT_DIR$/jk28_web/jk28_web.iml" />
+    </modules>
+  </component>
+</project>

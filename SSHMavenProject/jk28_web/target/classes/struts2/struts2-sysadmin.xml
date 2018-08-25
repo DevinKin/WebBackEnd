@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.ui.theme" value="simple"/>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+
+	<package name="sysadmin" namespace="/sysadmin" extends="default">
+        <action name="deptAction_*" class="cn.devinkin.jk.action.sysadmin.DeptAction" method="{1}">
+            <result name="list">/WEB-INF/pages/sysadmin/dept/jDeptList.jsp</result>
+            <result name="toview">/WEB-INF/pages/sysadmin/dept/jDeptView.jsp</result>
+            <result name="tocreate">/WEB-INF/pages/sysadmin/dept/jDeptCreate.jsp</result>
+            <result name="alist" type="redirectAction">deptAction_list</result>
+            <result name="toupdate">/WEB-INF/pages/sysadmin/dept/jDeptUpdate.jsp</result>
+            <result name="update" type="redirectAction">deptAction_list</result>
+            <result name="delete" type="redirectAction">deptAction_list</result>
+        </action>
+
+        <action name="userAction_*" class="cn.devinkin.jk.action.sysadmin.UserAction" method="{1}">
+            <result name="list">/WEB-INF/pages/sysadmin/user/jUserList.jsp</result>
+            <result name="toview">/WEB-INF/pages/sysadmin/user/jUserView.jsp</result>
+            <result name="tocreate">/WEB-INF/pages/sysadmin/user/jUserCreate.jsp</result>
+            <result name="alist" type="redirectAction">userAction_list</result>
+            <result name="toupdate">/WEB-INF/pages/sysadmin/user/jUserUpdate.jsp</result>
+            <result name="update" type="redirectAction">userAction_list</result>
+            <result name="delete" type="redirectAction">userAction_list</result>
+            <result name="torole">/WEB-INF/pages/sysadmin/user/jUserRole.jsp</result>
+            <result name="role" type="redirectAction">userAction_list</result>
+        </action>
+
+        <action name="roleAction_*" class="cn.devinkin.jk.action.sysadmin.RoleAction" method="{1}">
+            <result name="list">/WEB-INF/pages/sysadmin/role/jRoleList.jsp</result>
+            <result name="toview">/WEB-INF/pages/sysadmin/role/jRoleView.jsp</result>
+            <result name="tocreate">/WEB-INF/pages/sysadmin/role/jRoleCreate.jsp</result>
+            <result name="alist" type="redirectAction">roleAction_list</result>
+            <result name="toupdate">/WEB-INF/pages/sysadmin/role/jRoleUpdate.jsp</result>
+            <result name="update" type="redirectAction">roleAction_list</result>
+            <result name="delete" type="redirectAction">roleAction_list</result>
+            <result name="tomodule">/WEB-INF/pages/sysadmin/role/jRoleModule.jsp</result>
+        </action>
+
+        <action name="moduleAction_*" class="cn.devinkin.jk.action.sysadmin.ModuleAction" method="{1}">
+            <result name="list">/WEB-INF/pages/sysadmin/module/jModuleList.jsp</result>
+            <result name="toview">/WEB-INF/pages/sysadmin/module/jModuleView.jsp</result>
+            <result name="tocreate">/WEB-INF/pages/sysadmin/module/jModuleCreate.jsp</result>
+            <result name="alist" type="redirectAction">moduleAction_list</result>
+            <result name="toupdate">/WEB-INF/pages/sysadmin/module/jModuleUpdate.jsp</result>
+            <result name="update" type="redirectAction">moduleAction_list</result>
+            <result name="delete" type="redirectAction">moduleAction_list</result>
+        </action>
+    </package>
+
+
+</struts>
+

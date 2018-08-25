@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.ui.theme" value="simple"/>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+
+	<package name="cargo" namespace="/cargo" extends="default">
+        <action name="contractAction_*" class="cn.devinkin.jk.action.cargo.ContractAction" method="{1}">
+            <result name="list">/WEB-INF/pages/cargo/contract/jContractList.jsp</result>
+            <result name="toview">/WEB-INF/pages/cargo/contract/jContractView.jsp</result>
+            <result name="tocreate">/WEB-INF/pages/cargo/contract/jContractCreate.jsp</result>
+            <result name="alist" type="redirectAction">contractAction_list</result>
+            <result name="toupdate">/WEB-INF/pages/cargo/contract/jContractUpdate.jsp</result>
+            <result name="update" type="redirectAction">contractAction_list</result>
+            <result name="delete" type="redirectAction">contractAction_list</result>
+        </action>
+
+        <action name="contractProductAction_*" class="cn.devinkin.jk.action.cargo.ContractProductAction" method="{1}">
+            <result name="tocreate">/WEB-INF/pages/cargo/contract/jContractProductCreate.jsp</result>
+            <result name="toupdate">/WEB-INF/pages/cargo/contract/jContractProductUpdate.jsp</result>
+        </action>
+
+        <action name="extCproductAction_*" class="cn.devinkin.jk.action.cargo.ExtCproductAction" method="{1}">
+            <result name="tocreate">/WEB-INF/pages/cargo/contract/jExtCproductCreate.jsp</result>
+            <result name="toupdate">/WEB-INF/pages/cargo/contract/jExtCproductUpdate.jsp</result>
+        </action>
+    </package>
+
+
+</struts>
+

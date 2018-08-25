@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.devinkin.jk.domain">
+	<class name="Contract" table="CONTRACT_C" dynamic-insert="true" dynamic-update="true">
+		<id name="id" column="CONTRACT_ID">
+			<generator class="uuid"/>
+		</id>
+		<property name="offeror" column="OFFEROR"/>
+		<property name="contractNo" column="CONTRACT_NO"/>
+		<property name="signingDate" column="SIGNING_DATE"/>
+		<property name="inputBy" column="INPUT_BY"/>
+		<property name="checkBy" column="CHECK_BY"/>
+		<property name="inspector" column="INSPECTOR"/>
+		<property name="totalAmount" column="TOTAL_AMOUNT"/>
+		<property name="crequest" column="CREQUEST"/>
+		<property name="customName" column="CUSTOM_NAME"/>
+		<property name="shipTime" column="SHIP_TIME"/>
+		<property name="importNum" column="IMPORT_NUM"/>
+		<property name="deliveryPeriod" column="DELIVERY_PERIOD"/>
+		<property name="oldState" column="OLD_STATE"/>
+		<property name="outState" column="OUT_STATE"/>
+		<property name="tradeTerms" column="TRADE_TERMS"/>
+		<property name="printStyle" column="PRINT_STYLE"/>
+		<property name="remark" column="REMARK"/>
+		<property name="state" column="STATE"/>
+		
+		<property name="createBy" column="CREATE_BY"/>
+		<property name="createDept" column="CREATE_DEPT"/>
+		<property name="createTime" column="CREATE_TIME"/>
+		<property name="updateBy" column="UPDATE_BY"/>
+		<property name="updateTime" column="UPDATE_TIME"/>
+		
+		<!-- 合同和货物，一对多 -->
+		<set name="contractProducts" cascade="all" inverse="true">
+			<key column="CONTRACT_ID"></key>
+			<one-to-many class="ContractProduct"/>
+		</set>
+	</class>
+</hibernate-mapping>    
