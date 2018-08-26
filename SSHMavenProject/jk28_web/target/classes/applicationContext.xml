@@ -24,9 +24,9 @@
 	
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="jdbcUrl" value="jdbc:oracle:thin:@172.16.55.133:1521:orcl" />
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@172.16.32.225:1521:orcl" />
 		<property name="user" value="king" />
-		<property name="password" value="king" />
+		<property name="password" value="111111" />
 	</bean>
 	<!-- 2.sessionFactory-->
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
