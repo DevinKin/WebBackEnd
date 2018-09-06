@@ -2,6 +2,8 @@ package cn.devinkin.jk.action;
 
 import java.util.Map;
 
+import cn.devinkin.jk.domain.User;
+import cn.devinkin.jk.utils.SysConstant;
 import com.opensymphony.xwork2.ActionContext;
 import org.apache.log4j.Logger;
 import org.apache.struts2.interceptor.ApplicationAware;
@@ -68,5 +70,14 @@ public class BaseAction extends ActionSupport implements RequestAware, SessionAw
     public void put(String key, Object val) {
         ActionContext.getContext().put(key, val);
     }
+
+
+	/**
+	 * 获取当前登录用户的信息
+	 */
+	public User getCurrentUser() {
+		User user = (User)session.get(SysConstant.CURRENT_USER_INFO);
+		return user;
+	}
 
 }

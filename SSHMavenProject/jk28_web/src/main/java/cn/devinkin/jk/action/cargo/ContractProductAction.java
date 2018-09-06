@@ -1,14 +1,14 @@
 package cn.devinkin.jk.action.cargo;
 
 import cn.devinkin.jk.action.BaseAction;
+import cn.devinkin.jk.domain.Contract;
 import cn.devinkin.jk.domain.ContractProduct;
 import cn.devinkin.jk.domain.Factory;
-import cn.devinkin.jk.service.ContractProductService;
+import cn.devinkin.jk.service.cargo.ContractProductService;
 import cn.devinkin.jk.service.FactoryService;
 import cn.devinkin.jk.utils.Page;
 import com.opensymphony.xwork2.ModelDriven;
 
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -20,6 +20,7 @@ import java.util.List;
 public class ContractProductAction extends BaseAction implements ModelDriven<ContractProduct> {
 
     private ContractProduct model = new ContractProduct();
+
 
     @Override
     public ContractProduct getModel() {
@@ -43,6 +44,11 @@ public class ContractProductAction extends BaseAction implements ModelDriven<Con
     public void setContractProductService(ContractProductService contractProductService) {
         this.contractProductService = contractProductService;
     }
+
+//    private ContractService contractService;
+//    public void setContractService(ContractService contractService) {
+//        this.contractService = contractService;
+//    }
 
     // 注入FactoryProductService
     private FactoryService factoryService;
@@ -119,6 +125,14 @@ public class ContractProductAction extends BaseAction implements ModelDriven<Con
     public String update() throws Exception {
         // 调用业务
         ContractProduct contractProduct = contractProductService.get(ContractProduct.class, model.getId());
+
+        // 查找对应的购销合同
+//        Contract contract = contractService.get(Contract.class, contractProduct.getContract().getId());
+        Contract contract = contractProduct.getContract();
+
+        // 设置货物的新数量=购销合同货物总数量-旧货物数量+新货物数量
+        contract.setProdAmount(contract.getProdAmount() - contractProduct.getCnumber() + model.getCnumber());
+
 
         // 2. 设置修改的属性
         contractProduct.setFactory(model.getFactory());

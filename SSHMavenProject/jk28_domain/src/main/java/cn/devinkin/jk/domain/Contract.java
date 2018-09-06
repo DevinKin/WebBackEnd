@@ -32,6 +32,26 @@ public class Contract extends BaseEntity implements Serializable {
 	private String printStyle;		//打印板式，1打印一个货物2打印两个货物
 	private String remark;			//备注
 	private Integer state;			//状态：0草稿 1已上报待报运
+	private Integer prodAmount;		// 购销合同的货物数量
+	private Integer extAmount; 		// 购销合同下货物的总附件数
+
+
+	public Integer getProdAmount() {
+		return prodAmount;
+	}
+
+	public void setProdAmount(Integer prodAmount) {
+		this.prodAmount = prodAmount;
+	}
+
+	public Integer getExtAmount() {
+		return extAmount;
+	}
+
+	public void setExtAmount(Integer extAmount) {
+		this.extAmount = extAmount;
+	}
+
 	public String getId() {
 		return id;
 	}

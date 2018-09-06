@@ -378,7 +378,7 @@ public class FileUtil {
   	String s = "";
   	File d=new File(sPath);		//建立代表Sub目录的File对象，并得到它的一个引用
   	if(!d.exists()){			//检查Sub目录是否存在
-  		this.makeDir(sPath); 	//建立Sub目录
+  		makeDir(sPath); 	//建立Sub目录
   	}
   	
 	try {
@@ -397,7 +397,7 @@ public class FileUtil {
 	  String s = "";
 	  File d=new File(sPath);		//建立代表Sub目录的File对象，并得到它的一个引用
 	  if(!d.exists()){			//检查Sub目录是否存在
-		  this.makeDir(sPath); 	//建立Sub目录
+		  makeDir(sPath); 	//建立Sub目录
 	  }
 	  
 	  try {

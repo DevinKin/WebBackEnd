@@ -16,6 +16,17 @@ public class User extends BaseEntity{
     private String password;
     // 状态
     private Integer state;
+    // 等级
+    private Integer degree;
+
+    public Integer getDegree() {
+        return degree;
+    }
+
+    public void setDegree(Integer degree) {
+        this.degree = degree;
+    }
+
     // 用户与角色，多对多
     private Set<Role> roles = new HashSet<Role>(0);
 

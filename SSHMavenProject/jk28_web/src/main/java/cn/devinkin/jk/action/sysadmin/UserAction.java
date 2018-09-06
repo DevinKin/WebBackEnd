@@ -4,9 +4,9 @@ import cn.devinkin.jk.action.BaseAction;
 import cn.devinkin.jk.domain.Dept;
 import cn.devinkin.jk.domain.Role;
 import cn.devinkin.jk.domain.User;
-import cn.devinkin.jk.service.DeptService;
-import cn.devinkin.jk.service.RoleService;
-import cn.devinkin.jk.service.UserService;
+import cn.devinkin.jk.service.sysadmin.DeptService;
+import cn.devinkin.jk.service.sysadmin.RoleService;
+import cn.devinkin.jk.service.sysadmin.UserService;
 import cn.devinkin.jk.utils.Page;
 import com.opensymphony.xwork2.ModelDriven;
 

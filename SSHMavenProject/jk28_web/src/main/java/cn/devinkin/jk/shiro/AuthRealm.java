@@ -7,7 +7,7 @@ import java.util.Set;
 import cn.devinkin.jk.domain.Module;
 import cn.devinkin.jk.domain.Role;
 import cn.devinkin.jk.domain.User;
-import cn.devinkin.jk.service.UserService;
+import cn.devinkin.jk.service.sysadmin.UserService;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;

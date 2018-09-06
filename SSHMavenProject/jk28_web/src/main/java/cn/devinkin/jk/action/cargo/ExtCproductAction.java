@@ -1,9 +1,12 @@
 package cn.devinkin.jk.action.cargo;
 
 import cn.devinkin.jk.action.BaseAction;
+import cn.devinkin.jk.domain.Contract;
+import cn.devinkin.jk.domain.ContractProduct;
 import cn.devinkin.jk.domain.ExtCproduct;
 import cn.devinkin.jk.domain.Factory;
-import cn.devinkin.jk.service.ExtCproductService;
+import cn.devinkin.jk.service.cargo.ContractService;
+import cn.devinkin.jk.service.cargo.ExtCproductService;
 import cn.devinkin.jk.service.FactoryService;
 import cn.devinkin.jk.utils.Page;
 import com.opensymphony.xwork2.ModelDriven;
@@ -41,6 +44,13 @@ public class ExtCproductAction extends BaseAction implements ModelDriven<ExtCpro
 
     public void setExtCproductService(ExtCproductService extCproductService) {
         this.extCproductService = extCproductService;
+    }
+
+    // 注入ContractService
+    private ContractService contractService;
+
+    public void setContractService(ContractService contractService) {
+        this.contractService = contractService;
     }
 
     // 注入FactoryProductService
@@ -118,6 +128,15 @@ public class ExtCproductAction extends BaseAction implements ModelDriven<ExtCpro
     public String update() throws Exception {
         // 调用业务
         ExtCproduct extCproduct = extCproductService.get(ExtCproduct.class, model.getId());
+
+        // 查找对应的货物
+        ContractProduct contractProduct = extCproduct.getContractProduct();
+        // 查找对应的购销合同
+//        Contract contract = contractService.get(Contract.class, .getId());
+        Contract contract = contractProduct.getContract();
+
+        // 设置附件的新数量=购销合同附件总数量-旧附件数量+新附件数量
+        contract.setExtAmount(contract.getExtAmount() - extCproduct.getCnumber() + model.getCnumber());
 
         // 2. 设置修改的属性
         extCproduct.setFactory(model.getFactory());

@@ -12,7 +12,7 @@
 
 		<property name="show_sql">true</property>
 		<property name="format_sql">false</property>
-		<property name="hbm2ddl.auto">none</property>
+		<!--<property name="hbm2ddl.auto">update</property>-->
 		<!-- 懒加载，配合web.xml中配置的 openSessionInViewFilter -->
 		<property name="hibernate.enable_lazy_load_no_trans">true</property>
         <!--校验模式  JPA  java persistent api-->
@@ -29,6 +29,10 @@
         <mapping resource="cn/devinkin/jk/domain/ContractProduct.hbm.xml"></mapping>
         <mapping resource="cn/devinkin/jk/domain/Factory.hbm.xml"></mapping>
         <mapping resource="cn/devinkin/jk/domain/ExtCproduct.hbm.xml"></mapping>
+
+		<mapping resource="cn/devinkin/jk/domain/Export.hbm.xml"></mapping>
+		<mapping resource="cn/devinkin/jk/domain/ExportProduct.hbm.xml"></mapping>
+		<mapping resource="cn/devinkin/jk/domain/ExtEproduct.hbm.xml"></mapping>
 
 		
 		

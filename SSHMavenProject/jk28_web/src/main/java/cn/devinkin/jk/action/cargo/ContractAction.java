@@ -1,11 +1,13 @@
 package cn.devinkin.jk.action.cargo;
 
 import cn.devinkin.jk.action.BaseAction;
+import cn.devinkin.jk.action.print.ContractPrint;
 import cn.devinkin.jk.domain.Contract;
-import cn.devinkin.jk.service.DeptService;
-import cn.devinkin.jk.service.ContractService;
+import cn.devinkin.jk.domain.User;
+import cn.devinkin.jk.service.cargo.ContractService;
 import cn.devinkin.jk.utils.Page;
 import com.opensymphony.xwork2.ModelDriven;
+import org.apache.struts2.ServletActionContext;
 
 import java.util.List;
 
@@ -45,7 +47,25 @@ public class ContractAction extends BaseAction implements ModelDriven<Contract>{
      * 分页查询
      */
     public String list() throws Exception {
-        contractService.findPage("from Contract", page, Contract.class, null);
+        String hql = "from Contract where 1=1";
+
+        // 如何确定出用户的身份,用户的等级
+        User user = super.getCurrentUser();
+        int degree = user.getUserInfo().getDegree();
+        if (degree == 4) {
+            // 说明是员工
+            hql += " and createBy = '" + user.getId() + "'";
+        } else if (degree == 3) {
+            // 说明是部门经理,管理本部门
+            hql += " and createDept='" + user.getDept().getId() + "'";
+        } else if (degree == 2) {
+            // 说明是管理本部门及下属部门
+        } else if (degree == 1) {
+            // 说明是副经理
+        } else if (degree == 0) {
+            // 说明是总经理
+        }
+        contractService.findPage(hql, page, Contract.class, null);
 
         // 设置分页的url地址
         page.setUrl("contractAction_list");
@@ -91,6 +111,12 @@ public class ContractAction extends BaseAction implements ModelDriven<Contract>{
      * 保存
      */
     public String insert() throws Exception {
+        // 1. 加入细粒度权限控制的数据
+        User user = super.getCurrentUser();
+        // 设置创建者的id
+        model.setCreateBy(user.getId());
+        // 设置创建者所在部门的id
+        model.setCreateDept(user.getDept().getId());
         contractService.saveOrUpdate(getModel());
 
         // 页面跳转
@@ -195,5 +221,21 @@ public class ContractAction extends BaseAction implements ModelDriven<Contract>{
         // 2. 遍历ids，并加载出每个购销合同的对象，再修改购销合同的状态
         contractService.changeState(ids, 0);
         return "alist";
+    }
+
+
+    /**
+     * 打印购销合同
+     * @return
+     * @throws Exception
+     */
+    public String print() throws Exception {
+        // 根据购销合同的id获得购销合同
+        Contract contract = contractService.get(Contract.class,model.getId());
+        // 指定path
+        String path = ServletActionContext.getServletContext().getRealPath("/");
+        ContractPrint cp = new ContractPrint();
+        cp.print(contract, path, ServletActionContext.getResponse());
+        return NONE;
     }
 }

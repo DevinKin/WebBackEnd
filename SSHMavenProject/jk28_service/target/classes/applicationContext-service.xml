@@ -16,31 +16,47 @@
 	
 
     <!-- service -->
-	<bean id="deptService" class="cn.devinkin.jk.service.impl.DeptServiceImpl">
+	<bean id="deptService" class="cn.devinkin.jk.service.impl.sysadmin.DeptServiceImpl">
         <property name="baseDao" ref="baseDao"/>
     </bean>
-    <bean id="userService" class="cn.devinkin.jk.service.impl.UserServiceImpl">
+    <bean id="userService" class="cn.devinkin.jk.service.impl.sysadmin.UserServiceImpl">
         <property name="baseDao" ref="baseDao"/>
         <property name="mailMessage" ref="mailMessage"/>
         <property name="mailSender" ref="mailSender"/>
     </bean>
-    <bean id="roleService" class="cn.devinkin.jk.service.impl.RoleServiceImpl">
+    <bean id="roleService" class="cn.devinkin.jk.service.impl.sysadmin.RoleServiceImpl">
         <property name="baseDao" ref="baseDao"/>
     </bean>
-    <bean id="moduleService" class="cn.devinkin.jk.service.impl.ModuleServiceImpl">
+    <bean id="moduleService" class="cn.devinkin.jk.service.impl.sysadmin.ModuleServiceImpl">
         <property name="baseDao" ref="baseDao"/>
     </bean>
 
-    <bean id="contractService" class="cn.devinkin.jk.service.impl.ContractServiceImpl">
+    <bean id="contractService" class="cn.devinkin.jk.service.impl.cargo.ContractServiceImpl">
         <property name="baseDao" ref="baseDao"/>
     </bean>
-    <bean id="contractProductService" class="cn.devinkin.jk.service.impl.ContractProductServiceImpl">
+    <bean id="contractProductService" class="cn.devinkin.jk.service.impl.cargo.ContractProductServiceImpl">
         <property name="baseDao" ref="baseDao"/>
     </bean>
-    <bean id="extCproductService" class="cn.devinkin.jk.service.impl.ExtCproductServiceImpl">
+    <bean id="extCproductService" class="cn.devinkin.jk.service.impl.cargo.ExtCproductServiceImpl">
         <property name="baseDao" ref="baseDao"/>
     </bean>
     <bean id="factoryService" class="cn.devinkin.jk.service.impl.FactoryServiceImpl">
         <property name="baseDao" ref="baseDao"/>
+    </bean>
+
+    <bean id="exportService" class="cn.devinkin.jk.service.impl.cargo.ExportServiceImpl">
+        <property name="baseDao" ref="baseDao"/>
+    </bean>
+
+    <bean id="exportProductService" class="cn.devinkin.jk.service.impl.cargo.ExportProductServiceImpl">
+        <property name="baseDao" ref="baseDao"/>
+    </bean>
+
+    <bean id="extEproductService" class="cn.devinkin.jk.service.impl.cargo.ExtEproductServiceImpl">
+        <property name="baseDao" ref="baseDao"/>
+    </bean>
+
+    <bean id="statChartService" class="cn.devinkin.jk.service.impl.stat.StatChartServiceImpl">
+        <property name="sqlDao" ref="sqlDao"/>
     </bean>
 </beans>

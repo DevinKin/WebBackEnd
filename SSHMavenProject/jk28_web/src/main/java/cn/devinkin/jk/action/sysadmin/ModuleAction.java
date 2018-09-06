@@ -1,10 +1,9 @@
 package cn.devinkin.jk.action.sysadmin;
 
 import cn.devinkin.jk.action.BaseAction;
-import cn.devinkin.jk.domain.Dept;
 import cn.devinkin.jk.domain.Module;
-import cn.devinkin.jk.service.DeptService;
-import cn.devinkin.jk.service.ModuleService;
+import cn.devinkin.jk.service.sysadmin.DeptService;
+import cn.devinkin.jk.service.sysadmin.ModuleService;
 import cn.devinkin.jk.utils.Page;
 import com.opensymphony.xwork2.ModelDriven;
 

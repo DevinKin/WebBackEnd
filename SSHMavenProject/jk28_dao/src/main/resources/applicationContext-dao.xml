@@ -14,10 +14,19 @@
 	http://www.springframework.org/schema/context    
 	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<!--   BaseDao配置 -->
+	<!--  BaseDao配置 -->
 	<bean id="baseDao" class="cn.devinkin.jk.dao.impl.BaseDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	
+
+	<!-- sqlDao的配置 -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+    <bean id="sqlDao" class="cn.devinkin.jk.dao.springdao.SqlDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"/>
+	</bean>
+
+
 	
 </beans>

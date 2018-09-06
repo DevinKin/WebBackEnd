@@ -25,7 +25,9 @@
 		<property name="printStyle" column="PRINT_STYLE"/>
 		<property name="remark" column="REMARK"/>
 		<property name="state" column="STATE"/>
-		
+		<property name="prodAmount" column="PROD_AMOUNT"/>
+		<property name="extAmount" column="EXT_AMOUNT"/>
+
 		<property name="createBy" column="CREATE_BY"/>
 		<property name="createDept" column="CREATE_DEPT"/>
 		<property name="createTime" column="CREATE_TIME"/>

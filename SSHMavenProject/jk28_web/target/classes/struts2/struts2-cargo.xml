@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE struts PUBLIC
-    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
-    "http://struts.apache.org/dtds/struts-2.3.dtd">
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-	<constant name="struts.ui.theme" value="simple"/>
-	<constant name="struts.devMode" value="true" />
-	<constant name="struts.i18n.encoding" value="UTF-8" />
+    <constant name="struts.ui.theme" value="simple"/>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
 
-	<package name="cargo" namespace="/cargo" extends="default">
+    <package name="cargo" namespace="/cargo" extends="default">
         <action name="contractAction_*" class="cn.devinkin.jk.action.cargo.ContractAction" method="{1}">
             <result name="list">/WEB-INF/pages/cargo/contract/jContractList.jsp</result>
             <result name="toview">/WEB-INF/pages/cargo/contract/jContractView.jsp</result>
@@ -27,6 +27,31 @@
         <action name="extCproductAction_*" class="cn.devinkin.jk.action.cargo.ExtCproductAction" method="{1}">
             <result name="tocreate">/WEB-INF/pages/cargo/contract/jExtCproductCreate.jsp</result>
             <result name="toupdate">/WEB-INF/pages/cargo/contract/jExtCproductUpdate.jsp</result>
+        </action>
+
+        <action name="outProductAction_*" class="cn.devinkin.jk.action.cargo.OutProductAction" method="{1}">
+            <result name="toedit">/WEB-INF/pages/cargo/outproduct/jOutProduct.jsp</result>
+        </action>
+
+        <action name="exportAction_*" class="cn.devinkin.jk.action.cargo.ExportAction" method="{1}">
+            <result name="contractList">/WEB-INF/pages/cargo/export/jContractList.jsp</result>
+            <result name="list">/WEB-INF/pages/cargo/export/jExportList.jsp</result>
+            <result name="toview">/WEB-INF/pages/cargo/export/jExportView.jsp</result>
+            <result name="tocreate">/WEB-INF/pages/cargo/export/jExportCreate.jsp</result>
+            <result name="alist" type="redirectAction">exportAction_list</result>
+            <result name="toupdate">/WEB-INF/pages/cargo/export/jExportUpdate.jsp</result>
+            <result name="update" type="redirectAction">exportAction_list</result>
+            <result name="delete" type="redirectAction">exportAction_list</result>
+        </action>
+
+        <action name="exportProductAction_*" class="cn.devinkin.jk.action.cargo.ExportProductAction" method="{1}">
+            <result name="contractList">/WEB-INF/pages/cargo/exportProduct/jContractList.jsp</result>
+            <result name="toview">/WEB-INF/pages/cargo/exportProduct/jExportProductView.jsp</result>
+            <result name="tocreate">/WEB-INF/pages/cargo/exportProduct/jExportProductCreate.jsp</result>
+            <result name="alist" type="redirectAction">exportProductAction_list</result>
+            <result name="toupdate">/WEB-INF/pages/cargo/exportProduct/jExportProductUpdate.jsp</result>
+            <result name="update" type="redirectAction">exportProductAction_list</result>
+            <result name="delete" type="redirectAction">exportProductAction_list</result>
         </action>
     </package>
 

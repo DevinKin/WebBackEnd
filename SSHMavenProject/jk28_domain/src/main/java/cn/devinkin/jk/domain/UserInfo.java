@@ -46,6 +46,14 @@ public class UserInfo extends BaseEntity{
     // 邮箱地址
     private String email;
 
+    public Integer getDegree() {
+        return degree;
+    }
+
+    public void setDegree(Integer degree) {
+        this.degree = degree;
+    }
+
     public String getId() {
         return id;
     }
@@ -116,14 +124,6 @@ public class UserInfo extends BaseEntity{
 
     public void setTelephone(String telephone) {
         this.telephone = telephone;
-    }
-
-    public Integer getDegree() {
-        return degree;
-    }
-
-    public void setDegree(Integer degree) {
-        this.degree = degree;
     }
 
     public String getRemark() {

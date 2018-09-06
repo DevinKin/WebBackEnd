@@ -1,43 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chart>
-	<series>
-		<value xid="0">0</value>
-		<value xid="1">1</value>
-		<value xid="2">2</value>
-		<value xid="3">3</value>
-		<value xid="4">4</value>
-		<value xid="5">5</value>
-		<value xid="6">6</value>
-		<value xid="7">7</value>
-		<value xid="8">8</value>
-		<value xid="9">9</value>
-	</series>
-	<graphs>
-		<graph color="#00CC00" title="">
-			<value xid="0">16</value>
-			<value xid="1">12</value>
-			<value xid="2">14</value>
-			<value xid="3">21</value>
-			<value xid="4">40</value>
-			<value xid="5">21</value>
-			<value xid="6">21</value>
-			<value xid="7">21</value>
-			<value xid="8">24</value>
-			<value xid="9">118</value>
-
-		</graph>
-		<graph color="#ffCC00" title="">
-			<value xid="0">316</value>
-			<value xid="1">12</value>
-			<value xid="2">34</value>
-			<value xid="3">21</value>
-			<value xid="4">30</value>
-			<value xid="5">21</value>
-			<value xid="6">31</value>
-			<value xid="7">11</value>
-			<value xid="8">24</value>
-			<value xid="9">88</value>
-
-		</graph>
-	</graphs>
+    <series>
+        <value xid="0">00</value>
+        <value xid="1">01</value>
+        <value xid="2">02</value>
+        <value xid="3">03</value>
+        <value xid="4">04</value>
+        <value xid="5">05</value>
+        <value xid="6">06</value>
+        <value xid="7">07</value>
+        <value xid="8">08</value>
+        <value xid="9">09</value>
+        <value xid="10">10</value>
+        <value xid="11">11</value>
+        <value xid="12">12</value>
+        <value xid="13">13</value>
+        <value xid="14">14</value>
+        <value xid="15">15</value>
+        <value xid="16">16</value>
+        <value xid="17">17</value>
+        <value xid="18">18</value>
+        <value xid="19">19</value>
+        <value xid="20">20</value>
+        <value xid="21">21</value>
+        <value xid="22">22</value>
+        <value xid="23">23</value>
+    </series>
+    <graphs>
+        <graph gid="30" color="#FFCC00" gradient_fill_colors="#111111, #1A897C">
+            <value xid="0" description="" url="">1</value>
+            <value xid="1" description="" url="">0</value>
+            <value xid="2" description="" url="">0</value>
+            <value xid="3" description="" url="">0</value>
+            <value xid="4" description="" url="">0</value>
+            <value xid="5" description="" url="">0</value>
+            <value xid="6" description="" url="">0</value>
+            <value xid="7" description="" url="">0</value>
+            <value xid="8" description="" url="">0</value>
+            <value xid="9" description="" url="">2</value>
+            <value xid="10" description="" url="">2</value>
+            <value xid="11" description="" url="">4</value>
+            <value xid="12" description="" url="">2</value>
+            <value xid="13" description="" url="">0</value>
+            <value xid="14" description="" url="">3</value>
+            <value xid="15" description="" url="">0</value>
+            <value xid="16" description="" url="">2</value>
+            <value xid="17" description="" url="">0</value>
+            <value xid="18" description="" url="">0</value>
+            <value xid="19" description="" url="">2</value>
+            <value xid="20" description="" url="">1</value>
+            <value xid="21" description="" url="">1</value>
+            <value xid="22" description="" url="">2</value>
+            <value xid="23" description="" url="">0</value>
+        </graph>
+    </graphs>
+    <labels>
+        <label lid="0">
+            <x>0</x>
+            <y>20</y>
+            <rotate></rotate>
+            <width></width>
+            <align>center</align>
+            <text_color></text_color>
+            <text_size></text_size>
+            <text><![CDATA[<b>产品销售排行</b>]]></text>
+        </label>
+    </labels>
 </chart>

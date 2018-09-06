@@ -2,10 +2,8 @@ package cn.devinkin.jk.action.sysadmin;
 
 import cn.devinkin.jk.action.BaseAction;
 import cn.devinkin.jk.domain.Dept;
-import cn.devinkin.jk.service.DeptService;
+import cn.devinkin.jk.service.sysadmin.DeptService;
 import cn.devinkin.jk.utils.Page;
-import com.opensymphony.xwork2.Action;
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ModelDriven;
 
 import java.util.List;

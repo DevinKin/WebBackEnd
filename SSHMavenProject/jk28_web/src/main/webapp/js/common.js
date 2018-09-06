@@ -831,7 +831,7 @@ function getMaxlength(id) {
 /*
  * 2006/10/23 @laukin
  * 功能：url重定向。
- * 用法：<a onclick="urlDispatch('index.html')">首页</a>
+ * 用法：<a onclick="urlDispatch('index.jsp')">首页</a>
  */
 function urlDispatch(urlString) {
 	document.location.href = urlString;

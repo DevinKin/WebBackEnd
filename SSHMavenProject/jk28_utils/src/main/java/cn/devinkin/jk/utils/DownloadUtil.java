@@ -1,11 +1,16 @@
 package cn.devinkin.jk.utils;
 
+import org.apache.struts2.ServletActionContext;
+import sun.misc.BASE64Encoder;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class DownloadUtil {
@@ -42,7 +47,9 @@ public class DownloadUtil {
 		FileInputStream inputStream = null;
 		ServletOutputStream outputStream = null;
 		try {
-			if(!file.exists()) return;
+			if (!file.exists()) {
+				return;
+			}
 			response.reset();
 			//设置响应类型	PDF文件为"application/pdf"，WORD文件为："application/msword"， EXCEL文件为："application/vnd.ms-excel"。  
 			response.setContentType("application/octet-stream;charset=utf-8");
@@ -97,9 +104,13 @@ public class DownloadUtil {
 	 * @param response HttpServletResponse	写入response
 	 * @param returnName 返回的文件名
 	 */
-	public void download(ByteArrayOutputStream byteArrayOutputStream, HttpServletResponse response, String returnName) throws IOException{
+	public void download(ByteArrayOutputStream byteArrayOutputStream, HttpServletResponse response, String returnName) throws Exception {
 		response.setContentType("application/octet-stream;charset=utf-8");
-		returnName = response.encodeURL(new String(returnName.getBytes(),"iso8859-1"));			//保存的文件名,必须和页面编码一致,否则乱码
+//		returnName = response.encodeURL(new String(returnName.getBytes(),"iso8859-1"));			//保存的文件名,必须和页面编码一致,否则乱码
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String agent =  request.getHeader("user-agent");
+        returnName = encodeDownloadFilename(returnName, agent);
+
 		response.addHeader("Content-Disposition",   "attachment;filename=" + returnName);  
 		response.setContentLength(byteArrayOutputStream.size());
 		
@@ -108,4 +119,23 @@ public class DownloadUtil {
 		byteArrayOutputStream.close();									//关闭
 		outputstream.flush();											//刷数据
 	}
+
+    /**
+     * 下载文件时,针对不同浏览器,进行附件名的编码
+     * @param filename 下载文件名
+     * @param agent 客户端浏览器
+     * @return 编码后的下载附件名
+     * @throws Exception
+     */
+	public String encodeDownloadFilename(String filename, String agent) throws Exception {
+	    // 火狐浏览器
+	    if (agent.contains("Firefox")) {
+	        filename = "?UTF-8?B?" + new BASE64Encoder().encode(filename.getBytes("utf-8")) + "?=";
+        } else {
+	        // IE浏览器
+	        filename = URLEncoder.encode(filename, "utf-8");
+        }
+        return filename;
+
+    }
 }

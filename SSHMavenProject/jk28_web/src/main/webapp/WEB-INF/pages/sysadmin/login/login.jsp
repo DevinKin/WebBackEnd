@@ -2,6 +2,11 @@
 <%@ include file="../../base.jsp" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+	<script type="text/javascript">
+        if(self.location != top.location) {
+            top.location = self.location;
+        }
+	</script>
 <title>商务综合管理平台</title>
 	<link rel="stylesheet" rev="stylesheet" type="text/css" href="${ctx}/skin/default/css/login.css" media="all" />
 	<script src="${ctx}/components/pngfix/DD_belatedPNG.js"></script>

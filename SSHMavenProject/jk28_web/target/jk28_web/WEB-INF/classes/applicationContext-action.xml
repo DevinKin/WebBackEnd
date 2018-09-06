@@ -46,4 +46,21 @@
         <property name="extCproductService" ref="extCproductService"/>
         <property name="factoryService" ref="factoryService"/>
     </bean>
+
+    <!-- 出货表的Action -->
+    <bean id="outProductAction" class="cn.devinkin.jk.action.cargo.OutProductAction" scope="prototype">
+        <property name="contractProductService" ref="contractProductService"/>
+    </bean>
+
+    <!-- 报运的Action -->
+    <bean id="exportAction" class="cn.devinkin.jk.action.cargo.ExportAction" scope="prototype">
+        <property name="exportService" ref="exportService" />
+        <property name="contractService" ref="contractService"/>
+        <property name="exportProductService" ref="exportProductService"/>
+    </bean>
+
+    <!-- 统计分析的A餐厅-->
+    <bean id="statChartAction" class="cn.devinkin.jk.action.stat.StatChartAction">
+        <property name="statChartService" ref="statChartService"/>
+    </bean>
 </beans>
