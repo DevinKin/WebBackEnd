@@ -331,4 +331,16 @@ public class ExportAction extends BaseAction implements ModelDriven<Export> {
         return "alist";
     }
 
+    /**
+     * 电子保运
+     * @return
+     * @throws Exception
+     */
+    public String export() throws Exception {
+        // 1. 确定出选中的报运单
+
+        // 2. 将报运单对象及它的商品列表转换为json
+
+        // 3. 
+    }
 }
