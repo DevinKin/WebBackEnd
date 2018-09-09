@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.devinkin.jk.domain">
+	<!-- 配置类的映射 -->
+	<class name="Finance" table="FINANCE_C">
+		<!-- 1.配置主键生成策略 -->
+		<id name="id" column="FINANCE_ID" type="string">
+			<generator class="assigned"/>
+		</id>
+		
+		<!-- 2.配置其他属性 -->
+		<property name="inputDate" column="INPUT_DATE" type="date"/>
+		<property name="inputBy" column="INPUT_BY" type="string"/>
+		<property name="state" column="STATE" type="int"/>
+		<property name="createBy" column="CREATE_BY" type="string"/>
+		<property name="createDept" column="CREATE_DEPT" type="string"/>
+		<property name="createTime" column="CREATE_TIME" type="date"/>
+
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.devinkin.jk.domain">
+	<!-- 配置类的映射 -->
+	<class name="ShippingOrder" table="SHIPPING_ORDER_C">
+		<!-- 1.配置主键生成策略 -->
+		<id name="id" column="SHIPPING_ORDER_ID" type="string">
+			<generator class="assigned"/>
+		</id>
+		
+		<!-- 2.配置其他属性 -->
+		<property name="orderType" column="ORDER_TYPE" type="string"/>
+		<property name="shipper" column="SHIPPER" type="string"/>
+		<property name="consignee" column="CONSIGNEE" type="string"/>
+		<property name="notifyParty" column="NOTIFY_PARTY" type="string"/>
+		<property name="lcNo" column="LC_NO" type="string"/>
+		<property name="portOfLoading" column="PORT_OF_LOADING" type="string"/>
+		<property name="portOfTrans" column="PORT_OF_TRANS" type="string"/>
+		<property name="portOfDischarge" column="PORT_OF_DISCHARGE" type="string"/>
+		<property name="loadingDate" column="LOADING_DATE" type="date"/>
+		<property name="limitDate" column="LIMIT_DATE" type="date"/>
+		<property name="isBatch" column="IS_BATCH" type="string"/>
+		<property name="isTrans" column="IS_TRANS" type="string"/>
+		<property name="copyNum" column="COPY_NUM" type="string"/>
+		<property name="remark" column="REMARK" type="string"/>
+		<property name="specialCondition" column="SPECIAL_CONDITION" type="string"/>
+		<property name="freight" column="FREIGHT" type="string"/>
+		<property name="checkBy" column="CHECK_BY" type="string"/>
+		<property name="state" column="STATE" type="int"/>
+		<property name="createBy" column="CREATE_BY" type="string"/>
+		<property name="createDept" column="CREATE_DEPT" type="string"/>
+		<property name="createTime" column="CREATE_TIME" type="date"/>
+
+	</class>
+
+</hibernate-mapping>

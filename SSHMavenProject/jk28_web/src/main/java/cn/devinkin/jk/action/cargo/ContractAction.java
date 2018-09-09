@@ -117,6 +117,10 @@ public class ContractAction extends BaseAction implements ModelDriven<Contract>{
         model.setCreateBy(user.getId());
         // 设置创建者所在部门的id
         model.setCreateDept(user.getDept().getId());
+
+        // 设置购销合同下的货物数和附件数
+        model.setProdAmount(0);
+        model.setExtAmount(0);
         contractService.saveOrUpdate(getModel());
 
         // 页面跳转

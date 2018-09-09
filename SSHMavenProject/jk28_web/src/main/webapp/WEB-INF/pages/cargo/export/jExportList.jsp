@@ -1,6 +1,5 @@
 <%@ page language="java" pageEncoding="UTF-8" %>
 <%@ include file="../../baselist.jsp" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -68,7 +67,7 @@
                         <td>${status.index+1}</td>
                         <td>${o.id}</td>
                         <td align="center">
-                                ${o.exportProducts.size()}
+                            ${o.exportProducts.size()}
                             /
                             <c:set var="extNumber" value="0"></c:set><!-- 设置一个变量，用来累加，初始值0 -->
                             <c:forEach items="${o.exportProducts}" var="ep">
@@ -85,7 +84,11 @@
                         <td>${o.transportMode}</td>
                         <td>${o.priceCondition}</td>
                         <td><fmt:formatDate value="${o.inputDate }" pattern="yyyy-MM-dd"/></td>
-                        <td>${o.state==0?"草稿":"已上报"}</td>
+                        <td>
+                            <c:if test="${o.state == 0}">草稿</c:if>
+                            <c:if test="${o.state == 1}">已上报</c:if>
+                            <c:if test="${o.state == 2}">已报运</c:if>
+                        </td>
                     </tr>
                 </c:forEach>
 

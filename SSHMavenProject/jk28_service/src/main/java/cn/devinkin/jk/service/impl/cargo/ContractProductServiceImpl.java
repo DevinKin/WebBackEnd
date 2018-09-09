@@ -57,6 +57,7 @@ public class ContractProductServiceImpl implements ContractProductService{
             // 修改购销合同的货物数量,新增货物,货物数量加contractProduct.cnumber
             contract.setProdAmount(contract.getProdAmount() + entity.getCnumber());
 
+
             // 保存购销合同
 //            baseDao.saveOrUpdate(contract);
         } else {

@@ -5,7 +5,7 @@ import cn.devinkin.jk.domain.Contract;
 import cn.devinkin.jk.domain.ContractProduct;
 import cn.devinkin.jk.domain.Factory;
 import cn.devinkin.jk.service.cargo.ContractProductService;
-import cn.devinkin.jk.service.FactoryService;
+import cn.devinkin.jk.service.basicinfo.FactoryService;
 import cn.devinkin.jk.utils.Page;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -127,7 +127,6 @@ public class ContractProductAction extends BaseAction implements ModelDriven<Con
         ContractProduct contractProduct = contractProductService.get(ContractProduct.class, model.getId());
 
         // 查找对应的购销合同
-//        Contract contract = contractService.get(Contract.class, contractProduct.getContract().getId());
         Contract contract = contractProduct.getContract();
 
         // 设置货物的新数量=购销合同货物总数量-旧货物数量+新货物数量

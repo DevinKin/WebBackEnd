@@ -4,9 +4,8 @@ import java.io.Serializable;
 
 /**
  * @Description:
- * @Author:		传智播客 java学院	传智宋江
- * @Company:	http://java.itcast.cn
- * @CreateDate:	2015年1月9日
+ * @Author:		devinkin
+ * @CreateDate:	2018年9月9日
  */
 public class Factory extends BaseEntity implements Serializable{
 	private String id;

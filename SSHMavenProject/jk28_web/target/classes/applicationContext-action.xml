@@ -57,10 +57,37 @@
         <property name="exportService" ref="exportService" />
         <property name="contractService" ref="contractService"/>
         <property name="exportProductService" ref="exportProductService"/>
+        <property name="epService" ref="exportClient"/>
     </bean>
 
-    <!-- 统计分析的A餐厅-->
+    <!-- 统计分析的Action -->
     <bean id="statChartAction" class="cn.devinkin.jk.action.stat.StatChartAction">
         <property name="statChartService" ref="statChartService"/>
+    </bean>
+
+    <!-- 装箱管理的Action-->
+    <bean id="packingListAction" class="cn.devinkin.jk.action.cargo.PackingListAction" scope="prototype">
+        <property name="packingListService" ref="packingListService"/>
+    </bean>
+
+    <!-- 委托单的Action-->
+    <bean id="shippingOrderAction" class="cn.devinkin.jk.action.cargo.ShippingOrderAction" scope="prototype">
+        <property name="shippingOrderService" ref="shippingOrderService"/>
+        <property name="packingListService" ref="packingListService"/>
+    </bean>
+
+    <bean id="invoiceAction" class="cn.devinkin.jk.action.cargo.InvoiceAction" scope="prototype">
+        <property name="invoiceService" ref="invoiceService"/>
+        <property name="shippingOrderService" ref="shippingOrderService"/>
+        <property name="packingListService" ref="packingListService"/>
+    </bean>
+
+    <bean id="financeAction" class="cn.devinkin.jk.action.cargo.FinanceAction" scope="prototype">
+        <property name="financeService" ref="financeService"/>
+        <property name="invoiceService" ref="invoiceService"/>
+    </bean>
+
+    <bean id="factoryAction" class="cn.devinkin.jk.action.basicinfo.FactoryAction" scope="prototype">
+        <property name="factoryService" ref="factoryService"/>
     </bean>
 </beans>

@@ -1,6 +1,5 @@
 <%@ page language="java" isELIgnored="false" pageEncoding="UTF-8" %>
 <%@ include file="../base.jsp" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://shiro.apache.org/tags" prefix="shiro" %>
 <jsp:useBean id="now" class="java.util.Date"/>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -277,7 +276,7 @@
                             <span id="topmenu" onclick="toModule('stat');">统计分析</span><span id="tm_separator"></span>
                         </shiro:hasPermission>
                         <shiro:hasPermission name="基础信息">
-                            <span id="topmenu" onclick="toModule('baseinfo');">基础信息</span><span
+                            <span id="topmenu" onclick="toModule('basicinfo');">基础信息</span><span
                                 id="tm_separator"></span>
                         </shiro:hasPermission>
                         <shiro:hasPermission name="系统管理">

@@ -1,6 +1,5 @@
 <%@ page language="java" pageEncoding="UTF-8" %>
 <%@ include file="../../base.jsp" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>

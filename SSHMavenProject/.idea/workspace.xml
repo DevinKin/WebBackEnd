@@ -8,9 +8,104 @@
   <component name="ChangeListManager">
     <list default="true" id="409cbeec-f05b-4e58-b55a-05e2bcf1303a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_domain/src/main/java/cn/devinkin/jk/domain/Export.java" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_domain/src/main/java/cn/devinkin/jk/domain/Export.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_domain/src/main/java/cn/devinkin/jk/domain/ExportProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_domain/src/main/java/cn/devinkin/jk/domain/ExportProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_domain/src/main/java/cn/devinkin/jk/domain/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_domain/src/main/java/cn/devinkin/jk/domain/Factory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_domain/target/classes/cn/devinkin/jk/domain/Export.class" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_domain/target/classes/cn/devinkin/jk/domain/Export.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_domain/target/classes/cn/devinkin/jk/domain/ExportProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_domain/target/classes/cn/devinkin/jk/domain/ExportProduct.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_domain/target/classes/cn/devinkin/jk/domain/Factory.class" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_domain/target/classes/cn/devinkin/jk/domain/Factory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/FactoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/basicinfo/FactoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/cargo/ExportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/cargo/ExportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/FactoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/basicinfo/FactoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/ContractProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/ContractProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/ExportServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/ExportServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_service/src/main/resources/applicationContext-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_service/src/main/resources/applicationContext-service.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_service/target/classes/applicationContext-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_service/target/classes/applicationContext-service.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_service/target/classes/cn/devinkin/jk/service/FactoryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_service/target/classes/cn/devinkin/jk/service/cargo/ExportService.class" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_service/target/classes/cn/devinkin/jk/service/cargo/ExportService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_service/target/classes/cn/devinkin/jk/service/impl/FactoryServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_service/target/classes/cn/devinkin/jk/service/impl/cargo/ContractProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_service/target/classes/cn/devinkin/jk/service/impl/cargo/ContractProductServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_service/target/classes/cn/devinkin/jk/service/impl/cargo/ExportServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_service/target/classes/cn/devinkin/jk/service/impl/cargo/ExportServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ContractAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ContractAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ContractProductAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ContractProductAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ExportAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ExportAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ExtCproductAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ExtCproductAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/resource/applicationContext-action.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/resource/applicationContext-action.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/resource/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/resource/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/resource/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/resource/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/resource/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/resource/struts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/resource/struts2/struts2-cargo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/resource/struts2/struts2-cargo.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/base.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/base.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/baseinfo/left.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/baseinfo/main.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/baselist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/baselist.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/contract/jContractCreate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/contract/jContractCreate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/contract/jContractList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/contract/jContractList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/contract/jContractProductCreate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/contract/jContractProductCreate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/contract/jContractUpdate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/contract/jContractUpdate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/contract/jContractView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/contract/jContractView.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/export/jContractList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/export/jContractList.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/export/jExportList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/export/jExportList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/export/jExportUpdate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/export/jExportUpdate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/export/jExportView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/export/jExportView.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/packinglist/jPackingListCreate.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/packinglist/jPackingListListPage.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/packinglist/jPackingListUpdate.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/packinglist/jPackingListView.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/home/title.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/home/title.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/curdmenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/curdmenu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/dept/jDeptList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/dept/jDeptList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/module/jModuleList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/module/jModuleList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/role/jRoleList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/role/jRoleList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/role/jRoleModule.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/role/jRoleModule.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/user/jUserList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/user/jUserList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/user/jUserRole.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/user/jUserRole.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/classes/applicationContext-action.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/classes/applicationContext-action.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/classes/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/classes/cn/devinkin/jk/action/cargo/ContractAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/classes/cn/devinkin/jk/action/cargo/ContractAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/classes/cn/devinkin/jk/action/cargo/ContractProductAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/classes/cn/devinkin/jk/action/cargo/ContractProductAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/classes/cn/devinkin/jk/action/cargo/ExportAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/classes/cn/devinkin/jk/action/cargo/ExportAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/classes/cn/devinkin/jk/action/cargo/ExtCproductAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/classes/cn/devinkin/jk/action/cargo/ExtCproductAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/classes/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/classes/struts2/struts2-cargo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/classes/struts2/struts2-cargo.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/classes/applicationContext-action.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/classes/applicationContext-action.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/classes/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/classes/cn/devinkin/jk/action/cargo/ContractAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/classes/cn/devinkin/jk/action/cargo/ContractAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/classes/cn/devinkin/jk/action/cargo/ContractProductAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/classes/cn/devinkin/jk/action/cargo/ContractProductAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/classes/cn/devinkin/jk/action/cargo/ExportAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/classes/cn/devinkin/jk/action/cargo/ExportAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/classes/cn/devinkin/jk/action/cargo/ExtCproductAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/classes/cn/devinkin/jk/action/cargo/ExtCproductAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/classes/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/classes/struts2/struts2-cargo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/classes/struts2/struts2-cargo.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/lib/XmlSchema-1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/lib/jk28_dao-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/lib/jk28_dao-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/lib/jk28_domain-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/lib/jk28_domain-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/lib/jk28_exception-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/lib/jk28_exception-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/lib/jk28_service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/lib/jk28_service-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/lib/jk28_utils-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/lib/jk28_utils-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/base.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/base.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/baselist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/baselist.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/contract/jContractCreate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/contract/jContractCreate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/contract/jContractList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/contract/jContractList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/contract/jContractProductCreate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/contract/jContractProductCreate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/contract/jContractUpdate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/contract/jContractUpdate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/contract/jContractView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/contract/jContractView.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/export/jContractList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/export/jContractList.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/export/jExportList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/export/jExportList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/export/jExportUpdate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/export/jExportUpdate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/export/jExportView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/export/jExportView.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/packinglist/jPackingListCreate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/packinglist/jPackingListCreate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/packinglist/jPackingListListPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/packinglist/jPackingListListPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/packinglist/jPackingListUpdate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/packinglist/jPackingListUpdate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/packinglist/jPackingListView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/cargo/packinglist/jPackingListView.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/home/title.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/home/title.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/sysadmin/curdmenu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/sysadmin/curdmenu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/sysadmin/dept/jDeptList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/sysadmin/dept/jDeptList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/sysadmin/module/jModuleList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/sysadmin/module/jModuleList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/sysadmin/role/jRoleList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/sysadmin/role/jRoleList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/sysadmin/user/jUserList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/pages/sysadmin/user/jUserList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jk28_web/target/jk28_web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/jk28_domain/target/" />
     <ignored path="$PROJECT_DIR$/jk28_web/target/" />
@@ -25,21 +120,38 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1178856249">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="26" />
+          <entry key="project.closed" value="30" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.122" value="1" />
           <entry key="project.open.time.127" value="1" />
           <entry key="project.open.time.128" value="1" />
           <entry key="project.open.time.131" value="1" />
           <entry key="project.open.time.137" value="1" />
+          <entry key="project.open.time.151" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.219" value="1" />
           <entry key="project.open.time.244" value="1" />
           <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.3" value="1" />
@@ -55,43 +167,46 @@
           <entry key="project.open.time.66" value="1" />
           <entry key="project.open.time.91" value="1" />
           <entry key="project.open.time.98" value="1" />
-          <entry key="project.opened" value="30" />
+          <entry key="project.opened" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="bash_profile" value="3" />
-          <entry key="class" value="37" />
-          <entry key="css" value="2" />
+          <entry key="class" value="52" />
+          <entry key="css" value="4" />
+          <entry key="ftl" value="61" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="7" />
-          <entry key="java" value="174" />
-          <entry key="js" value="15" />
-          <entry key="jsp" value="40" />
-          <entry key="md" value="11" />
-          <entry key="pom" value="1" />
+          <entry key="java" value="308" />
+          <entry key="js" value="17" />
+          <entry key="jsp" value="259" />
+          <entry key="md" value="15" />
+          <entry key="pom" value="2" />
           <entry key="properties" value="2" />
-          <entry key="rnc" value="2" />
+          <entry key="rnc" value="4" />
           <entry key="ts" value="3" />
-          <entry key="xml" value="84" />
+          <entry key="txt" value="2" />
+          <entry key="xml" value="132" />
           <entry key="zshrc" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="37" />
-          <entry key="CSS" value="2" />
+          <entry key="CLASS" value="52" />
+          <entry key="CSS" value="4" />
+          <entry key="FTL" value="61" />
           <entry key="Git file" value="1" />
           <entry key="HTML" value="7" />
-          <entry key="JAVA" value="174" />
-          <entry key="JSP" value="40" />
-          <entry key="JavaScript" value="15" />
-          <entry key="Markdown" value="11" />
-          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="JAVA" value="308" />
+          <entry key="JSP" value="259" />
+          <entry key="JavaScript" value="17" />
+          <entry key="Markdown" value="15" />
+          <entry key="PLAIN_TEXT" value="6" />
           <entry key="Properties" value="2" />
-          <entry key="RNG Compact" value="2" />
+          <entry key="RNG Compact" value="4" />
           <entry key="TypeScript" value="3" />
-          <entry key="XML" value="85" />
+          <entry key="XML" value="134" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -99,122 +214,146 @@
           <entry key="bash_profile" value="4" />
           <entry key="class" value="16" />
           <entry key="dummy" value="29" />
+          <entry key="ftl" value="402" />
           <entry key="html" value="491" />
-          <entry key="java" value="21376" />
+          <entry key="java" value="27666" />
           <entry key="js" value="474" />
-          <entry key="jsp" value="3970" />
-          <entry key="md" value="5695" />
+          <entry key="jsp" value="13820" />
+          <entry key="md" value="6957" />
+          <entry key="pom" value="5" />
           <entry key="properties" value="31" />
-          <entry key="xml" value="4679" />
+          <entry key="txt" value="1" />
+          <entry key="xml" value="6494" />
           <entry key="zshrc" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="16" />
+          <entry key="FTL" value="402" />
           <entry key="HTML" value="491" />
-          <entry key="JAVA" value="21385" />
-          <entry key="JSP" value="3970" />
+          <entry key="JAVA" value="27675" />
+          <entry key="JSP" value="13820" />
           <entry key="JavaScript" value="474" />
-          <entry key="Markdown" value="5686" />
-          <entry key="PLAIN_TEXT" value="34" />
+          <entry key="Markdown" value="6948" />
+          <entry key="PLAIN_TEXT" value="35" />
           <entry key="Properties" value="31" />
-          <entry key="XML" value="4679" />
+          <entry key="XML" value="6499" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/export/jExportList.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="21" column="50" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ExportAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="343" column="14" selection-start-line="343" selection-start-column="14" selection-end-line="343" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/ContractProductServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/ContractServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/ExportProductServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/ExportServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="136" selection-start-line="136" selection-end-line="136" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/ExtCproductServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/ExtEproductServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://F:/JavaEE/【阶段11】商务综合管理平台综合项目/【阶段11】商务综合管理平台综合项目/项目-day12-webService/源码/03商务综合管理平台/jk28_web/src/main/resources/applicationContext.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1080" />
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/basicinfo/FactoryAction.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="355">
+                  <caret line="91" selection-start-line="91" selection-end-line="91" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/factory/jFactoryUpdate.jsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1340">
+                  <caret line="70" column="43" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/FinanceAction.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="340">
+                  <caret line="55" column="7" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ContractAction.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="320">
+                  <caret line="74" column="16" lean-forward="true" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
+                  <folding>
+                    <element signature="e#798#799#0" expanded="true" />
+                    <element signature="e#825#826#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/jk28_domain/src/main/java/cn/devinkin/jk/domain/Factory.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-157">
+                  <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/factory/jFactoryListPage.jsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="67">
+                  <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/curdmenu.jsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-120">
+                  <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/factory/jFactoryView.jsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="240">
+                  <caret line="36" selection-start-line="36" selection-end-line="36" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/factory/jFactoryCreate.jsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="240">
+                  <caret line="36" selection-start-line="36" selection-end-line="36" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/user/jUserList.jsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="180">
+                  <caret line="57" column="39" lean-forward="true" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -230,57 +369,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/test.jsp" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/js/tabledo.js" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/export/jExportUpdate.jsp" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/print/ContractPrint.java" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ContractAction.java" />
-        <option value="$PROJECT_DIR$/note/pro_day10.md" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/resource/applicationContext-job.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/job/MailJob.java" />
-        <option value="$PROJECT_DIR$/note/pro_day11.md" />
-        <option value="$PROJECT_DIR$/jk28_dao/src/main/java/cn/devinkin/jk/dao/springdao/SqlDao.java" />
-        <option value="$PROJECT_DIR$/jk28_dao/src/main/resources/applicationContext-dao.xml" />
-        <option value="$PROJECT_DIR$/jk28_service/src/main/resources/applicationContext-service.xml" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/resource/applicationContext-action.xml" />
-        <option value="$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/stat/StatChartService.java" />
-        <option value="$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/stat/StatChartServiceImpl.java" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/resource/struts.xml" />
-        <option value="$PROJECT_DIR$/jk28_utils/src/main/java/cn/devinkin/jk/utils/file/FileUtil.java" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/user/jUserList.jsp" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/stat/chart/factorysale/index.html" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/user/jUserCreate.jsp" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/user/jUserRole.jsp" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/stat/chart/amcharts/amcharts.js" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/resource/struts2/struts2-stat.xml" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/stat/chart/productsale/columnRotatedSeries.html" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/stat/chart/onlineinfo/data.xml" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/stat/chart/productsale/index.jsp" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/stat/chart/factorysale/index.jsp" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/stat/chart/onlineinfo/columnAndLineMix.html" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/stat/StatChartAction.java" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/stat/chart/onlineinfo/index.jsp" />
-        <option value="$PROJECT_DIR$/ws2801/src/cn/devinkin/webservice/IWeatherService.java" />
-        <option value="$PROJECT_DIR$/ws2801/src/cn/devinkin/webservice/IWeatherServiceImpl.java" />
-        <option value="$PROJECT_DIR$/ws2801/src/cn/devinkin/publisher/PublisherTest.java" />
-        <option value="$PROJECT_DIR$/ws2802/src/cn/devinkin/webservice/invoking/WeatherServiceInvokingClient.java" />
-        <option value="$PROJECT_DIR$/ws2803/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/ws2804/src/cn/devinkin/webservice/cn/devinkin/webservice/test/SpringCXFTest.java" />
-        <option value="$PROJECT_DIR$/ws2804/src/cn/devinkin/webservice/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/ws2804/config/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/ws2804/src/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/ws2804/src/applicationContext4.xml" />
-        <option value="$PROJECT_DIR$/ws2804/src/cn/devinkin/webservice/test/SpringCxfTest.java" />
-        <option value="$PROJECT_DIR$/note/pro_day12.md" />
-        <option value="$PROJECT_DIR$/jk28_web/src/test/java/cn/devinkin/jk/export/webservice/test/ExportTest.java" />
-        <option value="$PROJECT_DIR$/jk28_web/src/test/java/cn/itcast/export/webservice/test/ExportTest.java" />
-        <option value="$PROJECT_DIR$/ws2803/src/applicationContext.xml" />
         <option value="$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/ExportServiceImpl.java" />
+        <option value="$PROJECT_DIR$/codeMachine/src/ftl/ServiceInterface.ftl" />
+        <option value="$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/cargo/InvoiceService.java" />
+        <option value="$PROJECT_DIR$/jk28_domain/src/main/java/cn/devinkin/jk/domain/Invoice.java" />
+        <option value="$PROJECT_DIR$/jk28_domain/src/main/resources/cn/devinkin/jk/domain/Invoice.hbm.xml" />
+        <option value="$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/InvoiceServiceImpl.java" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/invoice/jInvoiceCreate.jsp" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/PackingListAction.java" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/shippingorder/jShippingOrderListPage.jsp" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/invoice/jInvoiceListPage.jsp" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/invoice/jInvoiceView.jsp" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/InvoiceAction.java" />
+        <option value="$PROJECT_DIR$/codeMachine/src/ftl/jDeptUpdate.jsp" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/invoice/jInvoiceUpdate.jsp" />
+        <option value="$PROJECT_DIR$/jk28_domain/src/main/java/cn/devinkin/jk/domain/Finance.java" />
+        <option value="$PROJECT_DIR$/jk28_domain/src/main/resources/cn/devinkin/jk/domain/Finance.hbm.xml" />
         <option value="$PROJECT_DIR$/jk28_web/src/main/resource/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/resource/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/export/jExportList.jsp" />
-        <option value="$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ExportAction.java" />
+        <option value="$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/cargo/FinanceService.java" />
+        <option value="$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/FinanceServiceImpl.java" />
+        <option value="$PROJECT_DIR$/codeMachine/src/ftl/ServiceImpl.ftl" />
+        <option value="$PROJECT_DIR$/jk28_service/src/main/resources/applicationContext-service.xml" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/resource/struts2/struts2-cargo.xml" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/finance/jFinanceCreate.jsp" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/finance/jFinanceListPage.jsp" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/FinanceAction.java" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/finance/jFinanceView.jsp" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/finance/jFinanceUpdate.jsp" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/packinglist/jPackingListListPage.jsp" />
+        <option value="$PROJECT_DIR$/codeMachine/src/execute/RunEntrance.java" />
+        <option value="$PROJECT_DIR$/jk28_domain/src/main/java/cn/devinkin/jk/domain/Factory.java" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/contract/jContractCreate.jsp" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/contract/jContractProductCreate.jsp" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/basic/FactoryAction.java" />
+        <option value="$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/basicinfo/FactoryService.java" />
+        <option value="$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/basicinfo/FactoryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/resource/applicationContext-action.xml" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/resource/struts2/struts2-basicinfo.xml" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/role/jRoleList.jsp" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/user/jUserRole.jsp" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/role/jRoleModule.jsp" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/home/title.jsp" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/left.jsp" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/resource/struts.xml" />
+        <option value="$PROJECT_DIR$/codeMachine/src/ftl/jDeptListPage.jsp" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/factory/jFactoryCreate.jsp" />
+        <option value="$PROJECT_DIR$/codeMachine/src/ftl/Action.ftl" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/factory/jFactoryView.jsp" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/factory/jFactoryUpdate.jsp" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/basicinfo/FactoryAction.java" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/curdmenu.jsp" />
+        <option value="$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/factory/jFactoryListPage.jsp" />
       </list>
     </option>
   </component>
@@ -309,10 +448,15 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/jk28_web/src/main/webapp/multiselect/package.json" />
+    </packageJsonPaths>
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="617" />
-    <option name="y" value="51" />
-    <option name="width" value="1300" />
+    <option name="x" value="253" />
+    <option name="y" value="37" />
+    <option name="width" value="1302" />
     <option name="height" value="865" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -323,7 +467,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -331,34 +475,182 @@
               <item name="jk28_parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="SSHMavenProject" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="jk28_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSHMavenProject" type="462c0819:PsiDirectoryNode" />
+              <item name="codeMachine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jk28_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSHMavenProject" type="462c0819:PsiDirectoryNode" />
+              <item name="codeMachine" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jk28_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSHMavenProject" type="462c0819:PsiDirectoryNode" />
+              <item name="codeMachine" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ftl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jk28_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSHMavenProject" type="462c0819:PsiDirectoryNode" />
+              <item name="jk28_web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jk28_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSHMavenProject" type="462c0819:PsiDirectoryNode" />
+              <item name="jk28_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jk28_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSHMavenProject" type="462c0819:PsiDirectoryNode" />
+              <item name="jk28_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jk28_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSHMavenProject" type="462c0819:PsiDirectoryNode" />
+              <item name="jk28_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jk28_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSHMavenProject" type="462c0819:PsiDirectoryNode" />
+              <item name="jk28_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jk28_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSHMavenProject" type="462c0819:PsiDirectoryNode" />
+              <item name="jk28_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="jk" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jk28_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSHMavenProject" type="462c0819:PsiDirectoryNode" />
+              <item name="jk28_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="jk" type="462c0819:PsiDirectoryNode" />
+              <item name="action" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jk28_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSHMavenProject" type="462c0819:PsiDirectoryNode" />
+              <item name="jk28_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="jk" type="462c0819:PsiDirectoryNode" />
+              <item name="action" type="462c0819:PsiDirectoryNode" />
+              <item name="basicinfo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jk28_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSHMavenProject" type="462c0819:PsiDirectoryNode" />
+              <item name="jk28_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="webservice" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jk28_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSHMavenProject" type="462c0819:PsiDirectoryNode" />
+              <item name="jk28_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jk28_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSHMavenProject" type="462c0819:PsiDirectoryNode" />
+              <item name="jk28_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jk28_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSHMavenProject" type="462c0819:PsiDirectoryNode" />
+              <item name="jk28_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jk28_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSHMavenProject" type="462c0819:PsiDirectoryNode" />
+              <item name="jk28_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jk28_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSHMavenProject" type="462c0819:PsiDirectoryNode" />
+              <item name="jk28_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="basicinfo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jk28_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SSHMavenProject" type="462c0819:PsiDirectoryNode" />
+              <item name="ws2804" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="jExportLis&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/webapp/WEB-INF/pages/cargo/export/jExportList.jsp&#10;ExportAc&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ExportAction.java&#10;hibernate&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/resource/hibernate.cfg.xml&#10;Export&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_domain/src/main/resources/cn/devinkin/jk/domain/Export.hbm.xml&#10;ExportA&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ExportAction.java&#10;ExportProduct&#9;PSI&#9;JAVA://cn.devinkin.jk.domain.ExportProduct&#10;hibernate.cfg&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/resource/hibernate.cfg.xml&#10;ExportAction&#9;PSI&#9;JAVA://cn.devinkin.jk.action.cargo.ExportAction&#10;SpringC&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/ws2804/src/cn/devinkin/webservice/test/SpringCxfTest.java&#10;pro_day09&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/note/pro_day09.md&#10;Stat&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/java/cn/devinkin/jk/action/stat/StatChartAction.java&#10;jStat&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/webapp/WEB-INF/pages/stat/chart/jStat.jsp&#10;st&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/resource/struts2/struts2-stat.xml&#10;struts2&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/resource/struts2/struts2-stat.xml&#10;Fi&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_utils/src/main/java/cn/devinkin/jk/utils/file/FileUtil.java&#10;data&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/webapp/stat/chart/factorysale/data.xml&#10;data.xml&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/webapp/stat/chart/factorysale/data.xml&#10;application&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/resource/applicationContext.xml&#10;applicationContext.&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/resource/applicationContext.xml&#10;app&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/tools/shiro/10-shiro安全框架/applicationContext-shiro.xml&#10;pom.xml&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/pom.xml&#10;ContractProduct&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_domain/src/main/java/cn/devinkin/jk/domain/ContractProduct.java&#10;jExportView&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/webapp/WEB-INF/pages/cargo/export/jExportView.jsp&#10;pro_day0&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/note/pro_day09.md&#10;Contract&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_domain/src/main/java/cn/devinkin/jk/domain/ContractProduct.java&#10;POI&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/test/java/POI01Test.java&#10;ContractProd&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_domain/src/main/java/cn/devinkin/jk/domain/ContractProduct.java&#10;pro&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/note/pro_day05.md&#10;pro.md&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/note/pro_day05.md&#10;jContractList&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/webapp/WEB-INF/pages/cargo/contract/jContractList.jsp" />
+    <property name="SearchEverywhereHistoryKey" value="factory.hbm&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_domain/src/main/resources/cn/devinkin/jk/domain/Factory.hbm.xml&#10;struts&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/resource/struts2/struts2-basicinfo.xml&#10;struts2&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/resource/struts2/struts2-basicinfo.xml&#10;ap&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/resource/applicationContext-action.xml&#10;stru&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/resource/struts2/struts2-cargo.xml&#10;ContractProduct&#9;PSI&#9;JAVA://cn.devinkin.jk.domain.ContractProduct&#10;ContractProductAc&#9;PSI&#9;JAVA://cn.devinkin.jk.action.cargo.ContractProductAction&#10;jContract&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/webapp/WEB-INF/pages/cargo/contract/jContractCreate.jsp&#10;jPackingList&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/webapp/WEB-INF/pages/cargo/packinglist/jPackingListListPage.jsp&#10;application&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/resource/applicationContext-action.xml&#10;hibernate&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/resource/hibernate.cfg.xml&#10;Packing&#9;PSI&#9;JAVA://cn.devinkin.jk.action.cargo.PackingListAction&#10;jPack&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/webapp/WEB-INF/pages/cargo/packinglist/jPackingListListPage.jsp&#10;Shipping&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/webapp/WEB-INF/pages/cargo/shippingorder/jShippingOrderListPage.jsp&#10;Invoice&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_domain/src/main/java/cn/devinkin/jk/domain/Invoice.java&#10;jInvoiceList&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/webapp/WEB-INF/pages/cargo/invoice/jInvoiceListPage.jsp&#10;application-&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/resource/applicationContext-action.xml&#10;struts-&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/resource/struts2/struts2-cargo.xml&#10;applicationContext-service&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_service/src/main/resources/applicationContext-service.xml&#10;Shippingorderserv&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/ShippingOrderServiceImpl.java&#10;ExportsER&#9;PSI&#9;JAVA://cn.devinkin.jk.service.impl.cargo.ExportServiceImpl&#10;ShippingOr&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_service/src/main/java/cn/devinkin/jk/service/cargo/ShippingOrderService.java&#10;ExportAc&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ExportAction.java&#10;jExportLi&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/webapp/WEB-INF/pages/cargo/export/jExportList.jsp&#10;ShippingOrder&#9;PSI&#9;JAVA://cn.devinkin.jk.domain.ShippingOrder&#10;ShippingOrderService&#9;PSI&#9;JAVA://cn.devinkin.jk.service.impl.cargo.ShippingOrderServiceImpl&#10;jExportLis&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/webapp/WEB-INF/pages/cargo/export/jExportList.jsp&#10;PackingLista&#9;PSI&#9;JAVA://cn.devinkin.jk.action.cargo.PackingListAction&#10;ExportAction&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ExportAction.java&#10;jExport&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/webapp/WEB-INF/pages/cargo/export/jExportList.jsp&#10;ContractPro&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ContractProductAction.java&#10;Contra&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ContractAction.java&#10;ContractAction&#9;PSI&#9;JAVA://cn.devinkin.jk.action.cargo.ContractAction&#10;struts2-&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/resource/struts2/struts2-cargo.xml&#10;PackingList&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_domain/src/main/java/cn/devinkin/jk/domain/PackingList.java&#10;ShippingOrderAction&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ShippingOrderAction.java&#10;hibernate.cfg&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/resource/hibernate.cfg.xml&#10;jExpo&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/webapp/WEB-INF/pages/cargo/export/jExportView.jsp&#10;JeX&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/webapp/WEB-INF/pages/cargo/export/jExportList.jsp&#10;ExportServiceIm&#9;PSI&#9;JAVA://cn.devinkin.jk.service.impl.cargo.ExportServiceImpl&#10;PackingListSer&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/PackingListServiceImpl.java&#10;ExportService&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_service/src/main/java/cn/devinkin/jk/service/cargo/ExportService.java&#10;PackingListPa&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/webapp/WEB-INF/pages/cargo/packinglist/jPackingListListPage.jsp&#10;PackingListAc&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/PackingListAction.java&#10;Export&#9;PSI&#9;JAVA://cn.devinkin.jk.domain.Export&#10;jPackingListUpda&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/webapp/WEB-INF/pages/cargo/packinglist/jPackingListUpdate.jsp&#10;pom.xml&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/pom.xml&#10;struts2-car&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/resource/struts2/struts2-cargo.xml&#10;applicationContex&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/resource/applicationContext-action.xml&#10;hibernate.cf&#9;FILE&#9;file://F:/WebBackEnd/SSHMavenProject/jk28_web/src/main/resource/hibernate.cfg.xml" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536248783247" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536508332118" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ws2804" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/codeMachine" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\WebBackEnd\SSHMavenProject\jk28_domain\src\main\java\cn\devinkin\jk\domain" />
       <recent name="F:\WebBackEnd\SSHMavenProject\ws2804\src" />
       <recent name="F:\WebBackEnd\SSHMavenProject\ws2804\config" />
       <recent name="F:\WebBackEnd\SSHMavenProject\ws2803\src" />
@@ -370,11 +662,11 @@
       <recent name="cn.devinkin.jk.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\WebBackEnd\SSHMavenProject\jk28_web\src\test\java\cn\itcast\export\webservice" />
-      <recent name="F:\WebBackEnd\SSHMavenProject\jk28_web\src\test\java\cn\devinkin\jk\export\webservice\test" />
-      <recent name="F:\WebBackEnd\SSHMavenProject\ws2804\src" />
-      <recent name="F:\WebBackEnd\SSHMavenProject\ws2804\lib" />
-      <recent name="F:\WebBackEnd\SSHMavenProject\ws2804\src\cn\devinkin\webservice" />
+      <recent name="F:\WebBackEnd\SSHMavenProject\jk28_web\src\main\webapp\WEB-INF\pages\basicinfo" />
+      <recent name="F:\WebBackEnd\SSHMavenProject\jk28_web\src\main\webapp\WEB-INF\pages\baseinfo\factory" />
+      <recent name="F:\WebBackEnd\SSHMavenProject\jk28_web\src\main\webapp\WEB-INF\pages\baseinfo" />
+      <recent name="F:\WebBackEnd\SSHMavenProject\jk28_web\src\main\resource\struts2" />
+      <recent name="F:\WebBackEnd\SSHMavenProject\jk28_web\src\main\java\cn\devinkin\jk\action\basic" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -390,12 +682,12 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 7.0.90">
-    <configuration name="Pie" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="jfreechart.Pie" />
-      <module name="jk28_web" />
+    <configuration name="PublisherTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.devinkin.publisher.PublisherTest" />
+      <module name="ws2801" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="jfreechart.*" />
+          <option name="PATTERN" value="cn.devinkin.publisher.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -403,12 +695,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PublisherTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.devinkin.publisher.PublisherTest" />
-      <module name="ws2801" />
+    <configuration name="RunEntrance" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="execute.RunEntrance" />
+      <module name="codeMachine" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.devinkin.publisher.*" />
+          <option name="PATTERN" value="execute.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -512,7 +804,6 @@
       </method>
     </configuration>
     <configuration name="Tomcat 7.0.90" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.90" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="jk28_web:war exploded">
           <settings>
@@ -694,19 +985,19 @@
     </configuration>
     <list>
       <item itemvalue="Tomcat Server.Tomcat 7.0.90" />
-      <item itemvalue="Application.Pie" />
       <item itemvalue="Application.PublisherTest" />
       <item itemvalue="JUnit.WeatherServiceInvokingClient.testWeather" />
       <item itemvalue="JUnit.SpringCXFTest.testCxf" />
       <item itemvalue="JUnit.SpringCxfTest.test1" />
+      <item itemvalue="Application.RunEntrance" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RunEntrance" />
         <item itemvalue="JUnit.SpringCxfTest.test1" />
         <item itemvalue="JUnit.SpringCXFTest.testCxf" />
         <item itemvalue="JUnit.WeatherServiceInvokingClient.testWeather" />
         <item itemvalue="Application.PublisherTest" />
-        <item itemvalue="Application.Pie" />
       </list>
     </recent_temporary>
   </component>
@@ -748,7 +1039,10 @@
       <workItem from="1536222153197" duration="1123000" />
       <workItem from="1536241692647" duration="2863000" />
       <workItem from="1536245584802" duration="813000" />
-      <workItem from="1536246592517" duration="2168000" />
+      <workItem from="1536246592517" duration="19574000" />
+      <workItem from="1536294853852" duration="6998000" />
+      <workItem from="1536326241548" duration="7197000" />
+      <workItem from="1536379289244" duration="61266000" />
     </task>
     <servers />
   </component>
@@ -773,7 +1067,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150879000" />
+    <option name="totallyTimeSpent" value="243746000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -785,10 +1079,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="494" y="41" width="1040" height="692" extended-state="0" />
+    <frame x="203" y="30" width="1041" height="692" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.27624872" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.19517103" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -798,8 +1092,8 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32921174" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49773756" visible="true" weight="0.31484795" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49886876" weight="0.39497307" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49773756" weight="0.5474061" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49886876" weight="0.30921987" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3283859" />
@@ -811,17 +1105,17 @@
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.32907802" />
       <window_info anchor="bottom" id="MyBatis Sql Log" order="14" />
-      <window_info anchor="bottom" id="Messages" order="15" weight="0.3219858" />
+      <window_info anchor="bottom" id="Messages" order="15" weight="0.31914893" />
       <window_info anchor="bottom" id="Tail" order="16" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="17" />
       <window_info anchor="bottom" id="Run with VisualVM" order="18" sideWeight="0.4994641" weight="0.3288719" />
       <window_info anchor="bottom" id="Debug with VisualVM" order="19" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.24975418" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24974516" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32925585" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
@@ -829,7 +1123,51 @@
       <window_info anchor="right" id="RestServices" order="10" />
       <window_info anchor="right" id="Bean Validation" order="11" weight="0.32940018" />
       <window_info anchor="right" id="Mybatis datasource" order="12" side_tool="true" />
+      <window_info anchor="right" id="JSON Viewer" order="13" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.29663607" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32921174" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49773756" visible="true" weight="0.31484795" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49886876" weight="0.3929078" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3283859" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32907802" />
+      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32907802" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5022625" side_tool="true" weight="0.3470483" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32907802" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.32907802" />
+      <window_info anchor="bottom" id="MyBatis Sql Log" order="14" />
+      <window_info anchor="bottom" id="Messages" order="15" weight="0.31914893" />
+      <window_info anchor="bottom" id="Tail" order="16" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="17" />
+      <window_info anchor="bottom" id="Run with VisualVM" order="18" sideWeight="0.4994641" weight="0.3288719" />
+      <window_info anchor="bottom" id="Debug with VisualVM" order="19" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24974516" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32925585" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Translate" order="9" weight="0.3290461" />
+      <window_info anchor="right" id="RestServices" order="10" />
+      <window_info anchor="right" id="Bean Validation" order="11" weight="0.32940018" />
+      <window_info anchor="right" id="Mybatis datasource" order="12" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -853,10 +1191,46 @@
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/ExportServiceImpl.java</url>
-          <line>131</line>
+          <url>file://$PROJECT_DIR$/codeMachine/src/com/platform/tool/data/DataServiceImpl.java</url>
+          <line>37</line>
           <properties />
-          <option name="timeStamp" value="8" />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/codeMachine/src/com/platform/tool/data/DataServiceImpl.java</url>
+          <line>39</line>
+          <properties />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ExportAction.java</url>
+          <line>362</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ExportAction.java</url>
+          <line>365</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ExportAction.java</url>
+          <line>369</line>
+          <properties />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ExportAction.java</url>
+          <line>371</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/PackingListServiceImpl.java</url>
+          <line>56</line>
+          <properties />
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -865,7 +1239,7 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
-        <watch expression="sFile" />
+        <watch expression="entity" />
       </configuration>
     </watches-manager>
   </component>
@@ -874,331 +1248,324 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ws2802/src/cn/devinkin/webservice/IWeatherServiceImplService.java">
+    <entry file="file://$PROJECT_DIR$/jk28_domain/src/main/java/cn/devinkin/jk/domain/ContractProduct.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-836">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        <state relative-caret-position="80">
+          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ws2802/src/cn/devinkin/webservice/IWeatherServiceImpl.java">
+    <entry file="file://F:/codeMachine/factory/FactoryService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+        <state relative-caret-position="238">
+          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ws2803/web/WEB-INF/lib/applicationContext.xml" />
-    <entry file="file://$PROJECT_DIR$/jk28_web/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    <entry file="file://$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/basicinfo/FactoryServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1200" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ws2804/src/cn/devinkin/webservice/IWeatherServiceImplService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        <state relative-caret-position="118">
+          <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ws2802/src/cn/devinkin/webservice/invoking/WeatherServiceInvokingClient.java">
+    <entry file="file://F:/codeMachine/factory/FactoryServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        <state relative-caret-position="252">
+          <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ws2804/src/cn/devinkin/webservice/cn/devinkin/webservice/test/SpringCXFTest.java" />
-    <entry file="file://$PROJECT_DIR$/ws2801/src/cn/devinkin/webservice/IWeatherService.java">
+    <entry file="file://$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/basicinfo/FactoryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/resource/struts2/struts2-cargo.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="80" column="47" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-360" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/role/jRoleList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="21" column="49" lean-forward="true" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/user/jUserRole.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ws2803/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ws2801/src/cn/devinkin/webservice/IWeatherServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ws2804/src/cn/devinkin/webservice/IWeatherServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ws2803/src/cn/devinkin/webservice/IWeatherService.java">
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/user/jUserUpdate.jsp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ws2804/src/applicationContext.xml">
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/user/jUserView.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/user/jUserCreate.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/role/jRoleCreate.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/role/jRoleModule.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+        <state relative-caret-position="40">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jk28_web/src/test/java/cn/devinkin/jk/export/webservice/test/ExportTest.java" />
-    <entry file="file://$PROJECT_DIR$/jk28_web/src/test/java/cn/itcast/export/webservice/test/ExportTest.java" />
-    <entry file="file://$PROJECT_DIR$/ws2803/src/cn/devinkin/webservice/IWeatherServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/role/jRoleUpdate.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/role/jRoleView.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/module/jModuleView.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="59" selection-start-line="5" selection-start-column="59" selection-end-line="5" selection-end-column="59" />
+        <state relative-caret-position="160">
+          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ws2804/src/cn/devinkin/webservice/test/SpringCxfTest.java">
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/module/jModuleUpdate.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/module/jModuleList.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+        <state relative-caret-position="420">
+          <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/note/pro_day12.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="4060">
-            <caret line="203" column="4" selection-start-line="203" selection-start-column="4" selection-end-line="203" selection-end-column="4" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/module/jModuleCreate.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/dept/jDeptUpdate.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/dept/jDeptView.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/contract/jContractProductCreate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="128" column="12" selection-start-line="128" selection-start-column="12" selection-end-line="128" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/finance/jFinanceCreate.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3540">
-          <caret line="177" column="20" selection-start-line="177" selection-start-column="20" selection-end-line="177" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jk28_domain/src/main/java/cn/devinkin/jk/domain/ExportProduct.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-240">
-          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ws2803/src/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/cargo/ExportService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jk28_domain/src/main/resources/cn/devinkin/jk/domain/Export.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11">
-          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jk28_domain/src/main/java/cn/devinkin/jk/domain/Export.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jk28_utils/src/main/java/cn/devinkin/jk/utils/UtilFuns.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="354" selection-start-line="354" selection-end-line="354" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.0.7.Final/hibernate-core-5.0.7.Final.jar!/org/hibernate/internal/SessionFactoryImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="581" selection-start-line="581" selection-end-line="581" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.0.7.Final/hibernate-core-5.0.7.Final.jar!/org/hibernate/internal/SessionImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="522" selection-start-line="522" selection-end-line="522" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jk28_dao/src/main/java/cn/devinkin/jk/dao/impl/BaseDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/struts/xwork/xwork-core/2.3.32/xwork-core-2.3.32.jar!/com/opensymphony/xwork2/ognl/accessor/XWorkMethodAccessor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/ognl/ognl/3.0.19/ognl-3.0.19.jar!/ognl/OgnlRuntime.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="848" selection-start-line="848" selection-end-line="848" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/ognl/ognl/3.0.19/ognl-3.0.19.jar!/ognl/SimpleNode.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="188" selection-start-line="188" selection-end-line="188" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/ognl/ognl/3.0.19/ognl-3.0.19.jar!/ognl/Ognl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="112" selection-start-line="112" selection-end-line="112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/struts/xwork/xwork-core/2.3.32/xwork-core-2.3.32.jar!/com/opensymphony/xwork2/ognl/OgnlUtil.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="287" selection-start-line="287" selection-end-line="287" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/struts/xwork/xwork-core/2.3.32/xwork-core-2.3.32.jar!/com/opensymphony/xwork2/DefaultActionInvocation.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="198" selection-start-line="198" selection-end-line="198" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/struts/struts2-core/2.3.32/struts2-core-2.3.32.jar!/org/apache/struts2/interceptor/debugging/DebuggingInterceptor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="199" selection-start-line="199" selection-end-line="199" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/ognl/ognl/3.0.19/ognl-3.0.19.jar!/ognl/ASTMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/struts/struts2-core/2.3.32/struts2-core-2.3.32.jar!/org/apache/struts2/interceptor/DeprecationInterceptor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/ognl/ognl/3.0.19/ognl-3.0.19.jar!/ognl/ObjectMethodAccessor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="98">
+          <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jk28_web/src/main/resource/applicationContext-action.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/resource/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-80">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+        <state relative-caret-position="242">
+          <caret line="89" column="69" lean-forward="true" selection-start-line="89" selection-start-column="69" selection-end-line="89" selection-end-column="69" />
         </state>
       </provider>
     </entry>
-    <entry file="file://F:/JavaEE/【阶段11】商务综合管理平台综合项目/【阶段11】商务综合管理平台综合项目/项目-day12-webService/源码/03商务综合管理平台/jk28_web/src/main/resources/applicationContext.xml">
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1080" />
+        <state relative-caret-position="560">
+          <caret line="28" column="54" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/ContractProductServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/home/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-920">
+          <caret line="11" column="49" lean-forward="true" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/home/title.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="278" column="74" selection-start-line="278" selection-start-column="74" selection-end-line="278" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/left.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="30" column="41" lean-forward="true" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/leftmenu.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/dept/jDeptList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="58" column="50" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/curdmenu.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
-          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/ContractServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/dept/jDeptCreate.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="698">
+          <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/ExportProductServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/resource/struts.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="298">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/ExportServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="136" selection-start-line="136" selection-end-line="136" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/ExtCproductServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jk28_service/src/main/java/cn/devinkin/jk/service/impl/cargo/ExtEproductServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/resource/applicationContext.xml">
+    <entry file="file://$PROJECT_DIR$/codeMachine/src/ftl/jDeptListPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
-          <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/resource/struts2/struts2-basicinfo.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        <state relative-caret-position="140">
+          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/cargo/export/jExportList.jsp">
+    <entry file="file://$PROJECT_DIR$/jk28_domain/src/main/java/cn/devinkin/jk/domain/Factory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="21" column="50" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
+        <state relative-caret-position="-157">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ExportAction.java">
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/ContractAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="343" column="14" selection-start-line="343" selection-start-column="14" selection-end-line="343" selection-end-column="14" />
+        <state relative-caret-position="320">
+          <caret line="74" column="16" lean-forward="true" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
+          <folding>
+            <element signature="e#798#799#0" expanded="true" />
+            <element signature="e#825#826#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/cargo/FinanceAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="55" column="7" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/ognl/ognl/3.0.19/ognl-3.0.19.jar!/ognl/OgnlRuntime.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="454" column="33" selection-start-line="454" selection-start-column="33" selection-end-line="454" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_domain/src/main/resources/cn/devinkin/jk/domain/Factory.hbm.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeMachine/src/ftl/Action.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/factory/jFactoryUpdate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1340">
+          <caret line="70" column="43" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/java/cn/devinkin/jk/action/basicinfo/FactoryAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/factory/jFactoryCreate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/curdmenu.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/user/jUserList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="57" column="39" lean-forward="true" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/factory/jFactoryView.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/factory/jFactoryListPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -1256,7 +1623,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>ws2804</last-edited>
+          <last-edited>codeMachine</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

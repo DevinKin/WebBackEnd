@@ -16,47 +16,84 @@
 	
 
     <!-- service -->
+
+    <!-- 部门管理 -->
 	<bean id="deptService" class="cn.devinkin.jk.service.impl.sysadmin.DeptServiceImpl">
         <property name="baseDao" ref="baseDao"/>
     </bean>
+
+    <!-- 用户管理 -->
     <bean id="userService" class="cn.devinkin.jk.service.impl.sysadmin.UserServiceImpl">
         <property name="baseDao" ref="baseDao"/>
         <property name="mailMessage" ref="mailMessage"/>
         <property name="mailSender" ref="mailSender"/>
     </bean>
+
+    <!-- 角色管理 -->
     <bean id="roleService" class="cn.devinkin.jk.service.impl.sysadmin.RoleServiceImpl">
         <property name="baseDao" ref="baseDao"/>
     </bean>
+
+    <!-- 模块管理 -->
     <bean id="moduleService" class="cn.devinkin.jk.service.impl.sysadmin.ModuleServiceImpl">
         <property name="baseDao" ref="baseDao"/>
     </bean>
 
+    <!-- 购销合同单 -->
     <bean id="contractService" class="cn.devinkin.jk.service.impl.cargo.ContractServiceImpl">
         <property name="baseDao" ref="baseDao"/>
     </bean>
+
+    <!-- 商品信息 -->
     <bean id="contractProductService" class="cn.devinkin.jk.service.impl.cargo.ContractProductServiceImpl">
         <property name="baseDao" ref="baseDao"/>
     </bean>
+
+    <!-- 附件信息 -->
     <bean id="extCproductService" class="cn.devinkin.jk.service.impl.cargo.ExtCproductServiceImpl">
         <property name="baseDao" ref="baseDao"/>
     </bean>
-    <bean id="factoryService" class="cn.devinkin.jk.service.impl.FactoryServiceImpl">
+
+    <!-- 工厂信息 -->
+    <bean id="factoryService" class="cn.devinkin.jk.service.impl.basicinfo.FactoryServiceImpl">
         <property name="baseDao" ref="baseDao"/>
     </bean>
 
+    <!-- 出口报运单 -->
     <bean id="exportService" class="cn.devinkin.jk.service.impl.cargo.ExportServiceImpl">
         <property name="baseDao" ref="baseDao"/>
     </bean>
 
+    <!-- 报运商品 -->
     <bean id="exportProductService" class="cn.devinkin.jk.service.impl.cargo.ExportProductServiceImpl">
         <property name="baseDao" ref="baseDao"/>
     </bean>
 
+    <!-- 报运附件 -->
     <bean id="extEproductService" class="cn.devinkin.jk.service.impl.cargo.ExtEproductServiceImpl">
         <property name="baseDao" ref="baseDao"/>
     </bean>
 
+    <!-- 图表显示数据 -->
     <bean id="statChartService" class="cn.devinkin.jk.service.impl.stat.StatChartServiceImpl">
         <property name="sqlDao" ref="sqlDao"/>
     </bean>
+
+    <!-- 装箱单 -->
+    <bean id="packingListService" class="cn.devinkin.jk.service.impl.cargo.PackingListServiceImpl">
+        <property name="baseDao" ref="baseDao"/>
+    </bean>
+
+    <bean id="shippingOrderService" class="cn.devinkin.jk.service.impl.cargo.ShippingOrderServiceImpl">
+        <property name="baseDao" ref="baseDao"/>
+    </bean>
+
+    <bean id="invoiceService" class="cn.devinkin.jk.service.impl.cargo.InvoiceServiceImpl">
+        <property name="baseDao" ref="baseDao"/>
+    </bean>
+
+    <bean id="financeService" class="cn.devinkin.jk.service.impl.cargo.FinanceServiceImpl">
+        <property name="baseDao" ref="baseDao"/>
+    </bean>
+
 </beans>

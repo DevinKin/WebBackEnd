@@ -29,4 +29,10 @@ public interface ExportService {
      * 修改状态
      */
     public void changeState(String[] ids, Integer state);
+
+    /**
+     * 更新数据库,数据来源于保运平台响应的结果
+     * @param resultExport
+     */
+    void updateE(Export resultExport);
 }

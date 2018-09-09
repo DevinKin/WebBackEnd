@@ -7,7 +7,7 @@ import cn.devinkin.jk.domain.ExtCproduct;
 import cn.devinkin.jk.domain.Factory;
 import cn.devinkin.jk.service.cargo.ContractService;
 import cn.devinkin.jk.service.cargo.ExtCproductService;
-import cn.devinkin.jk.service.FactoryService;
+import cn.devinkin.jk.service.basicinfo.FactoryService;
 import cn.devinkin.jk.utils.Page;
 import com.opensymphony.xwork2.ModelDriven;
 

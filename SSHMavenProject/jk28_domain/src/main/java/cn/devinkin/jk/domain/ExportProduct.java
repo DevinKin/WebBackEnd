@@ -3,20 +3,26 @@ package cn.devinkin.jk.domain;
 import java.io.Serializable;
 import java.util.Set;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 /**
  * @Description:	ExportProductService接口
  * @Author:			传智播客 java学院	传智宋江
- * @Company:		http://java.devinkin.cn
+ * @Company:		http://java.itcast.cn
  * @CreateDate:		2015-1-14 15:42:13
  */
 
 public class ExportProduct extends BaseEntity implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
+	@JSONField(serialize=false)
 	private Export export;			//报运货物和报运的关系，多对一
+	@JSONField(serialize=false)
 	private Factory factory;		//报运货物和厂家的关系，多对一
+	@JSONField(serialize=false)
 	private Set<ExtEproduct> extEproducts;		//报运货物和报运附件的关系，一对多
 
+	@JSONField(name="exportProductId")
 	private String id;	  	
 	private String productNo;			
 	private String packingUnit;			//PCS/SETS
@@ -30,6 +36,7 @@ public class ExportProduct extends BaseEntity implements Serializable{
 	private Double exPrice;			//sales confirmation 中的价格（手填）
 	private Double price;			
 	private Double tax;			//收购单价=合同单价
+	@JSONField(serialize=false)
 	private Integer orderNo;			
 
 	

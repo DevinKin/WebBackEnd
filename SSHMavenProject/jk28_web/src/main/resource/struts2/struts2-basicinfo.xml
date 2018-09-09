@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.ui.theme" value="simple"/>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+
+    <package name="basicinfo" namespace="/basicinfo" extends="default">
+        <action name="factoryAction_*" method="{1}" class="factoryAction">
+            <result name="alist" type="redirect">factoryAction_list</result>
+            <result name="plist">/WEB-INF/pages/basicinfo/factory/jFactoryListPage.jsp</result>
+            <result name="pcreate">/WEB-INF/pages/basicinfo/factory/jFactoryCreate.jsp</result>
+            <result name="pupdate">/WEB-INF/pages/basicinfo/factory/jFactoryUpdate.jsp</result>
+            <result name="pview">/WEB-INF/pages/basicinfo/factory/jFactoryView.jsp</result>
+        </action>
+    </package>
+
+</struts>
+

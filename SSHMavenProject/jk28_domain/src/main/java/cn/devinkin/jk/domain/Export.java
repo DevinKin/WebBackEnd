@@ -4,29 +4,39 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 /**
  * @Description:	ExportService接口
  * @Author:			传智播客 java学院	传智宋江
- * @Company:		http://java.devinkin.cn
+ * @Company:		http://java.itcast.cn
  * @CreateDate:		2015-1-14 14:02:34
  */
 
 public class Export extends BaseEntity implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
+	@JSONField(name="products")
 	private Set<ExportProduct> exportProducts;	//报运下的货物
 
+	@JSONField(name="exportId")
 	private String id;	  	
 	private Date inputDate;				//制单日期
+	@JSONField(serialize=false)
 	private String contractIds;			//打断字段，报运相关的多个合同的ID集合串
+	@JSONField(serialize=false)
 	private String customerContract;	//合同及确认书号
+	@JSONField(serialize=false)
 	private String lcno;				//信用证号
+	@JSONField(serialize=false)
 	private String consignee;			//收货人及地址	
+	@JSONField(serialize=false)
 	private String marks;				//唛头
 	private String shipmentPort;		//装船港	
 	private String destinationPort;		//目的港
 	private String transportMode;		//船运SEA/空运AIR 运输方式
 	private String priceCondition;		//FBO/CIF价格条件
+    @JSONField(serialize=false)
 	private String remark;				//备注
 	private Integer boxNums;			//冗余，为委托服务，一个报运的总箱数
 	private Double grossWeights;		//冗余，为委托服务，一个报运的总毛重

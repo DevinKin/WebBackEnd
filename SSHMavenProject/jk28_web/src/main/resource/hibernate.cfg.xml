@@ -34,6 +34,14 @@
 		<mapping resource="cn/devinkin/jk/domain/ExportProduct.hbm.xml"></mapping>
 		<mapping resource="cn/devinkin/jk/domain/ExtEproduct.hbm.xml"></mapping>
 
+        <mapping resource="cn/devinkin/jk/domain/PackingList.hbm.xml"></mapping>
+
+		<mapping resource="cn/devinkin/jk/domain/ShippingOrder.hbm.xml"></mapping>
+
+		<mapping resource="cn/devinkin/jk/domain/Invoice.hbm.xml"></mapping>
+
+        <mapping resource="cn/devinkin/jk/domain/Finance.hbm.xml"></mapping>
+
 		
 		
 		<!-- <mapping resource="cn/itcast/jk/domain/vo/PurBusOrder.hbm.xml"/>

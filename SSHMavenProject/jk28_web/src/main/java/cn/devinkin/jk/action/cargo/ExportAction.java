@@ -9,8 +9,12 @@ import cn.devinkin.jk.service.cargo.ExportProductService;
 import cn.devinkin.jk.service.cargo.ExportService;
 import cn.devinkin.jk.utils.Page;
 import cn.devinkin.jk.utils.UtilFuns;
+import cn.itcast.export.webservice.EpService;
+import com.alibaba.fastjson.JSON;
 import com.opensymphony.xwork2.ModelDriven;
+import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 
+import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -331,6 +335,20 @@ public class ExportAction extends BaseAction implements ModelDriven<Export> {
         return "alist";
     }
 
+
+    @Resource(name = "exportClient")
+    private EpService epService;
+
+    public void setEpService(EpService epService) {
+        this.epService = epService;
+    }
+    //    {
+//        JaxWsProxyFactoryBean proxy  = new JaxWsProxyFactoryBean();
+//        proxy.setAddress("http://localhost:8080/jk28_export/ws/export?wsdl");
+//        proxy.setServiceClass(EpService.class);
+//        this.epService = (EpService) proxy.create();
+//    }
+
     /**
      * 电子保运
      * @return
@@ -338,9 +356,22 @@ public class ExportAction extends BaseAction implements ModelDriven<Export> {
      */
     public String export() throws Exception {
         // 1. 确定出选中的报运单
+        Export export = exportService.get(Export.class, model.getId());
 
         // 2. 将报运单对象及它的商品列表转换为json
+        String inputJson = JSON.toJSONString(export);
+        System.out.println(inputJson);
 
-        // 3. 
+        // 3. 调用远程的webservice服务,将json传递给海关报运平台
+        String resultJson = epService.exportE(inputJson);
+
+
+        // 4. 处理海关报运平台响应的结果(json)
+        Export resultExport = JSON.parseObject(resultJson,Export.class);
+
+        exportService.updateE(resultExport);
+
+        // 5. 再次查询
+        return "alist";
     }
 }

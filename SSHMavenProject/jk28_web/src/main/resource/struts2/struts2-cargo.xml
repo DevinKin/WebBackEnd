@@ -53,8 +53,40 @@
             <result name="update" type="redirectAction">exportProductAction_list</result>
             <result name="delete" type="redirectAction">exportProductAction_list</result>
         </action>
-    </package>
 
+        <action name="packingListAction_*" method="{1}" class="cn.devinkin.jk.action.cargo.PackingListAction">
+            <result name="alist" type="redirectAction">packingListAction_list</result>
+            <result name="plist">/WEB-INF/pages/cargo/packinglist/jPackingListListPage.jsp</result>
+            <result name="pcreate">/WEB-INF/pages/cargo/packinglist/jPackingListCreate.jsp</result>
+            <result name="pupdate">/WEB-INF/pages/cargo/packinglist/jPackingListUpdate.jsp</result>
+            <result name="pview">/WEB-INF/pages/cargo/packinglist/jPackingListView.jsp</result>
+        </action>
+
+        <action name="shippingOrderAction_*" method="{1}" class="shippingOrderAction">
+            <result name="alist" type="redirect">shippingOrderAction_list</result>
+            <result name="plist">/WEB-INF/pages/cargo/shippingorder/jShippingOrderListPage.jsp</result>
+            <result name="pcreate">/WEB-INF/pages/cargo/shippingorder/jShippingOrderCreate.jsp</result>
+            <result name="pupdate">/WEB-INF/pages/cargo/shippingorder/jShippingOrderUpdate.jsp</result>
+            <result name="pview">/WEB-INF/pages/cargo/shippingorder/jShippingOrderView.jsp</result>
+        </action>
+
+        <action name="invoiceAction_*" method="{1}" class="invoiceAction">
+            <result name="alist" type="redirect">invoiceAction_list</result>
+            <result name="plist">/WEB-INF/pages/cargo/invoice/jInvoiceListPage.jsp</result>
+            <result name="pcreate">/WEB-INF/pages/cargo/invoice/jInvoiceCreate.jsp</result>
+            <result name="pupdate">/WEB-INF/pages/cargo/invoice/jInvoiceUpdate.jsp</result>
+            <result name="pview">/WEB-INF/pages/cargo/invoice/jInvoiceView.jsp</result>
+        </action>
+
+        <action name="financeAction_*" method="{1}" class="financeAction">
+            <result name="alist" type="redirect">financeAction_list</result>
+            <result name="plist">/WEB-INF/pages/cargo/finance/jFinanceListPage.jsp</result>
+            <result name="pcreate">/WEB-INF/pages/cargo/finance/jFinanceCreate.jsp</result>
+            <result name="pupdate">/WEB-INF/pages/cargo/finance/jFinanceUpdate.jsp</result>
+            <result name="pview">/WEB-INF/pages/cargo/finance/jFinanceView.jsp</result>
+        </action>
+
+    </package>
 
 </struts>
 
