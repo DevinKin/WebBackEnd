@@ -99,7 +99,7 @@ public class JDBCTest {
 ## 工程搭建
 1. 创建java工程
 
-### 导入jar包
+## 导入jar包
 ```xml
     <dependencies>
         <!-- mysql驱动-->
@@ -144,7 +144,7 @@ public class JDBCTest {
     </dependencies>
 ```
 
-### 创建log4j配置文件
+## 创建log4j配置文件
 ```properties
 # Global logging configuration
 log4j.rootLogger=DEBUG, stdout
@@ -155,7 +155,7 @@ log4j.appender.stdout.layout.ConversionPattern=%5p [%t] - %m%n
 
 ```
 
-### 创建SqlMapConfig配置文件
+## 创建SqlMapConfig配置文件
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration
@@ -181,7 +181,7 @@ log4j.appender.stdout.layout.ConversionPattern=%5p [%t] - %m%n
 </configuration>
 ```
 
-### po类的编写
+## po类的编写
 ```java
 package cn.devinkin.pojo;
 
@@ -205,7 +205,7 @@ public class User {
 }
 ```
 
-### pojo类配置文件编写
+## pojo类配置文件编写
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE cn.devinkin.test.mapper
@@ -267,7 +267,7 @@ public class User {
 </cn.devinkin.test.mapper>
 ```
 
-### 编写测试代码
+## 编写测试代码
 ```java
 package cn.devinkin.test;
 
@@ -758,7 +758,7 @@ public class UserMapperTest {
     6. plugins(插件)
     7. environments(环境集合属性对象)
         - environment(环境子属性对象)
-        - transactionManager(书屋管理)
+        - transactionManager(事务管理)
         - dataSource(数据源)
         - mappers(映射器)
 
