@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <!-- 定义单个pojo类别名:
+        type:类的全路径名称
+        alias:别名
+        -->
+        <!--<typeAlias type="cn.devinkin.mypojo.User" alias="user"/>-->
+
+        <!-- 使用包扫描的方式批量定义别名
+        定义后,别名等于类名,不区分大小写,但建议按照java明明规则来,首字母小写,以后每个单词的首字母大写
+        -->
+        <package name="cn.devinkin.pojo" />
+    </typeAliases>
+
+
+    <mappers>
+        <mapper resource="User.xml"/>
+
+        <!--
+ 使用class属性引入接口的全路径名称:
+ 使用规则
+     1. 接口名称和映射文件名称除扩展名外要完全一致
+     2. 接口和映射文件要放在同一个目录下
+ -->
+        <!--<mapper class="UserMapper.xml"/>-->
+        <!--<mapper class="cn.devinkin.mapper.UserMapper"/>-->
+
+        <!-- 使用包扫描的方式批量引入mapper接口
+        使用规则:
+            1. 接口名称和映射文件名称除扩展名外要完全一致
+            2. 接口和映射文件要放在同一个目录下
+         -->
+    </mappers>
+
+</configuration>

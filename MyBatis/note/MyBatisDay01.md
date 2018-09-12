@@ -220,7 +220,7 @@ public class User {
     resultType:返回结果集类型
     #{}占位符:起到占位作用,如果传入的是基本类型(string,long,double,int,boolean,float等),那么#{}中的变量名称可以随意写.
      -->
-    <select id="findUserById" parameterType="java.lang.Integer" resultType="cn.devinkin.pojo.User">
+    <select id="findUserById" parameterType="java.lang.Integer" resultType="cn.devinkin.mypojo.User">
 		select * from user where id=#{id}
 	</select>
 
@@ -230,7 +230,7 @@ public class User {
     ${}拼接符:字符串原样拼接,如果传入的参数是基本类型,那么${}中的变量名称必须是value
     注意:拼接符有sql注入的风险,所以要慎重使用,
     -->
-    <select id="findUserByUserName" parameterType="java.lang.Integer" resultType="cn.devinkin.pojo.User">
+    <select id="findUserByUserName" parameterType="java.lang.Integer" resultType="cn.devinkin.mypojo.User">
 		select * from user where username like '%${value}%'
 	</select>
 
@@ -238,7 +238,7 @@ public class User {
     #{}:如果传入的参数是pojo类型,那么${}中的变量名称必须是pojo中对应的属性
     如果要返回数据库自增主键:可以使用 select LAST_INSERT_ID()
     -->
-    <insert id="insertUser" parameterType="cn.devinkin.pojo.User">
+    <insert id="insertUser" parameterType="cn.devinkin.mypojo.User">
         <!-- 执行 LAST_INSERT_ID()数据库函数,返回自增的主键
         keyProperty:将返回的主键放入传入参数的Id中保存.
         order:当前函数相对于insert语句的执行顺序
@@ -250,7 +250,7 @@ public class User {
         insert into user(username, birthday, sex, address) values (#{username}, #{birthday}, #{sex}, #{address})
     </insert>
     
-	<insert id="insertUser2" parameterType="cn.devinkin.pojo.User2">
+	<insert id="insertUser2" parameterType="cn.devinkin.mypojo.User2">
 		<selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
 			select uuid()
 		</selectKey>
@@ -261,7 +261,7 @@ public class User {
 		delete from user where id = #{id}
 	</delete>
 
-    <update id="updateUserById" parameterType="cn.devinkin.pojo.User">
+    <update id="updateUserById" parameterType="cn.devinkin.mypojo.User">
         update user set username=#{username} where id=#{id}
     </update>
 </cn.devinkin.test.mapper>
@@ -271,8 +271,8 @@ public class User {
 ```java
 package cn.devinkin.test;
 
-import cn.devinkin.pojo.User;
-import cn.devinkin.pojo.User2;
+import cn.devinkin.mypojo.User;
+import cn.devinkin.mypojo.User2;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -415,7 +415,7 @@ public class UserTest {
 ```java
 package cn.devinkin.dao;
 
-import cn.devinkin.pojo.User;
+import cn.devinkin.mypojo.User;
 
 import java.util.List;
 
@@ -431,7 +431,7 @@ public interface UserDao {
 ```java
 package cn.devinkin.dao;
 
-import cn.devinkin.pojo.User;
+import cn.devinkin.mypojo.User;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -468,7 +468,7 @@ package cn.devinkin.test;
 
 import cn.devinkin.dao.UserDao;
 import cn.devinkin.dao.UserDaoImpl;
-import cn.devinkin.pojo.User;
+import cn.devinkin.mypojo.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
@@ -538,7 +538,7 @@ mapper接口代理实现编写规则
     resultType:返回结果集类型
     #{}占位符:起到占位作用,如果传入的是基本类型(string,long,double,int,boolean,float等),那么#{}中的变量名称可以随意写.
      -->
-    <select id="findUserById" parameterType="java.lang.Integer" resultType="cn.devinkin.pojo.User">
+    <select id="findUserById" parameterType="java.lang.Integer" resultType="cn.devinkin.mypojo.User">
 		select * from user where id=#{id}
 	</select>
 
@@ -548,7 +548,7 @@ mapper接口代理实现编写规则
     ${}拼接符:字符串原样拼接,如果传入的参数是基本类型,那么${}中的变量名称必须是value
     注意:拼接符有sql注入的风险,所以要慎重使用,
     -->
-    <select id="findUserByUserName" parameterType="java.lang.Integer" resultType="cn.devinkin.pojo.User">
+    <select id="findUserByUserName" parameterType="java.lang.Integer" resultType="cn.devinkin.mypojo.User">
 		select * from user where username like '%${value}%'
 	</select>
 
@@ -556,7 +556,7 @@ mapper接口代理实现编写规则
     #{}:如果传入的参数是pojo类型,那么${}中的变量名称必须是pojo中对应的属性
     如果要返回数据库自增主键:可以使用 select LAST_INSERT_ID()
     -->
-    <insert id="insertUser" parameterType="cn.devinkin.pojo.User">
+    <insert id="insertUser" parameterType="cn.devinkin.mypojo.User">
         <!-- 执行 LAST_INSERT_ID()数据库函数,返回自增的主键
         keyProperty:将返回的主键放入传入参数的Id中保存.
         order:当前函数相对于insert语句的执行顺序
@@ -572,7 +572,7 @@ mapper接口代理实现编写规则
 		delete from user where id = #{id}
 	</delete>
 
-    <update id="updateUserById" parameterType="cn.devinkin.pojo.User">
+    <update id="updateUserById" parameterType="cn.devinkin.mypojo.User">
         update user set username=#{username} where id=#{id}
     </update>
 </cn.devinkin.test.mapper>
@@ -583,7 +583,7 @@ mapper接口代理实现编写规则
 ```java
 package mapper.cn.devinkin.test.mapper;
 
-import cn.devinkin.pojo.User;
+import cn.devinkin.mypojo.User;
 
 import java.util.List;
 
@@ -624,7 +624,7 @@ public interface UserMapper {
 package cn.devinkin.test;
 
 import cn.devinkin.mapper.UserMapper;
-import cn.devinkin.pojo.User;
+import cn.devinkin.mypojo.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;

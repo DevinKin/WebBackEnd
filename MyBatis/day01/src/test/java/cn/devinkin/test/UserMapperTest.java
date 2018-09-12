@@ -1,6 +1,9 @@
 package cn.devinkin.test;
 
 import cn.devinkin.mapper.UserMapper;
+import cn.devinkin.pojo.CustomOrders;
+import cn.devinkin.pojo.Orders;
+import cn.devinkin.pojo.QueryVo;
 import cn.devinkin.pojo.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -10,6 +13,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -76,6 +80,91 @@ public class UserMapperTest {
         user.setId(31);
         user.setUsername("小拉拉");
         userMapper.updateUser(user);
+        openSession.commit();
+    }
+
+    @Test
+    public void testFindUserByVo() {
+        SqlSession openSession = factory.openSession();
+        // 通过getMapper方法来实例化接口
+        UserMapper userMapper = openSession.getMapper(UserMapper.class);
+        QueryVo queryVo = new QueryVo();
+        User user = new User();
+        user.setSex("2");
+        user.setUsername("王");
+        queryVo.setUser(user);
+        List<User> userList = userMapper.findUserByVo(queryVo);
+        System.out.println(userList);
+        openSession.commit();
+    }
+
+    @Test
+    public void testFindUserCount() {
+        SqlSession openSession = factory.openSession();
+        // 通过getMapper方法来实例化接口
+        UserMapper userMapper = openSession.getMapper(UserMapper.class);
+        Integer userCount = userMapper.findUserCount();
+        System.out.println(userCount);
+        openSession.commit();
+    }
+
+    @Test
+    public void testFindUserByUsernameAndSex() {
+        SqlSession openSession = factory.openSession();
+        // 通过getMapper方法来实例化接口
+        UserMapper userMapper = openSession.getMapper(UserMapper.class);
+        User user = new User();
+        user.setSex("2");
+        user.setUsername("王");
+        List<User> userList = userMapper.findUseByUsernameAndSex(user);
+        System.out.println(userList);
+        openSession.commit();
+    }
+
+    @Test
+    public void testFindUserByIds() {
+        SqlSession openSession = factory.openSession();
+        // 通过getMapper方法来实例化接口
+        UserMapper userMapper = openSession.getMapper(UserMapper.class);
+        QueryVo queryVo = new QueryVo();
+        List<Integer> ids = new ArrayList<Integer>();
+        ids.add(1);
+        ids.add(16);
+        ids.add(31);
+        ids.add(22);
+        queryVo.setIds(ids);
+        List<User> userList = userMapper.findUserByIds(queryVo);
+        System.out.println(userList);
+        openSession.commit();
+    }
+
+    @Test
+    public void testFindOrdersAndUser() throws Exception {
+        SqlSession openSession = factory.openSession();
+        // 通过getMapper方法来实例化接口
+        UserMapper userMapper = openSession.getMapper(UserMapper.class);
+        List<CustomOrders> customOrdersList = userMapper.findOrdersAndUser1();
+        System.out.println(customOrdersList);
+        openSession.commit();
+    }
+
+    @Test
+    public void testFindOrdersAndUser2() throws Exception {
+        SqlSession openSession = factory.openSession();
+        // 通过getMapper方法来实例化接口
+        UserMapper userMapper = openSession.getMapper(UserMapper.class);
+        List<Orders> customOrdersList = userMapper.findOrdersAndUser2();
+        System.out.println(customOrdersList);
+        openSession.commit();
+    }
+
+    @Test
+    public void testFindUserAndOrders() throws Exception {
+        SqlSession openSession = factory.openSession();
+        // 通过getMapper方法来实例化接口
+        UserMapper userMapper = openSession.getMapper(UserMapper.class);
+        List<User> userList = userMapper.findUserAndOrders();
+        System.out.println(userList);
         openSession.commit();
     }
 }

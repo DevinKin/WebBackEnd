@@ -3,14 +3,12 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <properties resource="db.properties"/>
-
     <typeAliases>
         <!-- 定义单个pojo类别名:
         type:类的全路径名称
         alias:别名
         -->
-        <!--<typeAlias type="cn.devinkin.pojo.User" alias="user"/>-->
+        <!--<typeAlias type="cn.devinkin.mypojo.User" alias="user"/>-->
 
         <!-- 使用包扫描的方式批量定义别名
         定义后,别名等于类名,不区分大小写,但建议按照java明明规则来,首字母小写,以后每个单词的首字母大写
