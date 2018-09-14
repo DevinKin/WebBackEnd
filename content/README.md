@@ -6,5 +6,7 @@
 ## [Spring笔记](/note/Spring/Spring.html)
 ## [SSH笔记](/note/SSH/SSH.html)
 ## [Maven笔记](/note/Maven/Maven.html)
+## [MyBatis笔记](/note/MyBatis/MyBatis.html)
+## [SpringMVC笔记](/note/SpringMVC/SpringMVC.html)
 ## Project-项目
 ### [JavaWeb项目笔记](/note/Project/JavaWeb/JavaWeb.html)

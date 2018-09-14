@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:contex="http://www.springframework.org/schema/jee"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
+
+
+    <!-- 配置@Controller注解扫描 -->
+    <context:component-scan base-package="cn.devinkin.controller"/>
+
+    <!-- 如果没有显式的配置处理器映射器和处理器适配器,那么springMVC会去默认的
+    dispatcherServlet.properties去查找对应的处理器映射器和处理器适配器去使用,每个请求都要扫描
+    一次它的默认配置文件,效率非常低,会降低访问速度,所以要显式的配置处理器映射器和处理器适配器
+    -->
+    <!-- 注解形式的处理器映射器 -->
+    <!--<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"></bean>-->
+    <!-- 注解形式的处理器适配器 -->
+    <!--<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"></bean>-->
+
+    <!-- 配置最新版的处理器映射器 -->
+    <!--<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"></bean>-->
+    <!-- 配置最新版的处理器适配器 -->
+    <!--<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"></bean>-->
+
+    <!-- 注解驱动:
+    作用:替我们自动配置最新版的注解的处理器映射器和处理器适配器
+    -->
+    <mvc:annotation-driven/>
+
+
+    <!-- 配置视图解析器:
+    作用:在controller中指定页面路径的时候就不用谢页面的完整路径了,可以直接写页面的BaseName即可 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!-- 真正的页面路径 = 前缀 + 去掉后缀名的页面 + 后缀 -->
+        <!-- 前缀-->
+        <property name="prefix" value="/WEB-INF/jsp/"></property>
+        <!-- 后缀 -->
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+</beans>
