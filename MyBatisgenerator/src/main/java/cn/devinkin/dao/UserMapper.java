@@ -1,4 +1,4 @@
-package cn.devinkin.mapper;
+package cn.devinkin.dao;
 
 import cn.devinkin.pojo.User;
 import cn.devinkin.pojo.UserExample;
