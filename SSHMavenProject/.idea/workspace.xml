@@ -106,7 +106,7 @@
     <session id="-1178856249">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="32" />
+          <entry key="project.closed" value="33" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
@@ -189,7 +189,7 @@
           <entry key="java" value="27666" />
           <entry key="js" value="474" />
           <entry key="jsp" value="13820" />
-          <entry key="md" value="7081" />
+          <entry key="md" value="7104" />
           <entry key="pom" value="5" />
           <entry key="properties" value="31" />
           <entry key="txt" value="1" />
@@ -205,7 +205,7 @@
           <entry key="JAVA" value="27675" />
           <entry key="JSP" value="13820" />
           <entry key="JavaScript" value="474" />
-          <entry key="Markdown" value="7072" />
+          <entry key="Markdown" value="7095" />
           <entry key="PLAIN_TEXT" value="35" />
           <entry key="Properties" value="31" />
           <entry key="XML" value="6499" />
@@ -273,7 +273,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="40">
-                <caret line="2" column="53" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
+                <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
               </first_editor>
               <second_editor />
             </state>
@@ -417,8 +417,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="650" />
-    <option name="y" value="16" />
+    <option name="x" value="603" />
+    <option name="y" value="17" />
     <option name="width" value="1305" />
     <option name="height" value="865" />
   </component>
@@ -814,7 +814,7 @@
       <workItem from="1536379289244" duration="61266000" />
       <workItem from="1536718354278" duration="105000" />
       <workItem from="1536765428250" duration="57000" />
-      <workItem from="1536928261134" duration="985000" />
+      <workItem from="1536928261134" duration="1203000" />
     </task>
     <servers />
   </component>
@@ -839,7 +839,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244893000" />
+    <option name="totallyTimeSpent" value="245111000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -851,7 +851,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="520" y="13" width="1044" height="692" extended-state="0" />
+    <frame x="483" y="14" width="1044" height="692" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.30831644" />
@@ -1336,7 +1336,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="40">
-            <caret line="2" column="53" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
+            <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
           </first_editor>
           <second_editor />
         </state>
