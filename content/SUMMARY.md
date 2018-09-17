@@ -52,3 +52,6 @@
 * [SpringMVC](./note/SpringMVC/SpringMVC.md)
     * [springmvc01](./note/SpringMVC/SpringMVCday01.md)
     * [springmvc02](./note/SpringMVC/SpringMVCday02.md)
+* [Lucene](./note/Lucene/Lucene.md)
+    * [Lucene](./note/Lucene/Luceneday01.md)
+    * [Solr](./note/Lucene/Solr01.md)
