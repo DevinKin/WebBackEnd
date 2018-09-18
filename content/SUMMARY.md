@@ -55,3 +55,5 @@
 * [Lucene](./note/Lucene/Lucene.md)
     * [Lucene](./note/Lucene/Luceneday01.md)
     * [Solr](./note/Lucene/Solr01.md)
+* [Redis](./note/Redis/Redis.md)
+    * [Redis](./note/Redis/Redis.md)

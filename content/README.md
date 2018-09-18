@@ -9,5 +9,6 @@
 ## [MyBatis笔记](/note/MyBatis/MyBatis.html)
 ## [SpringMVC笔记](/note/SpringMVC/SpringMVC.html)
 ## [Lucene笔记](/note/Lucene/Lucene.html)
+## [Redis笔记](/note/Redis/Redis.html)
 ## Project-项目
 ### [JavaWeb项目笔记](/note/Project/JavaWeb/JavaWeb.html)
