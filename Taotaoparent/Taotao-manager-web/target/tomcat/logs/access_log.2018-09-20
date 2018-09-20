@@ -1,0 +1,10 @@
+0:0:0:0:0:0:0:1 - - [20/Sep/2018:08:11:35 +0800] "GET / HTTP/1.1" 200 2824 http-bio-8082-exec-1 475
+0:0:0:0:0:0:0:1 - - [20/Sep/2018:08:11:37 +0800] "GET /favicon.ico HTTP/1.1" 404 997 http-bio-8082-exec-3 27
+0:0:0:0:0:0:0:1 - - [20/Sep/2018:08:11:38 +0800] "GET /item-list?_=1537402296189 HTTP/1.1" 200 6784 http-bio-8082-exec-4 72
+0:0:0:0:0:0:0:1 - - [20/Sep/2018:08:11:40 +0800] "GET /item/list?page=1&rows=30 HTTP/1.1" 200 11551 http-bio-8082-exec-5 1339
+0:0:0:0:0:0:0:1 - - [20/Sep/2018:08:11:43 +0800] "GET /item/list?page=2&rows=30 HTTP/1.1" 200 12503 http-bio-8082-exec-6 23
+0:0:0:0:0:0:0:1 - - [20/Sep/2018:08:11:46 +0800] "GET /item-add?_=1537402296190 HTTP/1.1" 200 5400 http-bio-8082-exec-7 162
+0:0:0:0:0:0:0:1 - - [20/Sep/2018:08:11:46 +0800] "GET /js/kindeditor-4.1.10/themes/default/default.css HTTP/1.1" 200 21967 http-bio-8082-exec-8 49
+0:0:0:0:0:0:0:1 - - [20/Sep/2018:08:11:46 +0800] "GET /js/kindeditor-4.1.10/kindeditor-all-min.js?_=1537402296191 HTTP/1.1" 200 179915 http-bio-8082-exec-9 72
+0:0:0:0:0:0:0:1 - - [20/Sep/2018:08:11:46 +0800] "GET /js/kindeditor-4.1.10/lang/zh_CN.js?_=1537402296192 HTTP/1.1" 200 8488 http-bio-8082-exec-9 17
+0:0:0:0:0:0:0:1 - - [20/Sep/2018:08:11:46 +0800] "GET /js/kindeditor-4.1.10/themes/default/default.png HTTP/1.1" 200 8299 http-bio-8082-exec-9 34

@@ -11,7 +11,7 @@
         </commentGenerator>
         <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/springmvc?useSSL=false" userId="dbuser"
+                        connectionURL="jdbc:mysql://localhost:3306/taotao?useSSL=false" userId="dbuser"
                         password="111111">
         </jdbcConnection>
         <!-- <jdbcConnection driverClass="oracle.jdbc.OracleDriver"
@@ -48,8 +48,20 @@
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
         <!-- 指定数据库表 -->
-        <table schema="" tableName="user"></table>
-        <table schema="" tableName="items"></table>
+        <!--<table schema="" tableName="user"></table>-->
+        <!--<table schema="" tableName="items"></table>-->
+        <table tableName="tb_content" schema=""/>
+        <table tableName="tb_content_category" schema=""/>
+        <table tableName="tb_item" schema=""/>
+        <table tableName="tb_item_cat" schema=""/>
+        <table tableName="tb_item_desc" schema=""/>
+        <table tableName="tb_item_param" schema=""/>
+        <table tableName="tb_item_param_item" schema=""/>
+        <table tableName="tb_order" schema=""/>
+        <table tableName="tb_order_item" schema=""/>
+        <table tableName="tb_order_shipping" schema=""/>
+        <table tableName="tb_user" schema=""/>
+
 
         <!-- 有些表的字段需要指定java类型
          <table schema="" tableName="">
