@@ -1,2 +1,4 @@
-cn\devinkin\controller\PageController.class
 cn\devinkin\controller\ItemController.class
+cn\devinkin\controller\PictureController.class
+cn\devinkin\controller\PageController.class
+cn\devinkin\controller\ItemCatController.class

@@ -5,7 +5,7 @@
 <div style="padding:10px 10px 10px 10px">
     <form id="itemAddForm" class="itemForm" method="post">
         <table cellpadding="5">
-            <t>
+            <tr>
                 <td>商品类目:</td>
                 <td>
                     <a href="javascript:void(0)" class="easyui-linkbutton selectItemCat">选择类目</a>
@@ -91,7 +91,7 @@
             return;
         }
         //取商品价格，单位为“分”
-        $("#itemAddForm [name=price]").val(eval($("#itemAddForm [name=priceView]").val()) * 100);
+        $("#itemAddForm [name=price]").val(eval($("#itemAddForm [name=priceView]").val()) * 1000);
         //同步文本框中的商品描述
         itemAddEditor.sync();
         //取商品的规格

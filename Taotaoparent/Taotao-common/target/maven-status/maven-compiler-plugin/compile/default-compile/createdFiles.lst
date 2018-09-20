@@ -1,1 +1,4 @@
+cn\devinkin\common\pojo\TaotaoResult.class
 cn\devinkin\common\pojo\EasyUITreeNode.class
+cn\devinkin\common\json\JsonUtils.class
+cn\devinkin\common\utils\IDUtils.class

@@ -80,6 +80,14 @@
             </exclusions>
         </dependency>
         <!-- 日志处理 -->
+
+        <!-- FastDFS Client -->
+        <dependency>
+            <groupId>fastdfs_client</groupId>
+            <artifactId>fastdfs_client</artifactId>
+            <version>1.25</version>
+        </dependency>
+        <!-- FastDFS Client -->
     </dependencies>
 
 </project>

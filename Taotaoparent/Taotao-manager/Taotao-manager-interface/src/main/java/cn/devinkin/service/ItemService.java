@@ -1,6 +1,7 @@
 package cn.devinkin.service;
 
 import cn.devinkin.common.pojo.EasyUIDataGridResult;
+import cn.devinkin.common.pojo.TaotaoResult;
 import cn.devinkin.pojo.TbItem;
 
 public interface ItemService {
@@ -18,4 +19,12 @@ public interface ItemService {
      * @return
      */
     EasyUIDataGridResult getItemList(Integer page, Integer rows);
+
+    /**
+     * 添加商品
+     * @param item 商品
+     * @param desc 商品描述
+     * @return
+     */
+    TaotaoResult addItem(TbItem item, String desc);
 }

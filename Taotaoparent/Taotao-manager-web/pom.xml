@@ -106,13 +106,24 @@
         </dependency>
         <!-- dubbo相关 -->
 
+        <!-- 文件上传组件 -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+        </dependency>
+        <!-- 文件上传组件 -->
+
         <dependency>
             <groupId>com.taotao</groupId>
             <artifactId>Taotao-manager-interface</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
-
+        <dependency>
+            <groupId>com.taotao</groupId>
+            <artifactId>Taotao-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
