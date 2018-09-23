@@ -2,9 +2,8 @@ package cn.devinkin.mapper;
 
 import cn.devinkin.pojo.TbContent;
 import cn.devinkin.pojo.TbContentExample;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface TbContentMapper {
     long countByExample(TbContentExample example);

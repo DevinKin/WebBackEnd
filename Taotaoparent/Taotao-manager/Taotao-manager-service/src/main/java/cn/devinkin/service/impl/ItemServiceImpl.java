@@ -7,6 +7,7 @@ import cn.devinkin.mapper.TbItemDescMapper;
 import cn.devinkin.mapper.TbItemMapper;
 import cn.devinkin.pojo.TbItem;
 import cn.devinkin.pojo.TbItemDesc;
+import cn.devinkin.pojo.TbItemDescExample;
 import cn.devinkin.pojo.TbItemExample;
 import cn.devinkin.service.ItemService;
 import com.github.pagehelper.PageHelper;
@@ -14,6 +15,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -46,6 +48,12 @@ public class ItemServiceImpl implements ItemService {
         PageHelper.startPage(page, rows);
         // 执行查询
         TbItemExample example = new TbItemExample();
+        TbItemExample.Criteria criteria = example.createCriteria();
+        List<Byte> status = new ArrayList<>();
+        // 查询状态为1和2的商品,即正常和下架的
+        status.add((byte) 1);
+        status.add((byte) 2);
+        criteria.andStatusIn(status);
         List<TbItem> list = tbItemMapper.selectByExample(example);
         //取查询结果
         PageInfo<TbItem> pageInfo = new PageInfo<>(list);
@@ -79,6 +87,52 @@ public class ItemServiceImpl implements ItemService {
         tbItemDescMapper.insert(itemDesc);
         // 返回结果
         return TaotaoResult.ok();
+    }
+
+    @Override
+    public TbItemDesc getItemDescById(Long id) {
+        TbItemDescExample example = new TbItemDescExample();
+        TbItemDescExample.Criteria criteria = example.createCriteria();
+        criteria.andItemIdEqualTo(id);
+        List<TbItemDesc> list = tbItemDescMapper.selectByExampleWithBLOBs(example);
+        if (list != null && list.size() > 0) {
+            return list.get(0);
+        } else {
+            return null;
+        }
+    }
+
+    @Override
+    public void updateItem(TbItem item, TbItemDesc itemDesc) {
+        // 更新商品信息
+        tbItemMapper.updateByPrimaryKey(item);
+        // 更新商品描述信息
+        TbItemDescExample example = new TbItemDescExample();
+        // 根据id修改商品描述信息
+        TbItemDescExample.Criteria criteria = example.createCriteria();
+        criteria.andItemIdEqualTo(itemDesc.getItemId());
+        tbItemDescMapper.updateByExampleWithBLOBs(itemDesc, example);
+    }
+
+    @Override
+    public void deleteItem(Long id) {
+        TbItem tbItem = tbItemMapper.selectByPrimaryKey(id);
+        tbItem.setStatus((byte) 3);
+        tbItemMapper.updateByPrimaryKey(tbItem);
+    }
+
+    @Override
+    public void instockItem(Long id) {
+        TbItem tbItem = tbItemMapper.selectByPrimaryKey(id);
+        tbItem.setStatus((byte) 2);
+        tbItemMapper.updateByPrimaryKey(tbItem);
+    }
+
+    @Override
+    public void reshelfItem(Long id) {
+        TbItem tbItem = tbItemMapper.selectByPrimaryKey(id);
+        tbItem.setStatus((byte) 1);
+        tbItemMapper.updateByPrimaryKey(tbItem);
     }
 
 }

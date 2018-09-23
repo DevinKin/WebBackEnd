@@ -3,6 +3,7 @@ package cn.devinkin.service;
 import cn.devinkin.common.pojo.EasyUIDataGridResult;
 import cn.devinkin.common.pojo.TaotaoResult;
 import cn.devinkin.pojo.TbItem;
+import cn.devinkin.pojo.TbItemDesc;
 
 public interface ItemService {
     /**
@@ -27,4 +28,36 @@ public interface ItemService {
      * @return
      */
     TaotaoResult addItem(TbItem item, String desc);
+
+    /**
+     * 通过商品id查询对应的商品描述
+     * @param id 商品id
+     * @return
+     */
+    TbItemDesc getItemDescById(Long id);
+
+    /**
+     * 更新商品信息
+     * @param item 商品信息
+     * @param itemDesc 商品描述信息
+     */
+    void updateItem(TbItem item, TbItemDesc itemDesc);
+
+    /**
+     * 删除商品,将状态置为3
+     * @param id 商品id
+     */
+    void deleteItem(Long id);
+
+    /**
+     * 下架商品,将状态置为2
+     * @param id
+     */
+    void instockItem(Long id);
+
+    /**
+     * 上架商品,将状态置为2
+     * @param id
+     */
+    void reshelfItem(Long id);
 }

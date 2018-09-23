@@ -122,6 +122,7 @@
         $.post("/item/save", $("#itemAddForm").serialize(), function (data) {
             if (data.status == 200) {
                 $.messager.alert('提示', '新增商品成功!');
+                $("#itemList").datagrid("reload");
             }
         });
     }

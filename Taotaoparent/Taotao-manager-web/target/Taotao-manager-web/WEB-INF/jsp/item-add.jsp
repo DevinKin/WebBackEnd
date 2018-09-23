@@ -91,7 +91,7 @@
             return;
         }
         //取商品价格，单位为“分”
-        $("#itemAddForm [name=price]").val(eval($("#itemAddForm [name=priceView]").val()) * 100);
+        $("#itemAddForm [name=price]").val(eval($("#itemAddForm [name=priceView]").val()) * 1000);
         //同步文本框中的商品描述
         itemAddEditor.sync();
         //取商品的规格
@@ -122,6 +122,7 @@
         $.post("/item/save", $("#itemAddForm").serialize(), function (data) {
             if (data.status == 200) {
                 $.messager.alert('提示', '新增商品成功!');
+                $("#itemList").datagrid("reload");
             }
         });
     }

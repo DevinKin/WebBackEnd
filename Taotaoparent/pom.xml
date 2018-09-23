@@ -11,6 +11,10 @@
         <module>Taotao-common</module>
         <module>Taotao-manager</module>
         <module>Taotao-manager-web</module>
+        <module>taotao-portal-web</module>
+        <module>Taotao-content</module>
+        <module>Taotao-search</module>
+        <module>Taotao-search-web</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -32,10 +36,10 @@
         <commons-lang3.version>3.3.2</commons-lang3.version>
         <commons-io.version>1.3.2</commons-io.version>
         <commons-net.version>3.3</commons-net.version>
-        <pagehelper.version>3.4.2</pagehelper.version>
+        <pagehelper.version>3.4.2-fix</pagehelper.version>
         <jsqlparser.version>0.9.1</jsqlparser.version>
         <commons-fileupload.version>1.3.1</commons-fileupload.version>
-        <jedis.version>2.7.2</jedis.version>
+        <jedis.version>2.9.0</jedis.version>
         <solrj.version>4.10.3</solrj.version>
         <dubbo.version>2.5.3</dubbo.version>
         <zookeeper.version>3.4.7</zookeeper.version>

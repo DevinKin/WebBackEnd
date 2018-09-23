@@ -5,7 +5,7 @@ cn\devinkin\mapper\TbOrderMapper.class
 cn\devinkin\mapper\TbItemDescMapper.class
 cn\devinkin\mapper\TbOrderItemMapper.class
 cn\devinkin\mapper\TbOrderShippingMapper.class
+cn\devinkin\mapper\TbContentCategoryMapper.class
 cn\devinkin\mapper\TbItemMapper.class
 cn\devinkin\mapper\TbItemParamItemMapper.class
 cn\devinkin\mapper\TbContentMapper.class
-cn\devinkin\mapper\TbContentCategoryMapper.class

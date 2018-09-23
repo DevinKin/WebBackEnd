@@ -6,7 +6,7 @@
             </ul>
         </div>
         <div data-options="region:'center'" style="padding:5px">
-            <table class="easyui-datagrid" id="contentList" data-options="toolbar:contentListToolbar,singleSelect:false,collapsible:true,pagination:true,method:'get',pageSize:20,url:'/content/query/list',queryParams:{categoryId:0}">
+            <table class="easyui-datagrid" id="contentList" data-options="toolbar:contentListToolbar,singleSelect:false,collapsible:true,pagination:true,method:'get',pageSize:20,url:'/content/list',queryParams:{categoryId:0}">
 		    <thead>
 		        <tr>
 		            <th data-options="field:'id',width:30">ID</th>
@@ -77,8 +77,13 @@ var contentListToolbar = [{
 				if(data.pic2){
 					$("#contentEditForm [name=pic2]").after("<a href='"+data.pic2+"' target='_blank'><img src='"+data.pic2+"' width='80' height='50'/></a>");					
 				}
-				
-				contentEditEditor.html(data.content);
+
+				// 根据id查找对应的内容
+                $.getJSON('/content/query/content/'+data.id,undefined,function(_data){
+                    if(_data.status == 200){
+                        contentEditEditor.html(_data.data.content);
+                    }
+                });
 			}
 		});    	
     }

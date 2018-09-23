@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <conelement value="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER" />
+    <src_description expected_position="0">
+      <src_folder value="file://F:/JavaEE/【阶段17】淘淘商城综合项目/参考资料/mybatis/pagehelper-fix/pagehelper/src/main/java" expected_position="0" />
+      <src_folder value="file://F:/JavaEE/【阶段17】淘淘商城综合项目/参考资料/mybatis/pagehelper-fix/pagehelper/src/main/resources" expected_position="1" />
+      <src_folder value="file://F:/JavaEE/【阶段17】淘淘商城综合项目/参考资料/mybatis/pagehelper-fix/pagehelper/src/test/java" expected_position="2" />
+      <src_folder value="file://F:/JavaEE/【阶段17】淘淘商城综合项目/参考资料/mybatis/pagehelper-fix/pagehelper/src/test/resources" expected_position="3" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://F:/JavaEE/【阶段17】淘淘商城综合项目/参考资料/mybatis/pagehelper-fix/pagehelper/target/classes" />
+    <exclude-output />
+    <content url="file://F:/JavaEE/【阶段17】淘淘商城综合项目/参考资料/mybatis/pagehelper-fix/pagehelper">
+      <sourceFolder url="file://F:/JavaEE/【阶段17】淘淘商城综合项目/参考资料/mybatis/pagehelper-fix/pagehelper/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://F:/JavaEE/【阶段17】淘淘商城综合项目/参考资料/mybatis/pagehelper-fix/pagehelper/src/main/resources" isTestSource="false" />
+      <sourceFolder url="file://F:/JavaEE/【阶段17】淘淘商城综合项目/参考资料/mybatis/pagehelper-fix/pagehelper/src/test/java" isTestSource="false" />
+      <sourceFolder url="file://F:/JavaEE/【阶段17】淘淘商城综合项目/参考资料/mybatis/pagehelper-fix/pagehelper/src/test/resources" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
+    <orderEntry type="library" name="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER" level="application" />
+  </component>
+</module>
