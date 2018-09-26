@@ -1,2 +1,4 @@
 cn\devinkin\search\service\impl\SearchItemServiceImpl.class
+cn\devinkin\search\service\impl\SearchServiceImpl.class
 cn\devinkin\search\dao\SearchDao.class
+cn\devinkin\search\mapper\SearchItemMapper.class

@@ -12,7 +12,7 @@ import java.util.List;
  * @since 14:34 2018/9/23
  */
 public class SearchResult implements Serializable {
-    private int totalPages;
+    private Long totalPages;
     private Long recordCount;
 
     private List<SearchItem> itemList;
@@ -25,11 +25,11 @@ public class SearchResult implements Serializable {
         this.recordCount = recordCount;
     }
 
-    public int getTotalPages() {
+    public Long getTotalPages() {
         return totalPages;
     }
 
-    public void setTotalPages(int totalPages) {
+    public void setTotalPages(Long totalPages) {
         this.totalPages = totalPages;
     }
 
