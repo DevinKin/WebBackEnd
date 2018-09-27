@@ -1,6 +1,7 @@
 package cn.devinkin.search.mapper;
 
 import cn.devinkin.common.pojo.SearchItem;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -12,6 +13,8 @@ import java.util.List;
  * @see
  * @since 10:45 2018/9/23
  */
+@Repository
 public interface SearchItemMapper {
     List<SearchItem> getItemList();
+    SearchItem getItemById(Long itemId);
 }

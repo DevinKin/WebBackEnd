@@ -88,6 +88,12 @@
             </exclusions>
         </dependency>
         <!-- dubbo相关 -->
+        <!-- ActiveMQ-->
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-all</artifactId>
+        </dependency>
+        <!-- ActiveMQ-->
     </dependencies>
 
 

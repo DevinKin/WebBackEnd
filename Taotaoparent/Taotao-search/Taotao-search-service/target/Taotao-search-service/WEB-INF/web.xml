@@ -8,10 +8,7 @@
     <!-- 初始化spring容器 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring/applicationContext-dao.xml,
-            classpath:spring/applicationContext-service.xml,
-            classpath:spring/applicationContext-solr.xml
-        </param-value>
+        <param-value>classpath:spring/applicationContext-*.xml</param-value>
     </context-param>
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

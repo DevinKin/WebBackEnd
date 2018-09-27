@@ -1,4 +1,8 @@
 F:\WebBackEnd\Taotaoparent\Taotao-search\Taotao-search-service\src\main\java\cn\devinkin\search\service\impl\SearchServiceImpl.java
 F:\WebBackEnd\Taotaoparent\Taotao-search\Taotao-search-service\src\main\java\cn\devinkin\search\mapper\SearchItemMapper.java
+F:\WebBackEnd\Taotaoparent\Taotao-search\Taotao-search-service\src\main\java\cn\devinkin\search\listener\MyMessageListener.java
 F:\WebBackEnd\Taotaoparent\Taotao-search\Taotao-search-service\src\main\java\cn\devinkin\search\service\impl\SearchItemServiceImpl.java
+F:\WebBackEnd\Taotaoparent\Taotao-search\Taotao-search-service\src\main\java\cn\devinkin\search\listener\ItemDeleteMessageListener.java
+F:\WebBackEnd\Taotaoparent\Taotao-search\Taotao-search-service\src\main\java\cn\devinkin\search\listener\ItemAddMessageListener.java
 F:\WebBackEnd\Taotaoparent\Taotao-search\Taotao-search-service\src\main\java\cn\devinkin\search\dao\SearchDao.java
+F:\WebBackEnd\Taotaoparent\Taotao-search\Taotao-search-service\src\main\java\cn\devinkin\search\listener\ItemEditMessageListener.java

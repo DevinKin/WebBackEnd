@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+    <!-- 真正可以产生Connection的ConnectionFactory,由对应的服务厂商提供 -->
+    <bean id="targetConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="tcp://192.168.85.138:61616"/>
+    </bean>
+
+    <!-- Spring用于管理的真正的ConnectionFactory的ConnectionFactory -->
+    <bean id="connectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">
+        <!-- 目标ConnectionFactory对应真是的可以产生JMS Connection的ConnectionFactory -->
+        <property name="targetConnectionFactory" ref="targetConnectionFactory"/>
+    </bean>
+
+    <!-- 配置生产者 -->
+    <!-- Spring JmsTemplate对象,发送消息 -->
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <!-- 这个connectionFactory对应的是我们定义的Spring提供的ConnectionFactory -->
+        <property name="connectionFactory" ref="connectionFactory"/>
+    </bean>
+
+    <!-- 配置队列的Destination,点对点 -->
+    <bean id="queueDestination" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg name="name" value="spring-queue"/>
+    </bean>
+
+    <!-- 配置商品添加Topic的Destination,一对多的 -->
+    <bean id="addItemtopicDestination" class="org.apache.activemq.command.ActiveMQTopic">
+        <constructor-arg name="name" value="item-add-topic"/>
+    </bean>
+
+    <!-- 配置商品修改Topic的Destination,一对多的 -->
+    <bean id="editItemtopicDestination" class="org.apache.activemq.command.ActiveMQTopic">
+        <constructor-arg name="name" value="item-edit-topic"/>
+    </bean>
+
+    <!-- 配置商品删除Topic的Destination,一对多的 -->
+    <bean id="deleteItemtopicDestination" class="org.apache.activemq.command.ActiveMQTopic">
+        <constructor-arg name="name" value="item-delete-topic"/>
+    </bean>
+</beans>

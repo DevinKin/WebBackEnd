@@ -13,8 +13,12 @@ import cn.devinkin.service.ItemService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jms.core.JmsTemplate;
+import org.springframework.jms.core.MessageCreator;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+import javax.jms.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -35,6 +39,19 @@ public class ItemServiceImpl implements ItemService {
 
     @Autowired
     private TbItemDescMapper tbItemDescMapper;
+
+    @Autowired
+    private JmsTemplate jmsTemplate;
+
+    @Resource(name = "addItemtopicDestination")
+    private Destination addItemDestination;
+
+    @Resource(name = "editItemtopicDestination")
+    private Destination editItemDestination;
+
+    @Resource(name = "deleteItemtopicDestination")
+    private Destination deleteItemDestination;
+
 
     @Override
     public TbItem getItemById(Long itemId) {
@@ -67,7 +84,7 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public TaotaoResult addItem(TbItem item, String desc) {
         // 生成商品id
-        Long id = IDUtils.genItemId();
+        final Long id = IDUtils.genItemId();
         // 补全Item的属性
         item.setId(id);
         // 商品状态,1-正常,2-下架,3-删除
@@ -85,6 +102,16 @@ public class ItemServiceImpl implements ItemService {
         itemDesc.setCreated(new Date());
         // 向商品描述插入数据
         tbItemDescMapper.insert(itemDesc);
+        // 向ActiveMQ发送商品添加消息
+        jmsTemplate.send(addItemDestination, new MessageCreator() {
+            @Override
+            public Message createMessage(Session session) throws JMSException {
+                // 发送商品id
+                TextMessage textMessage = session.createTextMessage(id + "");
+                return textMessage;
+            }
+        });
+
         // 返回结果
         return TaotaoResult.ok();
     }
@@ -103,7 +130,7 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public void updateItem(TbItem item, TbItemDesc itemDesc) {
+    public void updateItem(final TbItem item, TbItemDesc itemDesc) {
         // 更新商品信息
         tbItemMapper.updateByPrimaryKey(item);
         // 更新商品描述信息
@@ -112,13 +139,32 @@ public class ItemServiceImpl implements ItemService {
         TbItemDescExample.Criteria criteria = example.createCriteria();
         criteria.andItemIdEqualTo(itemDesc.getItemId());
         tbItemDescMapper.updateByExampleWithBLOBs(itemDesc, example);
+        // 同步solr索引库
+        jmsTemplate.send(editItemDestination, new MessageCreator() {
+            @Override
+            public Message createMessage(Session session) throws JMSException {
+                // 发送商品id
+                TextMessage textMessage = session.createTextMessage(item.getId() + "");
+                return textMessage;
+            }
+        });
     }
 
     @Override
-    public void deleteItem(Long id) {
+    public void deleteItem(final Long id) {
         TbItem tbItem = tbItemMapper.selectByPrimaryKey(id);
+        // 删除商品,将其状态置为3
         tbItem.setStatus((byte) 3);
         tbItemMapper.updateByPrimaryKey(tbItem);
+        // 删除solr索引库中对应的索引
+        jmsTemplate.send(deleteItemDestination, new MessageCreator() {
+            @Override
+            public Message createMessage(Session session) throws JMSException {
+                // 发送商品id
+                TextMessage textMessage = session.createTextMessage(id + "");
+                return textMessage;
+            }
+        });
     }
 
     @Override

@@ -1,1 +1,3 @@
 cn\devinkin\test\solrj\TestSolrj.class
+cn\devinkin\test\solrj\TestSolrCloud.class
+cn\devinkin\test\activemq\testSpringQueueConsumer.class

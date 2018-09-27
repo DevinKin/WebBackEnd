@@ -1,4 +1,8 @@
+cn\devinkin\search\listener\ItemDeleteMessageListener.class
+cn\devinkin\search\listener\ItemAddMessageListener.class
 cn\devinkin\search\service\impl\SearchItemServiceImpl.class
 cn\devinkin\search\service\impl\SearchServiceImpl.class
 cn\devinkin\search\dao\SearchDao.class
+cn\devinkin\search\listener\MyMessageListener.class
 cn\devinkin\search\mapper\SearchItemMapper.class
+cn\devinkin\search\listener\ItemEditMessageListener.class

@@ -29,15 +29,10 @@
     <context:component-scan base-package="cn.devinkin.search.controller"></context:component-scan>
 
 
-
     <!-- 引用dubbo服务 -->
     <dubbo:application name="taotao-portal-web"/>
     <dubbo:registry protocol="zookeeper" address="192.168.85.135:2181"/>
     <dubbo:reference interface="cn.devinkin.search.service.SearchService" id="searchService"/>
     <!--<dubbo:reference interface="cn.devinkin.service.ItemCatService" id="itemCatService"/>-->
-
-
-
-
 
 </beans>

@@ -30,7 +30,7 @@ public class SearchController {
     public String search(@RequestParam("q") String queryString,
                          @RequestParam(defaultValue = "1") Long page,
                          Model model) throws Exception{
-        int a = 1/0;
+//        int a = 1/0;
         // 解决查询条件中文乱码
         queryString = new String(queryString.getBytes("ISO-8859-1"), "UTF-8");
         // 调用服务,执行查询
