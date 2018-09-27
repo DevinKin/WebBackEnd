@@ -115,7 +115,7 @@ redis-cli -p 7002 -c
         <constructor-arg name="port" value="6379"></constructor-arg>
     </bean>
 
-    <bean id="jedisClientPool" class="cn.devinkin.jedis.JedisClientPool">
+    <bean id="jedisClientPool" class="cn.devinkin.cn.devinkin.service.jedis.JedisClientPool">
     </bean>
 </beans>
 ```
@@ -171,7 +171,7 @@ public class TestJedisSpring {
         <!--<constructor-arg name="port" value="6379"></constructor-arg>-->
     <!--</bean>-->
 
-    <!--<bean id="jedisClientPool" class="cn.devinkin.jedis.JedisClientPool">-->
+    <!--<bean id="jedisClientPool" class="cn.devinkin.cn.devinkin.service.jedis.JedisClientPool">-->
 
     <!-- redis集群版 -->
     <bean id="jedisCluster" class="redis.clients.jedis.JedisCluster">
@@ -205,7 +205,7 @@ public class TestJedisSpring {
         </constructor-arg>
     </bean>
     
-    <bean id="jedisClientCluster" class="cn.devinkin.jedis.JedisClientCluster">
+    <bean id="jedisClientCluster" class="cn.devinkin.cn.devinkin.service.jedis.JedisClientCluster">
     </bean>
 </beans>
 

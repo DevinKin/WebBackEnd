@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.617" errors="0" skipped="0" tests="3" name="cn.devinkin.jedis.TestJedis">
+<testsuite failures="0" time="0.291" errors="0" skipped="0" tests="3" name="cn.devinkin.jedis.TestJedis">
   <properties>
     <property name="idea.version" value="2018.2.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\JavaSE7\jdk1.7.0_80\jre\bin"/>
     <property name="java.vm.version" value="24.80-b11"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="F:\WebBackEnd\Taotaoparent\Taotao-content"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\WebBackEnd\Taotaoparent\Taotao-content"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -17,12 +17,12 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="F:\WebBackEnd\Taotaoparent\Taotao-content"/>
+    <property name="user.dir" value="D:\WebBackEnd\Taotaoparent\Taotao-content"/>
     <property name="java.runtime.version" value="1.7.0_80-b15"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\JavaSE7\jdk1.7.0_80\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="visualvm.id" value="36308146917128"/>
+    <property name="visualvm.id" value="2995556717294"/>
     <property name="java.io.tmpdir" value="C:\Users\devinkin\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
@@ -63,7 +63,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.363" classname="cn.devinkin.jedis.TestJedis" name="testJedisCluster"/>
-  <testcase time="0.25" classname="cn.devinkin.jedis.TestJedis" name="testJedis"/>
-  <testcase time="0.004" classname="cn.devinkin.jedis.TestJedis" name="testJedisPool"/>
+  <testcase time="0.287" classname="cn.devinkin.jedis.TestJedis" name="testJedisCluster"/>
+  <testcase time="0.001" classname="cn.devinkin.jedis.TestJedis" name="testJedis"/>
+  <testcase time="0.003" classname="cn.devinkin.jedis.TestJedis" name="testJedisPool"/>
 </testsuite>

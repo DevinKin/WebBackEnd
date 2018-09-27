@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="1.543" errors="0" skipped="0" tests="6" name="cn.devinkin.activemq.TestActiveMq">
+<testsuite failures="0" time="0.827" errors="0" skipped="0" tests="6" name="cn.devinkin.activemq.TestActiveMq">
   <properties>
     <property name="idea.version" value="2018.2.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\JavaSE7\jdk1.7.0_80\jre\bin"/>
     <property name="java.vm.version" value="24.80-b11"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="F:\WebBackEnd\Taotaoparent\Taotao-manager"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\WebBackEnd\Taotaoparent\Taotao-manager"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -17,12 +17,12 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="F:\WebBackEnd\Taotaoparent\Taotao-manager"/>
+    <property name="user.dir" value="D:\WebBackEnd\Taotaoparent\Taotao-manager"/>
     <property name="java.runtime.version" value="1.7.0_80-b15"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\JavaSE7\jdk1.7.0_80\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="visualvm.id" value="40756026179227"/>
+    <property name="visualvm.id" value="80642398909230"/>
     <property name="java.io.tmpdir" value="C:\Users\devinkin\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
@@ -63,10 +63,10 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="1.28" classname="cn.devinkin.activemq.TestActiveMq" name="testTopicConsumer1"/>
-  <testcase time="0.052" classname="cn.devinkin.activemq.TestActiveMq" name="testTopicConsumer2"/>
-  <testcase time="0.025" classname="cn.devinkin.activemq.TestActiveMq" name="testTopicConsumer3"/>
-  <testcase time="0.065" classname="cn.devinkin.activemq.TestActiveMq" name="testQueueProducer"/>
-  <testcase time="0.049" classname="cn.devinkin.activemq.TestActiveMq" name="testQueueConsumer"/>
-  <testcase time="0.072" classname="cn.devinkin.activemq.TestActiveMq" name="testTopicProducer"/>
+  <testcase time="0.551" classname="cn.devinkin.activemq.TestActiveMq" name="testTopicConsumer1"/>
+  <testcase time="0.026" classname="cn.devinkin.activemq.TestActiveMq" name="testTopicConsumer2"/>
+  <testcase time="0.048" classname="cn.devinkin.activemq.TestActiveMq" name="testTopicConsumer3"/>
+  <testcase time="0.064" classname="cn.devinkin.activemq.TestActiveMq" name="testQueueProducer"/>
+  <testcase time="0.07" classname="cn.devinkin.activemq.TestActiveMq" name="testQueueConsumer"/>
+  <testcase time="0.068" classname="cn.devinkin.activemq.TestActiveMq" name="testTopicProducer"/>
 </testsuite>

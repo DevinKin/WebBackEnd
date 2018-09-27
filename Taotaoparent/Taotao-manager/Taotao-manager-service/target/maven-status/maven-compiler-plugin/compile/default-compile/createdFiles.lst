@@ -1,5 +1,8 @@
+cn\devinkin\service\jedis\JedisClientCluster.class
+cn\devinkin\service\jedis\JedisClientPool.class
+cn\devinkin\service\impl\ItemServiceImpl$1.class
 cn\devinkin\service\impl\ItemServiceImpl$2.class
 cn\devinkin\service\impl\ItemServiceImpl.class
 cn\devinkin\service\impl\ItemServiceImpl$3.class
 cn\devinkin\service\impl\ItemCatServiceImpl.class
-cn\devinkin\service\impl\ItemServiceImpl$1.class
+cn\devinkin\service\jedis\JedisClient.class

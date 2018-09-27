@@ -24,4 +24,6 @@ public interface TbItemDescMapper {
     int updateByExampleWithBLOBs(@Param("record") TbItemDesc record, @Param("example") TbItemDescExample example);
 
     int updateByExample(@Param("record") TbItemDesc record, @Param("example") TbItemDescExample example);
+
+//    TbItemDesc selectByPrimaryKey(Long id);
 }

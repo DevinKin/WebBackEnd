@@ -34,7 +34,7 @@ public interface ItemService {
      * @param id 商品id
      * @return
      */
-    TbItemDesc getItemDescById(Long id);
+    TbItemDesc getItemDescById(Long itemId);
 
     /**
      * 更新商品信息

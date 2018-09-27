@@ -1,2 +1,5 @@
+cn\devinkin\jedis\JedisClientCluster.class
 cn\devinkin\content\service\impl\ContentServiceImpl.class
 cn\devinkin\content\service\impl\ContentCategoryServiceImpl.class
+cn\devinkin\jedis\JedisClientPool.class
+cn\devinkin\jedis\JedisClient.class

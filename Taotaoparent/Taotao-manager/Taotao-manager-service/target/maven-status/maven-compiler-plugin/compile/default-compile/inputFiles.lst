@@ -1,2 +1,5 @@
-F:\WebBackEnd\Taotaoparent\Taotao-manager\Taotao-manager-service\src\main\java\cn\devinkin\service\impl\ItemServiceImpl.java
-F:\WebBackEnd\Taotaoparent\Taotao-manager\Taotao-manager-service\src\main\java\cn\devinkin\service\impl\ItemCatServiceImpl.java
+D:\WebBackEnd\Taotaoparent\Taotao-manager\Taotao-manager-service\src\main\java\cn\devinkin\service\jedis\JedisClient.java
+D:\WebBackEnd\Taotaoparent\Taotao-manager\Taotao-manager-service\src\main\java\cn\devinkin\service\jedis\JedisClientPool.java
+D:\WebBackEnd\Taotaoparent\Taotao-manager\Taotao-manager-service\src\main\java\cn\devinkin\service\impl\ItemServiceImpl.java
+D:\WebBackEnd\Taotaoparent\Taotao-manager\Taotao-manager-service\src\main\java\cn\devinkin\service\jedis\JedisClientCluster.java
+D:\WebBackEnd\Taotaoparent\Taotao-manager\Taotao-manager-service\src\main\java\cn\devinkin\service\impl\ItemCatServiceImpl.java
