@@ -10,5 +10,6 @@
 ## [SpringMVC笔记](/note/SpringMVC/SpringMVC.html)
 ## [Lucene笔记](/note/Lucene/Lucene.html)
 ## [Redis笔记](/note/Redis/Redis.html)
+## [Taotao商城项目笔记](/note/TaotaoProject/TaotaoProject.html)
 ## Project-项目
 ### [JavaWeb项目笔记](/note/Project/JavaWeb/JavaWeb.html)

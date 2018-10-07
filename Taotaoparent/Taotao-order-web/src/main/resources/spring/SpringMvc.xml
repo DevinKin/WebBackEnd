@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <!-- 加载属性文件 -->
+    <context:property-placeholder location="classpath:resource/resource.properties"/>
+    <!-- 注解驱动 -->
+    <mvc:annotation-driven/>
+
+    <!-- 配置视图解析器 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!-- 真正的页面路径 =  前缀 + 去掉后缀名的页面名称 + 后缀 -->
+        <!-- 前缀 -->
+        <property name="prefix" value="/WEB-INF/jsp/"></property>
+        <!-- 后缀 -->
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+    <!-- @Controller注解扫描 -->
+    <context:component-scan base-package="cn.devinkin.order.controller"></context:component-scan>
+
+    <!-- 配置拦截器 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/order/**"/>
+            <bean class="cn.devinkin.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+
+    <!-- 引用dubbo服务 -->
+    <dubbo:application name="taotao-order-web"/>
+    <dubbo:registry protocol="zookeeper" address="192.168.85.135:2181"/>
+    <dubbo:reference interface="cn.devinkin.sso.service.UserService" id="userService"/>
+    <dubbo:reference interface="cn.devinkin.order.service.OrderService" id="orderService"/>
+
+
+
+
+
+</beans>

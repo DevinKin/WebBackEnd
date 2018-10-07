@@ -16,6 +16,12 @@
         <module>Taotao-search</module>
         <module>Taotao-search-web</module>
         <module>Taotao-item-web</module>
+        <module>Taotao-sso</module>
+        <module>Taotao-sso</module>
+        <module>Taotao-sso-web</module>
+        <module>Taotao-cart-web</module>
+        <module>Taotao-order</module>
+        <module>Taotao-order-web</module>
     </modules>
     <packaging>pom</packaging>
 

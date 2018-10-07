@@ -3,14 +3,13 @@ package cn.devinkin.item.listener;
 import cn.devinkin.item.pojo.Item;
 import cn.devinkin.pojo.TbItem;
 import cn.devinkin.pojo.TbItemDesc;
-import cn.devinkin.service.ItemService;
+import cn.devinkin.manager.service.ItemService;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
-import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;
 import javax.jms.TextMessage;

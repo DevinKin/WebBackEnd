@@ -1,2 +1,2 @@
-cn\devinkin\service\ItemService.class
-cn\devinkin\service\ItemCatService.class
+cn\devinkin\manager\service\ItemCatService.class
+cn\devinkin\manager\service\ItemService.class

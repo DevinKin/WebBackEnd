@@ -88,6 +88,13 @@
             <version>1.25</version>
         </dependency>
         <!-- FastDFS Client -->
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <!-- 打包的时候不加入该jar包,编译,测试,运行时候都加入这jar包 -->
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
 </project>

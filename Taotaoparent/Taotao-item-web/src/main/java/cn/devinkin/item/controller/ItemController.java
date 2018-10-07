@@ -3,7 +3,7 @@ package cn.devinkin.item.controller;
 import cn.devinkin.item.pojo.Item;
 import cn.devinkin.pojo.TbItem;
 import cn.devinkin.pojo.TbItemDesc;
-import cn.devinkin.service.ItemService;
+import cn.devinkin.manager.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

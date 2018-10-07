@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="74.735" errors="0" skipped="0" tests="1" name="cn.devinkin.test.solrj.TestSolrCloud">
+<testsuite failures="0" time="3.574" errors="0" skipped="0" tests="1" name="cn.devinkin.test.solrj.TestSolrCloud">
   <properties>
     <property name="idea.version" value="2018.2.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -22,7 +22,7 @@
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\JavaSE7\jdk1.7.0_80\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="visualvm.id" value="80814472439151"/>
+    <property name="visualvm.id" value="12850899015410"/>
     <property name="java.io.tmpdir" value="C:\Users\devinkin\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
@@ -63,5 +63,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="74.735" classname="cn.devinkin.test.solrj.TestSolrCloud" name="testSolrCloudAdDocument"/>
+  <testcase time="3.574" classname="cn.devinkin.test.solrj.TestSolrCloud" name="testSolrCloudAdDocument"/>
 </testsuite>

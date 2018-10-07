@@ -30,7 +30,7 @@
     <!-- 切面:切入点和通知 -->
     <aop:config>
         <aop:advisor advice-ref="txAdvice"
-                     pointcut="execution(* cn.devinkin.service.*.*(..))"/>
+                     pointcut="execution(* cn.devinkin.manager.service.*.*(..))"/>
     </aop:config>
 
 </beans>
