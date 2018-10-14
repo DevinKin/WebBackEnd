@@ -7,73 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="409cbeec-f05b-4e58-b55a-05e2bcf1303a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Spring/note/Spring框架第二天.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../Spring/note/Spring框架第二天.xmind" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../content/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../content/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../content/SUMMARY.md" beforeDir="false" afterPath="$PROJECT_DIR$/../content/SUMMARY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/gitbook/fonts/fontawesome/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/gitbook/fonts/fontawesome/fontawesome-webfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-fontsettings/fontsettings.js" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-fontsettings/fontsettings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-fontsettings/website.css" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-fontsettings/website.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-highlight/ebook.css" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-highlight/ebook.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-highlight/website.css" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-highlight/website.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-livereload/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-livereload/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-lunr/lunr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-lunr/lunr.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-lunr/search-lunr.js" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-lunr/search-lunr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-search/lunr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-search/lunr.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-search/search-engine.js" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-search/search-engine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-search/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-search/search.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-search/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-search/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-sharing/buttons.js" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/gitbook/gitbook-plugin-sharing/buttons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/gitbook/gitbook.js" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/gitbook/gitbook.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/gitbook/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/gitbook/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/gitbook/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/gitbook/theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Hibernate/Hibernate.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Hibernate/Hibernate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Hibernate/day28.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Hibernate/day28.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Hibernate/day29.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Hibernate/day29.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Hibernate/day30.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Hibernate/day30.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Hibernate/day31.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Hibernate/day31.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day10.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day11.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day12.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day13.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day13.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day14.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day14.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day15.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day15.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day16.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day16.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day17.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day17.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day4.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day5.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day6.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day7.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day8.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/day9.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/day9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/JavaWeb/javaweb.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/JavaWeb/javaweb.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Maven/Maven.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Maven/Maven.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Maven/day44.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Maven/day44.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Maven/day45.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Maven/day45.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Oracle/Oracle.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Oracle/Oracle.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Oracle/day25.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Oracle/day25.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Oracle/day26.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Oracle/day26.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Oracle/day27.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Oracle/day27.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Project/JavaWeb/JavaWeb.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Project/JavaWeb/JavaWeb.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Project/SSH/SSH.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Project/SSH/SSH.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Project/project.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Project/project.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/SSH/SSH.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/SSH/SSH.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/SSH/day39.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/SSH/day39.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/SSH/day40.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/SSH/day40.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Spring/Spring.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Spring/Spring.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Spring/day35.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Spring/day35.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Spring/day36.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Spring/day36.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Spring/day37.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Spring/day37.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Spring/day38.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Spring/day38.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Struts2/Struts2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Struts2/Struts2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Struts2/day32.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Struts2/day32.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Struts2/day33.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Struts2/day33.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/note/Struts2/day34.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/note/Struts2/day34.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/search_index.json" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/search_index.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSMCRM/SSMController/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SSMCRM/SSMController/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSMCRM/SSMController/target/classes/cn/devinkin/controller/CustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSMCRM/SSMController/target/classes/cn/devinkin/converter/CustomGlobalStrToDateConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSMCRM/SSMController/target/classes/cn/devinkin/filter/CharacterEncodingFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSMCRM/SSMController/target/classes/cn/devinkin/filter/GetRequest.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/jk28_domain/target/" />
     <ignored path="$PROJECT_DIR$/jk28_web/target/" />
@@ -212,13 +150,22 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="913484539">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/factory/jFactoryListPage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
+            <state relative-caret-position="532">
               <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
             </state>
           </provider>
@@ -226,9 +173,8 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jk28_web/pom.xml">
-          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
+            <state relative-caret-position="190">
               <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
@@ -236,9 +182,8 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
+            <state relative-caret-position="6859">
               <caret line="361" column="21" selection-start-line="361" selection-start-column="21" selection-end-line="361" selection-end-column="21" />
             </state>
           </provider>
@@ -248,7 +193,7 @@
         <entry file="file://$PROJECT_DIR$/../content/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="180">
+              <first_editor relative-caret-position="171">
                 <caret line="9" selection-start-line="9" selection-end-line="9" />
               </first_editor>
               <second_editor />
@@ -260,7 +205,7 @@
         <entry file="file://$PROJECT_DIR$/../content/SUMMARY.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="414">
+              <first_editor relative-caret-position="1007">
                 <caret line="53" column="46" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
               </first_editor>
               <second_editor />
@@ -272,7 +217,7 @@
         <entry file="file://$PROJECT_DIR$/../content/note/SpringMVC/SpringMVC.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="40">
+              <first_editor relative-caret-position="38">
                 <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
               </first_editor>
               <second_editor />
@@ -283,7 +228,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/curdmenu.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="171">
               <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
             </state>
           </provider>
@@ -292,7 +237,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/factory/jFactoryView.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
+            <state relative-caret-position="684">
               <caret line="36" selection-start-line="36" selection-end-line="36" />
             </state>
           </provider>
@@ -301,7 +246,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/factory/jFactoryCreate.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
+            <state relative-caret-position="684">
               <caret line="36" selection-start-line="36" selection-end-line="36" />
             </state>
           </provider>
@@ -310,7 +255,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/user/jUserList.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1140">
+            <state relative-caret-position="1083">
               <caret line="57" column="39" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
             </state>
           </provider>
@@ -411,16 +356,11 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/jk28_web/src/main/webapp/multiselect/package.json" />
-    </packageJsonPaths>
-  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="603" />
-    <option name="y" value="17" />
-    <option name="width" value="1305" />
-    <option name="height" value="865" />
+    <option name="x" value="-1" />
+    <option name="y" value="-25" />
+    <option name="width" value="1922" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -430,9 +370,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -444,6 +381,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -456,13 +395,13 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536508332118" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/codeMachine" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -815,6 +754,7 @@
       <workItem from="1536718354278" duration="105000" />
       <workItem from="1536765428250" duration="57000" />
       <workItem from="1536928261134" duration="1203000" />
+      <workItem from="1538999489431" duration="160000" />
     </task>
     <servers />
   </component>
@@ -839,7 +779,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="245111000" />
+    <option name="totallyTimeSpent" value="245271000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -851,10 +791,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="483" y="14" width="1044" height="692" extended-state="0" />
-    <editor active="true" />
+    <frame x="-1" y="-25" width="1922" height="1080" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.30831644" />
+      <window_info id="JRebel" side_tool="true" />
+      <window_info id="Learn" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30810234" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -862,6 +803,7 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="JRebel Console" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32921174" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49773756" weight="0.5474061" />
@@ -875,13 +817,15 @@
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5022625" side_tool="true" weight="0.3470483" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32907802" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.32907802" />
+      <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" weight="0.32907802" />
       <window_info anchor="bottom" id="MyBatis Sql Log" order="14" />
       <window_info anchor="bottom" id="Messages" order="15" weight="0.31914893" />
       <window_info anchor="bottom" id="Tail" order="16" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="17" />
       <window_info anchor="bottom" id="Run with VisualVM" order="18" sideWeight="0.4994641" weight="0.3288719" />
       <window_info anchor="bottom" id="Debug with VisualVM" order="19" />
+      <window_info anchor="right" id="ASM" />
+      <window_info anchor="right" id="PlantUML" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24974516" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1209,13 +1153,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/ognl/ognl/3.0.19/ognl-3.0.19.jar!/ognl/OgnlRuntime.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="454" column="33" selection-start-line="454" selection-start-column="33" selection-end-line="454" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/ognl/ognl/3.0.19/ognl-3.0.19.jar!/ognl/OgnlRuntime.class" />
     <entry file="file://$PROJECT_DIR$/jk28_domain/src/main/resources/cn/devinkin/jk/domain/Factory.hbm.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1263,51 +1201,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/factory/jFactoryListPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
+        <state relative-caret-position="532">
           <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jk28_web/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
+        <state relative-caret-position="190">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/curdmenu.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/factory/jFactoryView.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/factory/jFactoryCreate.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/user/jUserList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="57" column="39" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
+        <state relative-caret-position="6859">
           <caret line="361" column="21" selection-start-line="361" selection-start-column="21" selection-end-line="361" selection-end-column="21" />
         </state>
       </provider>
@@ -1315,7 +1223,7 @@
     <entry file="file://$PROJECT_DIR$/../content/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="180">
+          <first_editor relative-caret-position="171">
             <caret line="9" selection-start-line="9" selection-end-line="9" />
           </first_editor>
           <second_editor />
@@ -1325,17 +1233,45 @@
     <entry file="file://$PROJECT_DIR$/../content/SUMMARY.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="414">
+          <first_editor relative-caret-position="1007">
             <caret line="53" column="46" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/curdmenu.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/factory/jFactoryView.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/basicinfo/factory/jFactoryCreate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jk28_web/src/main/webapp/WEB-INF/pages/sysadmin/user/jUserList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1083">
+          <caret line="57" column="39" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../content/note/SpringMVC/SpringMVC.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="40">
+          <first_editor relative-caret-position="38">
             <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
           </first_editor>
           <second_editor />
