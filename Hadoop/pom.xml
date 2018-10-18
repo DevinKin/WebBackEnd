@@ -12,6 +12,8 @@
         <hadoop.version>2.4.1</hadoop.version>
         <hive.version>0.14.0</hive.version>
         <hbase.version>0.96.2-hadoop2</hbase.version>
+        <storm.version>0.9.2-incubating</storm.version>
+        <kafka.version>0.8.1.1</kafka.version>
     </properties>
 
     <dependencies>
@@ -61,6 +63,22 @@
             <groupId>org.apache.hbase</groupId>
             <artifactId>hbase-client</artifactId>
             <version>${hbase.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.storm</groupId>
+            <artifactId>storm-core</artifactId>
+            <version>${storm.version}</version>
+            <!--<scope>provided</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka_2.10</artifactId>
+            <version>${kafka.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.storm</groupId>
+            <artifactId>storm-kafka</artifactId>
+            <version>${storm.version}</version>
         </dependency>
     </dependencies>
 

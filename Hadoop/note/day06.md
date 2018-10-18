@@ -198,12 +198,14 @@ select getarea(phonenbr),upflow,downflow from t_flow;
 ```
 
 # HBase
+1. nosql数据库
+2. 分布式,面向列的开源数据库
 
 ## HBase表结构
 1. 建表时,不需要限定表中的数据,只需要指定若干个列族
 2. 插入数据时,列族中可以存储任意多个列(KV,列名和列值)
 3. 要查询某个具体字段的值,需要指定的坐标:表名->行键->列族(Column Family):列名(qulifier)->版本
-4. 表明,行键,列族,列值,版本
+4. 表名,行键,列族,列值,版本
 
 4. Hbase的寻址机制
     - ROOT表
@@ -328,5 +330,169 @@ create 'mygirls', {NAME => 'base_info', VERSIONS => 3}, {NAME => 'extra_info'}
 ## HBase Java API
 1. 在maven中导入Hbase相关依赖
 ```xml
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-server</artifactId>
+            <version>${hbase.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-client</artifactId>
+            <version>${hbase.version}</version>
+        </dependency>
+```
+2. 编写测试代码
+```java
+package cn.devinkin.hbase;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hbase.*;
+import org.apache.hadoop.hbase.client.*;
+import org.apache.hadoop.hbase.filter.Filter;
+import org.apache.hadoop.hbase.filter.PrefixFilter;
+import org.apache.hadoop.hbase.util.Bytes;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class HbaseDao {
+
+    private HBaseAdmin admin = null;
+    private Configuration conf = null;
+
+    @Before
+    public void init() throws Exception {
+        conf = HBaseConfiguration.create();
+        conf.set("hbase.cluster.distributed", "true");
+        conf.set("hbase.zookeeper.quorum", "zookeeper01:2181,zookeeper02:2181,zookeeper03:2181");
+
+        admin = new HBaseAdmin(conf);
+    }
+
+    @Test
+    public void testCreateTable() throws Exception {
+
+        // 设置表名
+        TableName tableName = TableName.valueOf("hbaseJavaapi");
+        // 设置表信息描述
+        HTableDescriptor descriptor = new HTableDescriptor(tableName);
+
+        // 添加列族
+        HColumnDescriptor baseInfo = new HColumnDescriptor("base_info");
+        HColumnDescriptor extraInfo = new HColumnDescriptor("extra_info");
+        // 设置列族版本号,最多保存5个版本
+        baseInfo.setMaxVersions(5);
+        extraInfo.setMaxVersions(5);
+        descriptor.addFamily(baseInfo);
+        descriptor.addFamily(extraInfo);
+
+        admin.createTable(descriptor);
+
+    }
+
+    @Test
+    public void testPut() throws Exception {
+        // 获得表对象
+        HTable hbaseJavaapi = new HTable(conf, "hbaseJavaapi");
+
+        // 获得Put对象,给定行键初始化
+        Put name = new Put(Bytes.toBytes("rk0003"));
+        // 设定列族,键,值
+        name.add(Bytes.toBytes("base_info"), Bytes.toBytes("name"), Bytes.toBytes("hanxin"));
+
+        Put age = new Put(Bytes.toBytes("rk0003"));
+        age.add(Bytes.toBytes("base_info"), Bytes.toBytes("age"), Bytes.toBytes(30));
+
+        // 将put对象加入put数组
+        ArrayList<Put> puts = new ArrayList<Put>();
+        puts.add(name);
+        puts.add(age);
+
+        // 插入数据
+        hbaseJavaapi.put(puts);
+        hbaseJavaapi.close();
+    }
+
+    @Test
+    public void testGet() throws Exception {
+        // 获取表对象
+        HTable hbaseJavaapi = new HTable(conf, "hbaseJavaapi");
+
+        // 获取Get对象
+        Get get = new Get(Bytes.toBytes("rk0001"));
+        // 设置get的最大版本数
+        get.setMaxVersions(5);
+        // 获取结果对象
+        Result result = hbaseJavaapi.get(get);
+        List<Cell> cells = result.listCells();
+
+        // 使用KeyValue遍历结果
+        for (KeyValue kv : result.list()) {
+            // 获取族名
+            String family = new String(kv.getFamily());
+            System.out.println(family);
+            // 获取列名(key)
+            String quaifier = new String(kv.getQualifier());
+            System.out.println(quaifier);
+            // 获取列值(value)
+            System.out.println(kv.getValue());
+
+            // 可以从reesult取出特定的value
+            byte[] bytes = result.getValue(Bytes.toBytes("base_info"), Bytes.toBytes("name"));
+            System.out.println(new String(bytes));
+        }
+        hbaseJavaapi.close();
+    }
+
+    @Test
+    public void testScan() throws Exception {
+        // 获取表对象
+        HTable hbaseJavaapi = new HTable(conf, "hbaseJavaapi");
+
+        // 获取Scan对象,设置起始行键,结束行键
+        Scan scan = new Scan(Bytes.toBytes("rk0001"), Bytes.toBytes("rk0003"));
+
+        // 获取Filter对象,前缀过滤器,针对行键
+        Filter filter = new PrefixFilter(Bytes.toBytes("rk"));
+
+        // 添加列族
+        scan.addFamily(Bytes.toBytes("base_info"));
+        // 获取结果过滤器
+        ResultScanner scanner = hbaseJavaapi.getScanner(scan);
+
+        // 遍历结果
+        for (Result r : scanner) {
+            byte[] bytes = r.getValue(Bytes.toBytes("base_info"), Bytes.toBytes("name"));
+            System.out.println(new String(bytes));
+        }
+        hbaseJavaapi.close();
+    }
+
+    @Test
+    public void testDel() throws Exception {
+        // 获取表对象
+        HTable hbaseJavaapi = new HTable(conf, "hbaseJavaapi");
+
+        // 获取删除对象,用行键进行初始化
+        Delete del = new Delete(Bytes.toBytes("rk0001"));
+        // 删除列,指定列族和列名
+        del.deleteColumn(Bytes.toBytes("base_info"), Bytes.toBytes("age"));
+        // 执行删除
+        hbaseJavaapi.delete(del);
+        hbaseJavaapi.close();
+
+    }
+
+    @Test
+    public void testDrop() throws Exception {
+        // 获取admin对象
+        admin.disableTable("hbaseJavaapi");
+        admin.deleteTable("hbaseJavaapi");
+        admin.close();
+    }
+
+}
 
 ```
