@@ -11,5 +11,6 @@
 ## [Lucene笔记](/note/Lucene/Lucene.html)
 ## [Redis笔记](/note/Redis/Redis.html)
 ## [Taotao商城项目笔记](/note/TaotaoProject/TaotaoProject.html)
+## [Hadoop大数据笔记](/note/Hadoop/Hadoop.html)
 ## Project-项目
 ### [JavaWeb项目笔记](/note/Project/JavaWeb/JavaWeb.html)
