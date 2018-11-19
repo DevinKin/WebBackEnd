@@ -1,0 +1,285 @@
+#+TITLE: SpringBoot学习笔记-入门
+#+CATEGORIES: Java
+#+DESCRIPTION: SpringBoot学习笔记
+#+KEYWORDS: Java
+#+DATE: 2018-11-19 15:23
+
+
+* Spring Boot入门
+- 内容概要
+  - Spring Boot入门
+  - Spring Boot配置
+  - Spring Boot与日志
+  - Spring Boot与Web开发
+  - Spring Boot与Docker
+  - Spring Boot与数据访问
+  - Spring Boot启动配置原理
+  - Spring Boot自定义starters
+  - Spring Boot与缓存(redis)
+  - Spring Boot与消息
+  - Spring Boot与检索
+  - Spring Boot与任务
+  - Spring Boot与安全
+  - Spring Boot与分布式
+  - Spring Boot与开发热部署
+  - Spring Boot与监控管理
+
+** SpringBoot简介
+- SpringBoot来简化Spring应用开发,约定大于配置,去翻从简,just run就能创建一个独立的,产品级别的应用.
+- SpringBoot用于解决J2EE一站式解决方案.
+
+- SpringBoot优点
+  - 快速创建独立运行的Spring项目以及与主流框架集成
+  - 使用嵌入式的Servlet容器,应用无需打成WAR包
+  - starters自动依赖与版本控制
+  - 大量的自动配置,简化开发,也可修改默认值
+  - 无需配置XML,无需代码生成,开箱即用
+  - 准生产环境的运行时应用监控
+  - 与云计算的天然继承
+    
+** 微服务
+- 微服务是一种架构风格
+  - 一个应用应该是一组小型服务.可以通过HTTP的方式进行互通.
+  - 每一个功能元素最终都是一个可独立替换,可独立升级的软件单元.
+
+** 入门环境
+- jdk1.8
+- maven3.x
+- idea
+- springboot1.5.9
+- Maven设置
+#+BEGIN_SRC xml
+  <profiles>
+    <profile>
+      <id>jdk-1.8</id>
+        <activation>
+        <activeByDefault>true</activeByDefault>
+        <jdk>1.8</jdk>
+      </activation>	
+      <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+      </properties>
+    </profile>
+  </profiles>
+#+END_SRC
+
+
+** SpringBoot HelloWorld程序
+- 需求:浏览器发送hello请求,服务器接受请求并处理,响应 ~Hello World~ 字符串.
+
+*** 创建一个maven工程(jar)
+- 导入SpringBoot的相关依赖
+#+BEGIN_SRC xml
+    <!-- Inherit defaults from Spring Boot -->
+    <parent>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-parent</artifactId>
+      <version>2.1.1.BUILD-SNAPSHOT</version>
+    </parent>
+
+    <!-- Add typical dependencies for a web application -->
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+      </dependency>
+    </dependencies>
+#+END_SRC
+
+
+
+*** 编写主程序
+- 启动SpringBoot应用
+#+BEGIN_SRC java
+  package com.devinkin;
+
+  import org.springframework.boot.SpringApplication;
+  import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+  /**
+   ,* @SpringBootApplication 来标注一个主程序类,说明这是一个主程序类
+   ,*/
+  @SpringBootApplication
+  public class HelloWorldMainApplication {
+      public static void main(String[] args) {
+          // Spring 应用启动起来
+          SpringApplication.run(HelloWorldMainApplication.class, args);
+      }
+  }
+#+END_SRC
+
+- 编写Controller
+#+BEGIN_SRC java
+  package com.devinkin.controller;
+
+  import org.springframework.stereotype.Controller;
+  import org.springframework.web.bind.annotation.RequestMapping;
+  import org.springframework.web.bind.annotation.ResponseBody;
+
+  @Controller
+  public class HelloController {
+
+      @ResponseBody
+      @RequestMapping("/hello")
+      public String hello() {
+          return "Hello World!";
+      }
+  }
+#+END_SRC
+
+- 运行主程序进行测试
+
+  
+** 简化部署
+- 导入插件到maven项目
+#+BEGIN_SRC xml
+  <!-- 这个插件,可以将应用打包成一个可执行的jar包 -->
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+#+END_SRC
+
+- 这个应用打成jar包,直接使用 ~java -jar xxx.jar~ 的命令进行执行.
+
+  
+** HelloWorld探究
+*** POM文件
+- 导入父项目 ~spring-boot-starter-parent~ 的父项目是 ~spring-boot-dependencies~
+- ~spring-boot-dependencies~ 是SpringBoot版本仲裁中心.以后导入依赖是不需要写版本.
+- 没有在dependencies里面管理的依赖自然需要声明版本号.
+
+*** 导入的依赖
+- ~spring-boot-starter~ 称为SpringBoot场景启动器.
+- ~spring-boot-starter-web~ 导入了web模块正常运行所依赖的组件.
+- SpringBoot将所有的功能场景都抽取出来,做成一个starters(启动器),只需要在项目中引入这些starters,相关场景的所有依赖都会导入进来.要用什么功能,就用什么场景启动器.
+
+  
+
+
+*** 主程序类,主入口类
+- ~@SpringBootApplication~ SpringBoot应用程序标注在某个类上说明这个类是SpringBoot的主配置类, SpringBoot就应该运行这个类的main方法来启动Spring应用.
+#+BEGIN_SRC java
+  //
+  // Source code recreated from a .class file by IntelliJ IDEA
+  // (powered by Fernflower decompiler)
+  //
+
+  package org.springframework.boot.autoconfigure;
+
+  import java.lang.annotation.Documented;
+  import java.lang.annotation.ElementType;
+  import java.lang.annotation.Inherited;
+  import java.lang.annotation.Retention;
+  import java.lang.annotation.RetentionPolicy;
+  import java.lang.annotation.Target;
+  import org.springframework.boot.SpringBootConfiguration;
+  import org.springframework.boot.context.TypeExcludeFilter;
+  import org.springframework.context.annotation.ComponentScan;
+  import org.springframework.context.annotation.FilterType;
+  import org.springframework.context.annotation.ComponentScan.Filter;
+  import org.springframework.core.annotation.AliasFor;
+
+  @Target({ElementType.TYPE})
+  @Retention(RetentionPolicy.RUNTIME)
+  @Documented
+  @Inherited
+  @SpringBootConfiguration
+  @EnableAutoConfiguration
+  @ComponentScan(
+      excludeFilters = {@Filter(
+      type = FilterType.CUSTOM,
+      classes = {TypeExcludeFilter.class}
+  ), @Filter(
+      type = FilterType.CUSTOM,
+      classes = {AutoConfigurationExcludeFilter.class}
+  )}
+  )
+  public @interface SpringBootApplication {
+      @AliasFor(
+          annotation = EnableAutoConfiguration.class,
+          attribute = "exclude"
+      )
+      Class<?>[] exclude() default {};
+
+      @AliasFor(
+          annotation = EnableAutoConfiguration.class,
+          attribute = "excludeName"
+      )
+      String[] excludeName() default {};
+
+      @AliasFor(
+          annotation = ComponentScan.class,
+          attribute = "basePackages"
+      )
+      String[] scanBasePackages() default {};
+
+      @AliasFor(
+          annotation = ComponentScan.class,
+          attribute = "basePackageClasses"
+      )
+      Class<?>[] scanBasePackageClasses() default {};
+  }
+
+
+  @Target({ElementType.TYPE})
+  @Retention(RetentionPolicy.RUNTIME)
+  @Documented
+  @Configuration
+  public @interface SpringBootConfiguration {
+  }
+#+END_SRC
+- ~@SpringBootConfiguration~ SpringBoot的配置类.
+  - 标注在某个类上,表示这是一个SpringBoot配置类.
+- ~@Configuration~ 表明这个类是配置类,用以替换配置文件.是Spring的注解.
+  - 配置类也是容器的一个组件 ~@Component~
+- ~@EnableAutoConfiguration~ 开启自动配置功能.
+  - 以前我们需要配置的东西,该注解告诉SpringBoot帮我们自动配置.
+  - 包含了 ~@AutoConfigurationPackage~ 注解.
+#+BEGIN_SRC java
+  @AutoConfigurationPackage
+  @Import({EnableAutoConfigurationImportSelector.class})
+  public @interface EnableAutoConfiguration {
+      String ENABLED_OVERRIDE_PROPERTY = "spring.boot.enableautoconfiguration";
+
+      Class<?>[] exclude() default {};
+
+      String[] excludeName() default {};
+  }
+#+END_SRC
+- ~@AutoConfigurationPackage~ 自动配置包注解
+  - 包含了 ~@Import~ 注解, 是Spring的底层注解,作用是给容器导入一个组件 ~Registrar.class~.
+  - 作用是将主配置类的(~@SpringBootApplication~ 标注的类)的所在包及下面所有子包里面的所有组件扫描到Spring容器中.
+- ~@Import~ 注解给容器导入了一个组件.
+  - ~@EnableAutoConfigurationImportSelector~ 导入哪些组件的选择器.
+  - 将所有容器导入的组件以全类名的形式返回,这些组件会被添加到容器中.
+  - 会给容器中导入非常多的自动配置类(XXXAutoConfiguration),就是给容器中导入这个场景需要的所有组件,并配置好这些组件.
+[[file:./img/configuration.png]]
+- 有了自动配置类,免去了我们手动编写配置注入功能组件等工作.
+  - ~SpringFactoriesLoader.loadFactoryNames(EanbleAutoConfiguration.class, classloader)~ 从类路径下的 ~META-INF/spring.factories~ 中获取 ~EanbleAutoConfiguration~ 指定的值.
+  - SpringBoot在启动的时候从类路径下的 ~META-INF/spring.factories~ 中获取 ~EnableAutoConfiguration~ 指定的值,将这些值作为自动配置类导入到容器中,自动配置类就生效.帮我们进行自动配置工作.
+  - 以前我们需要自己配置的东西,自动配置类都配置好了.
+  - J2EE的整合解决方案和自动配置都在 ~spring-boot-autoconfigure-1.5.9.RELEASE.jar~ 中
+
+
+#+BEGIN_SRC java
+  @Import({Registrar.class})
+  public @interface AutoConfigurationPackage {
+  }
+#+END_SRC
+
+
+** 使用Spring Initializer快速创建SpringBoot项目
+- IDE对支持Spring的项目创建向导快速创建一个SpringBoot项目,选择我们需要的模块,需要联网.
+- 默认生成的SpringBoot项目
+  - 主程序已经生成好了,我们只需要我们自己的逻辑
+  - resources文件夹中目结构
+    - static: 保存所有的静态资源, js,css,image.
+    - templates: 保存所有的模板页面. (SpringBoot默认jar包使用嵌入式的Tomcat, 默认不支持JSP页面,可以使用模板引擎freemarker, thymeleaf)
+    - application.properties: SpringBoot应用的配置文件, 可以修改一些默认配置.
