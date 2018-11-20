@@ -119,6 +119,7 @@
   import org.springframework.web.bind.annotation.ResponseBody;
 
   @Controller
+  //@RestController = @Controller + @ResponseBody
   public class HelloController {
 
       @ResponseBody
