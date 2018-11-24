@@ -1,0 +1,28 @@
+server:
+  port: 8081
+spring:
+  profiles:
+    active: prod
+---
+server:
+  port: 8082
+spring:
+  profiles: prod
+---
+server:
+  port: 8083
+spring:
+  profiles: dev
+---
+#person:
+#  age: 18
+#  boss: false
+#  birth: 2017/12/12
+#  maps: {k1: v1, k2: 12}
+#  lists:
+#    - lisi
+#    - zhaoliu
+#  dog:
+#    name: 小狗
+#    age: 2
+#  last-name: habi
