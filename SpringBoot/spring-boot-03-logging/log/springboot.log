@@ -1,0 +1,17 @@
+2018-12-29 21:40:25.479  INFO 4040 --- [main] .d.s.SpringBoot03LoggingApplicationTests : Starting SpringBoot03LoggingApplicationTests on SC-201811261228 with PID 4040 (started by Administrator in E:\JavaCode\WebBackEnd\SpringBoot\spring-boot-03-logging)
+2018-12-29 21:40:25.480 DEBUG 4040 --- [main] .d.s.SpringBoot03LoggingApplicationTests : Running with Spring Boot v1.5.19.BUILD-SNAPSHOT, Spring v4.3.22.BUILD-SNAPSHOT
+2018-12-29 21:40:25.481  INFO 4040 --- [main] .d.s.SpringBoot03LoggingApplicationTests : No active profile set, falling back to default profiles: default
+2018-12-29 21:40:25.537  INFO 4040 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@15aab8c6: startup date [Sat Dec 29 21:40:25 CST 2018]; root of context hierarchy
+2018-12-29 21:40:28.735  INFO 4040 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@15aab8c6: startup date [Sat Dec 29 21:40:25 CST 2018]; root of context hierarchy
+2018-12-29 21:40:28.827  INFO 4040 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-12-29 21:40:28.829  INFO 4040 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-12-29 21:40:28.870  INFO 4040 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-29 21:40:28.871  INFO 4040 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-29 21:40:28.933  INFO 4040 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-29 21:40:29.128  INFO 4040 --- [main] .d.s.SpringBoot03LoggingApplicationTests : Started SpringBoot03LoggingApplicationTests in 4.642 seconds (JVM running for 6.242)
+2018-12-29 21:40:29.192 TRACE 4040 --- [main] .d.s.SpringBoot03LoggingApplicationTests : 这是trace日志...
+2018-12-29 21:40:29.192 DEBUG 4040 --- [main] .d.s.SpringBoot03LoggingApplicationTests : 这是debug日志...
+2018-12-29 21:40:29.193  INFO 4040 --- [main] .d.s.SpringBoot03LoggingApplicationTests : 这是info日志...
+2018-12-29 21:40:29.193  WARN 4040 --- [main] .d.s.SpringBoot03LoggingApplicationTests : 这是warn日志...
+2018-12-29 21:40:29.193 ERROR 4040 --- [main] .d.s.SpringBoot03LoggingApplicationTests : 这是error日志...
+2018-12-29 21:40:29.201  INFO 4040 --- [Thread-2] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@15aab8c6: startup date [Sat Dec 29 21:40:25 CST 2018]; root of context hierarchy

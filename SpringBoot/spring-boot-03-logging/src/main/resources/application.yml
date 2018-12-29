@@ -1,0 +1,12 @@
+logging:
+  level:
+    com.devinkin: trace
+  path: E:\JavaCode\WebBackEnd\SpringBoot\spring-boot-03-logging\log2
+  # 在控制台输出的日志的格式
+  pattern:
+#    console: '%d{yyyy-MM-dd} [%thread] %-5level %logger{50} - %msg%n'
+    file: '%d{yyyy-MM-dd} ==== [%thread] ==== %-5level ==== %logger{50} - %msg%n'
+#  file: E:\JavaCode\WebBackEnd\SpringBoot\spring-boot-03-logging\log\springboot.log
+spring:
+  profiles:
+    active: test

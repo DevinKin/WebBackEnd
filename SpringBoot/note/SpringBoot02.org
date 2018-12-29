@@ -19,7 +19,7 @@
     
 - 配置文件的作用: 修改SpringBoot自动配置的默认值.
 
-
+  
 ** YAML语法
 - 使用缩进表示层级关系.
 - 缩进时不允许使用Tab键,只允许使用空格.
@@ -417,6 +417,7 @@ person.dog.age=15
       return filter;
   }
 #+END_SRC
+
 
 ** SpringBoot精髓
 - SpringBoot启动会加载大量的自动配置类
