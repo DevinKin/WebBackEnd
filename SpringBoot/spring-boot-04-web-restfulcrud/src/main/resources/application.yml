@@ -1,3 +1,12 @@
 #spring:
 #  resources:
 #    static-locations: classpath:/hello/,classpath:/devinkin/
+server:
+  context-path: /crud
+spring:
+  messages:
+    basename: i18n.login
+  # 禁用模板引擎的缓存
+  thymeleaf:
+    cache: false
+

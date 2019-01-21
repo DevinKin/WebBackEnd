@@ -25,4 +25,9 @@ public class HelloController {
         map.put("users", Arrays.asList("zhangsan", "lisi", "wangwu"));
         return "success";
     }
+
+//    @RequestMapping({"/","/login.html"})
+//    public String index() {
+//        return "index";
+//    }
 }

@@ -1,4 +1,4 @@
-package com.atguigu.springmvc.crud.entities;
+package com.devinkin.springboot.entities;
 
 public class Department {
 
