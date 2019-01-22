@@ -3,10 +3,14 @@
 #    static-locations: classpath:/hello/,classpath:/devinkin/
 server:
   context-path: /crud
+  tomcat:
+    uri-encoding: UTF-8
 spring:
   messages:
     basename: i18n.login
   # 禁用模板引擎的缓存
   thymeleaf:
     cache: false
+  mvc:
+    date-format: yyyy-MM-dd
 
